@@ -13,9 +13,11 @@
   /* ------------------------------------------------------------------------------------------------ Rules */
 
 
-#[ \t]*define {ECHO;defineCounter++; printf("Encontre un define \n");}
+#[ \t]*define {ECHO;defineCounter++; printf("Encontre un define \n");strcpy(name,yytext); return DEFINE;}
 #[ \t]*include[ \t"]+ {includeCounter++; printf("Encontre un include \n"); }
 [^ \t\n"]+   { strcpy(name,yytext);}
+[\t] { return TAB;}
+[a-zA-Z]([a-zA-Z]|[0-9])* {strcpy(name,yytext);}
 
 
 
@@ -48,6 +50,21 @@ void openFilePath(){
 	else{
 		printf("Error al abrir el archivo %s\n", name);
 	}
+}
+
+void processDefine(){
+	char cname [1024];
+	char value [1024];
+	int current_token = yylex();
+	if(current_token == DEFINE ){
+		current_token = yylex();
+		yylex();
+		strcpy(cname,name);
+		yylex();
+		strcpy(value,name);
+		printf("Nombre:%s\nValor:%s\n", cname,value);
+	}
+
 }
 
 main(int argc,char *argv){
