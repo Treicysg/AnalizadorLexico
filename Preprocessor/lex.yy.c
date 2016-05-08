@@ -476,11 +476,13 @@ char *yytext;
 #line 1 "preprocessor.l"
 /* ------------------------------------------------------------------------------------------------Definitions */
 #line 4 "preprocessor.l"
+	#include <stdio.h>
+	#include <ctype.h>
+	#include "global.h"
 	int includeCounter = 0;
 	int defineCounter = 0;
-	char str[999];
-
-#line 484 "lex.yy.c"
+	char name[1024] = "";
+#line 486 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -667,12 +669,12 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 10 "preprocessor.l"
+#line 12 "preprocessor.l"
 
   /* ------------------------------------------------------------------------------------------------ Rules */
- 
- 
-#line 676 "lex.yy.c"
+
+
+#line 678 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -757,25 +759,25 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 "preprocessor.l"
-{defineCounter++; printf("Encontre un define \n");} 
+#line 16 "preprocessor.l"
+{ECHO;defineCounter++; printf("Encontre un define \n");}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 15 "preprocessor.l"
-{includeCounter++; printf("Encontre un include \n");}
+#line 17 "preprocessor.l"
+{includeCounter++; printf("Encontre un include \n"); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "preprocessor.l"
-{ getFilePath(yytext);}
+#line 18 "preprocessor.l"
+{ strcpy(name,yytext);}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 20 "preprocessor.l"
+#line 22 "preprocessor.l"
 ECHO;
 	YY_BREAK
-#line 779 "lex.yy.c"
+#line 781 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1773,20 +1775,29 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 20 "preprocessor.l"
+#line 22 "preprocessor.l"
 
 
 	/* --------------------------------------------------------------------------------------------------Code */
- 
- 
-main(int argc,char *argv){
-	
-	yyin = fopen( "prueba.txt", "r" );
+
+void openFilePath(){
+	printf("Entre a la funcion que va a abrir el archivo %s\n", name);
 	yylex();
-	printf("Cantidad de includes: %d, Cantidad de defines: %d\n",includeCounter,defineCounter);
+	int c;
+	FILE* file = fopen(name, "r");
+	if (file) {
+			printf("leimos bien el file\n");
+	}
+	else{
+		printf("Error al abrir el archivo %s\n", name);
+	}
 }
 
-void getFilePath(char *filepath)
-{
-	printf("Nombre del archivo: %s \n", filepath);
+
+main(int argc,char *argv){
+	yyin = fopen( "prueba.txt", "r" );
+	//printf("Cantidad de includes: %d, Cantidad de defines: %d\n",includeCounter,defineCounter);
+	//printf("El nombre del archivo: %s \n",name);
+	openFilePath();
 }
+
