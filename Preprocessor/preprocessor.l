@@ -9,15 +9,19 @@
 	char name[1024] = "";
 %}
 
+digit [0-9]
+letter [a-zA-Z]
 %%
   /* ------------------------------------------------------------------------------------------------ Rules */
 
 
 #[ \t]*define {ECHO;defineCounter++; printf("Encontre un define \n");strcpy(name,yytext); return DEFINE;}
-#[ \t]*include[ \t"]+ {includeCounter++; printf("Encontre un include \n"); }
+[ \t] {strcpy(name, yytext); return SPACE;}
+{letter}({letter}|{digit})* {strcpy(name,yytext); return CODIGO;}
+#[ \t]*include[ \t"]+ {includeCounter++; printf("Encontre un include \n"); return INCLUDE; }
 [^ \t\n"]+   { strcpy(name,yytext);}
-[\t] { return TAB;}
-[a-zA-Z]([a-zA-Z]|[0-9])* {strcpy(name,yytext);}
+
+
 
 
 
@@ -57,9 +61,10 @@ void processDefine(){
 	char value [1024];
 	int current_token = yylex();
 	if(current_token == DEFINE ){
-		current_token = yylex();
-		yylex();
+		current_token = yylex(); //espacio
+		yylex(); //nombre
 		strcpy(cname,name);
+		yylex();// espacio
 		yylex();
 		strcpy(value,name);
 		printf("Nombre:%s\nValor:%s\n", cname,value);
@@ -71,5 +76,6 @@ main(int argc,char *argv){
 	yyin = fopen( "prueba.txt", "r" );
 	//printf("Cantidad de includes: %d, Cantidad de defines: %d\n",includeCounter,defineCounter);
 	//printf("El nombre del archivo: %s \n",name);
-	openFilePath();
+	//openFilePath();
+	processDefine();
 }

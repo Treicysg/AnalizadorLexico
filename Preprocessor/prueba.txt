@@ -1,1 +1,1 @@
-#include "incluyeme.txt"
+#define AGE 10
