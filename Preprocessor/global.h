@@ -15,3 +15,6 @@ typedef enum token_types{
 } token;
 /*------------------------------------------------------------------------------------------------------------------------*/
 typedef enum {false=0, true=1} bool;
+
+void openFilePath(YY_BUFFER_STATE buffer,FILE *output);
+void readIncludeFile(FILE *file, FILE *output);

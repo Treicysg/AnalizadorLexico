@@ -1795,6 +1795,34 @@ void yyfree (void * ptr )
 
 
 	/* --------------------------------------------------------------------------------------------------Code */
+
+void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
+	yy_switch_to_buffer (buffer); // Nos pasamos al buffer principal.
+	int current_token = yylex();
+	
+	if(current_token == INCLUDE){
+		yylex(); // obtiene archivo
+		FILE* file = fopen(name, "r");
+		if (file) {
+				printf("leimos bien el file\n");
+				readIncludeFile(file, output);
+		}
+		else{
+			printf("Error al abrir el archivo %s\n", name);
+		}
+	}
+
+	//Copiara en el output file los datos de los archivos incluidos
+	else if(current_token == CODIGO){
+		// Copia datos
+		fprintf(output,"%s", name);
+	}
+	else if(current_token == SPACE){
+		// Copia espacios
+		fprintf(output,"%s", name);
+	}
+}
+
 void readIncludeFile(FILE *file, FILE *output){
 		char a;
 		int c;
@@ -1821,35 +1849,6 @@ void readIncludeFile(FILE *file, FILE *output){
 		}
 	}
 
-void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
-	yy_switch_to_buffer (buffer);
-	int current_token = yylex();
-
-	//Abre recursivamente todos los includes que vengan en los files
-
-	if(current_token == INCLUDE){
-		yylex(); // obtiene archivo
-		FILE* file = fopen(name, "r");
-		if (file) {
-				printf("leimos bien el file\n");
-				readIncludeFile(file, output);
-		}
-		else{
-			printf("Error al abrir el archivo %s\n", name);
-		}
-	}
-
-	//Copiara en el output file los datos de los archivos incluidos
-	else if(current_token == CODIGO){
-		// Copia datos
-		fprintf(output,"%s", name);
-	}
-	else if(current_token == SPACE){
-		// Copia espacios
-		fprintf(output,"%s", name);
-	}
-}
-
 void processDefine(){
 	char cname [1024];
 	char value [1024];
@@ -1869,8 +1868,10 @@ void processDefine(){
 main(int argc,char *argv){
 	FILE *originalFile = fopen( "prueba.txt", "r" );
 	FILE *output = fopen("outputFile.txt","w");
+
 	//Creamos buffer para almacenar y recorrer el file original
 	YY_BUFFER_STATE buffer = yy_create_buffer(originalFile,YY_BUF_SIZE);
+
 	openFilePath(buffer, output);
 	//processDefine();
 }
