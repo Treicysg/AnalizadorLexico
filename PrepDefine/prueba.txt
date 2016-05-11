@@ -1,0 +1,7 @@
+#define AGE 10
+
+int main()
+{
+   printf("La edad es %d years old.\n",AGE);
+   return 0;
+}
