@@ -368,8 +368,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 6
-#define YY_END_OF_BUFFER 7
+#define YY_NUM_RULES 8
+#define YY_END_OF_BUFFER 9
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -377,12 +377,11 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[40] =
+static yyconst flex_int16_t yy_accept[28] =
     {   0,
-        0,    0,    7,    5,    2,    6,    5,    3,    5,    0,
-        5,    5,    3,    0,    0,    5,    5,    0,    0,    5,
-        5,    0,    0,    5,    5,    0,    0,    5,    5,    0,
-        0,    1,    5,    1,    0,    5,    0,    4,    0
+        0,    0,    9,    7,    2,    3,    7,    4,    0,    0,
+        0,    0,    4,    0,    0,    6,    0,    0,    0,    0,
+        0,    0,    1,    0,    0,    5,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -391,16 +390,16 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    2,    1,    4,    5,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    6,    6,    6,
-        6,    6,    6,    6,    6,    6,    6,    1,    1,    1,
-        1,    1,    1,    1,    7,    7,    7,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        1,    1,    1,    1,    1,    1,    7,    7,    8,    9,
+        1,    1,    1,    1,    1,    6,    1,    7,    7,    7,
+        7,    7,    7,    7,    7,    7,    7,    1,    1,    1,
+        1,    1,    1,    1,    8,    8,    8,    8,    8,    8,
+        8,    8,    8,    8,    8,    8,    8,    8,    8,    8,
+        8,    8,    8,    8,    8,    8,    8,    8,    8,    8,
+        1,    1,    1,    1,    1,    1,    8,    8,    9,   10,
 
-       10,   11,    7,    7,   12,    7,    7,   13,    7,   14,
-        7,    7,    7,    7,    7,    7,   15,    7,    7,    7,
-        7,    7,    1,    1,    1,    1,    1,    1,    1,    1,
+       11,   12,    8,    8,   13,    8,    8,   14,    8,   15,
+        8,    8,    8,    8,    8,    8,   16,    8,    8,    8,
+        8,    8,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -417,52 +416,44 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst flex_int32_t yy_meta[16] =
+static yyconst flex_int32_t yy_meta[17] =
     {   0,
-        1,    2,    2,    2,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1
+        1,    1,    1,    1,    1,    2,    2,    3,    3,    3,
+        3,    3,    3,    3,    3,    3
     } ;
 
-static yyconst flex_int16_t yy_base[43] =
+static yyconst flex_int16_t yy_base[30] =
     {   0,
-        0,    6,   55,    0,   56,   56,   11,   13,    0,   22,
-       44,   39,   14,   42,   37,   39,   41,   37,   39,   34,
-       32,   32,   30,   28,   26,   26,   24,   28,   28,   23,
-       20,    0,   12,   56,   11,   23,   24,   28,   56,   34,
-       16,   15
+        0,    0,   41,   42,   42,   42,   15,   34,    0,   28,
+       23,    0,   31,   24,   26,   28,   20,   18,   16,   11,
+       15,   14,   42,   12,   16,   17,   42,   27,   19
     } ;
 
-static yyconst flex_int16_t yy_def[43] =
+static yyconst flex_int16_t yy_def[30] =
     {   0,
-       40,   40,   39,   41,   39,   39,   41,   42,   41,   39,
-       41,   41,   42,   39,   39,   41,   41,   39,   39,   41,
-       41,   39,   39,   41,   41,   39,   39,   41,   41,   39,
-       39,   41,   41,   39,   39,   41,   39,   39,    0,   39,
-       39,   39
+       27,    1,   27,   27,   27,   27,   27,   28,    7,   27,
+       27,   29,   28,   27,   27,   29,   27,   27,   27,   27,
+       27,   27,   27,   27,   27,   27,    0,   27,   27
     } ;
 
-static yyconst flex_int16_t yy_nxt[72] =
+static yyconst flex_int16_t yy_nxt[59] =
     {   0,
-        4,    5,    6,    6,    7,    4,    4,    5,    6,    6,
-        7,    4,   10,    9,    9,   13,    9,    9,    9,   11,
-       37,   36,   12,   10,   38,   38,   38,   38,   35,   38,
-       14,   38,   34,   15,    8,    8,   33,   32,   31,   30,
-       29,   28,   27,   26,   25,   24,   23,   22,   21,   20,
-       19,   18,   17,   16,   39,    3,   39,   39,   39,   39,
-       39,   39,   39,   39,   39,   39,   39,   39,   39,   39,
-       39
+        4,    5,    6,    4,    7,    4,    4,    8,    8,    8,
+        8,    8,    8,    8,    8,    8,    9,   26,   26,   26,
+       26,   16,   25,   24,   10,   23,   22,   11,   13,   13,
+       21,   20,   19,   12,   18,   17,   12,   15,   14,   12,
+       27,    3,   27,   27,   27,   27,   27,   27,   27,   27,
+       27,   27,   27,   27,   27,   27,   27,   27
     } ;
 
-static yyconst flex_int16_t yy_chk[72] =
+static yyconst flex_int16_t yy_chk[59] =
     {   0,
-        1,    1,    1,    1,    1,    1,    2,    2,    2,    2,
-        2,    2,    7,    8,   13,   42,   41,    8,   13,    7,
-       35,   33,    7,   10,   36,   37,   36,   37,   31,   38,
-       10,   38,   30,   10,   40,   40,   29,   28,   27,   26,
-       25,   24,   23,   22,   21,   20,   19,   18,   17,   16,
-       15,   14,   12,   11,    3,   39,   39,   39,   39,   39,
-       39,   39,   39,   39,   39,   39,   39,   39,   39,   39,
-       39
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    7,   25,   26,   25,
+       26,   29,   24,   22,    7,   21,   20,    7,   28,   28,
+       19,   18,   17,   16,   15,   14,   13,   11,   10,    8,
+        3,   27,   27,   27,   27,   27,   27,   27,   27,   27,
+       27,   27,   27,   27,   27,   27,   27,   27
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -488,7 +479,7 @@ char *yytext;
 	int includeCounter = 0;
 	int defineCounter = 0;
 	char name[1024] = "";
-#line 492 "lex.yy.c"
+#line 483 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -680,7 +671,7 @@ YY_DECL
   /* ------------------------------------------------------------------------------------------------ Rules */
 
 
-#line 684 "lex.yy.c"
+#line 675 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -733,13 +724,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 40 )
+				if ( yy_current_state >= 28 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 56 );
+		while ( yy_base[yy_current_state] != 42 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -774,28 +765,41 @@ YY_RULE_SETUP
 {strcpy(name, yytext); return SPACE;}
 	YY_BREAK
 case 3:
+/* rule 3 can match eol */
 YY_RULE_SETUP
 #line 20 "preprocessor.l"
-{strcpy(name,yytext); return CODIGO;}
+{strcpy(name,"");return NEWLINE;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 21 "preprocessor.l"
-{includeCounter++; return INCLUDE;}
+{strcpy(name,yytext); return CODIGO;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 22 "preprocessor.l"
-{ strcpy(name,yytext);}
+{includeCounter++; return INCLUDE;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 28 "preprocessor.l"
+#line 23 "preprocessor.l"
+{strcpy(name,yytext);printf("%s\n",yytext);return FILENAME; }
+	YY_BREAK
+case YY_STATE_EOF(INITIAL):
+#line 24 "preprocessor.l"
+{  return EOF;}
+	YY_BREAK
+case 7:
+YY_RULE_SETUP
+#line 25 "preprocessor.l"
+{strcpy(name,yytext);return CODIGO;}
+	YY_BREAK
+case 8:
+YY_RULE_SETUP
+#line 32 "preprocessor.l"
 ECHO;
 	YY_BREAK
-#line 797 "lex.yy.c"
-case YY_STATE_EOF(INITIAL):
-	yyterminate();
+#line 803 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1085,7 +1089,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 40 )
+			if ( yy_current_state >= 28 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1113,11 +1117,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 40 )
+		if ( yy_current_state >= 28 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 39);
+	yy_is_jam = (yy_current_state == 27);
 
 	return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1791,36 +1795,53 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 28 "preprocessor.l"
+#line 32 "preprocessor.l"
 
 
 	/* --------------------------------------------------------------------------------------------------Code */
 
 void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
+	int current_token;
 	yy_switch_to_buffer (buffer); // Nos pasamos al buffer principal.
-	int current_token = yylex();
-	
-	if(current_token == INCLUDE){
-		yylex(); // obtiene archivo
-		FILE* file = fopen(name, "r");
-		if (file) {
-				printf("leimos bien el file\n");
-				readIncludeFile(file, output);
+
+	while((current_token= yylex())!= EOF){
+		// Mientras haya algo que leer...
+
+		if(current_token == INCLUDE){
+			current_token = yylex(); // obtiene archivo
+
+			if (current_token == FILENAME){
+				FILE* file = fopen(name, "r");
+				if (file) {
+						printf("leimos bien el file\n");
+						readIncludeFile(file, output);
+				}
+				else{
+					printf("Error al abrir el archivo %s\n", name);
+					exit(0);
+				}
+			}
+			else{
+				printf("Error. '%s' no es un file path valido.\n", name);
+				exit(0);
+			}
 		}
-		else{
-			printf("Error al abrir el archivo %s\n", name);
+
+		//Copiara en el output file los datos de los archivos incluidos
+		else if(current_token == CODIGO){
+			// Copia datos
+			fprintf(output,"%s", name);
+		}
+		else if(current_token == SPACE){
+			// Copia espacios
+			fprintf(output,"%s", name);
+		}
+		else if(current_token == NEWLINE){
+			// Copia cambios de linea
+			fprintf(output,"%s", "\n");
 		}
 	}
 
-	//Copiara en el output file los datos de los archivos incluidos
-	else if(current_token == CODIGO){
-		// Copia datos
-		fprintf(output,"%s", name);
-	}
-	else if(current_token == SPACE){
-		// Copia espacios
-		fprintf(output,"%s", name);
-	}
 }
 
 void readIncludeFile(FILE *file, FILE *output){

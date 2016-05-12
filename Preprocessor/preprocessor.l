@@ -9,7 +9,7 @@
 	char name[1024] = "";
 %}
 
-digit [0-9]
+number [0-9]
 letter [a-zA-Z]
 %%
   /* ------------------------------------------------------------------------------------------------ Rules */
@@ -17,9 +17,13 @@ letter [a-zA-Z]
 
 #[ \t]*define {ECHO;defineCounter++;strcpy(name,yytext); return DEFINE;}
 [ \t] {strcpy(name, yytext); return SPACE;}
-{letter}({letter}|{digit})* {strcpy(name,yytext); return CODIGO;}
+[\n]	{strcpy(name,"");return NEWLINE;}
+{letter}({letter}|{number})* {strcpy(name,yytext); return CODIGO;}
 #[ \t]*include[ \t"]+ {includeCounter++; return INCLUDE;}
-[^ \t\n"]+  { strcpy(name,yytext);}
+{letter}({letter}|{number})*("."{letter}+)+ {strcpy(name,yytext);printf("%s\n",yytext);return FILENAME; }
+<<EOF>> {  return EOF;}
+. {strcpy(name,yytext);return CODIGO;}
+
 
 
 
@@ -29,30 +33,47 @@ letter [a-zA-Z]
 	/* --------------------------------------------------------------------------------------------------Code */
 
 void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
+	int current_token;
 	yy_switch_to_buffer (buffer); // Nos pasamos al buffer principal.
-	int current_token = yylex();
-	
-	if(current_token == INCLUDE){
-		yylex(); // obtiene archivo
-		FILE* file = fopen(name, "r");
-		if (file) {
-				printf("leimos bien el file\n");
-				readIncludeFile(file, output);
+
+	while((current_token= yylex())!= EOF){
+		// Mientras haya algo que leer...
+
+		if(current_token == INCLUDE){
+			current_token = yylex(); // obtiene archivo
+
+			if (current_token == FILENAME){
+				FILE* file = fopen(name, "r");
+				if (file) {
+						printf("leimos bien el file\n");
+						readIncludeFile(file, output);
+				}
+				else{
+					printf("Error al abrir el archivo %s\n", name);
+					exit(0);
+				}
+			}
+			else{
+				printf("Error. '%s' no es un file path valido.\n", name);
+				exit(0);
+			}
 		}
-		else{
-			printf("Error al abrir el archivo %s\n", name);
+
+		//Copiara en el output file los datos de los archivos incluidos
+		else if(current_token == CODIGO){
+			// Copia datos
+			fprintf(output,"%s", name);
+		}
+		else if(current_token == SPACE){
+			// Copia espacios
+			fprintf(output,"%s", name);
+		}
+		else if(current_token == NEWLINE){
+			// Copia cambios de linea
+			fprintf(output,"%s", "\n");
 		}
 	}
 
-	//Copiara en el output file los datos de los archivos incluidos
-	else if(current_token == CODIGO){
-		// Copia datos
-		fprintf(output,"%s", name);
-	}
-	else if(current_token == SPACE){
-		// Copia espacios
-		fprintf(output,"%s", name);
-	}
 }
 
 void readIncludeFile(FILE *file, FILE *output){
