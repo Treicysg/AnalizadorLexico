@@ -49,6 +49,7 @@ letter [a-zA-Z]
 "," {strcpy(name,yytext);  return CODE;    }
 "." {strcpy(name,yytext);    return CODE;  }
 {letter}({letter}|{digit})* {strcpy(name,yytext); return CODE;}
+{digit}({digit})* {strcpy(name,yytext); return VALUE;}
 . {strcpy(name,yytext);return CODE;}
 [^ \t\n"]+   { strcpy(name,yytext);}
 
@@ -100,14 +101,14 @@ void processDefine(){
 
 		current_token = yylex();// espacio
 		if(current_token == SPACE){
-			printf("You are going for a good way!! Continue");
+			printf("You are going for a good way!! Continue\n");
 		}
-		//yylex();
-		//strcpy(value,name);
-		strcpy(value,"");
-    while (yylex()!=NEWLINE){
-			strcat(value,name);
+		current_token = yylex();// espera encontrar un valor
+		if(current_token == VALUE){
+			printf("Lo que se espera que haya en el valor es: %s\n", name);
+			strcpy(value,name);
 		}
+
 		if(current_token==NEWLINE){
 			printf("I am here!");
 		}
