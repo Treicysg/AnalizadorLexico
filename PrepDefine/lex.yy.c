@@ -950,19 +950,21 @@ YY_RULE_SETUP
 #line 53 "preprocessor.l"
 {strcpy(name,yytext);return CODE;}
 	YY_BREAK
+case YY_STATE_EOF(INITIAL):
+#line 54 "preprocessor.l"
+{  return EOF;}
+	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 54 "preprocessor.l"
+#line 55 "preprocessor.l"
 { strcpy(name,yytext);}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 60 "preprocessor.l"
+#line 61 "preprocessor.l"
 ECHO;
 	YY_BREAK
-#line 964 "lex.yy.c"
-case YY_STATE_EOF(INITIAL):
-	yyterminate();
+#line 968 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1958,7 +1960,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 60 "preprocessor.l"
+#line 61 "preprocessor.l"
 
 
 	/* --------------------------------------------------------------------------------------------------Code */
@@ -1992,7 +1994,8 @@ void openFilePath(){
 }
 void replace_define(FILE* fInput,char* nombre, char* valor){
 
-	FILE* replacedFile = tmpfile();
+	//FILE* replacedFile = tmpfile();
+	FILE* replacedFile = fopen("outputFile.txt","w+");
 	int ongoing_token;
 	while((ongoing_token= yylex())!= EOF){
 		ongoing_token = yylex();
@@ -2008,7 +2011,7 @@ void replace_define(FILE* fInput,char* nombre, char* valor){
 				fprintf(replacedFile, "#define ");
 			}
 		}
-		if(ongoing_token == CODE || ongoing_token == INCLUDE || ongoing_token == FILENAME || ongoing_token == DEFINE){
+		if(ongoing_token == CODE || ongoing_token == INCLUDE || ongoing_token == FILENAME || ongoing_token == DEFINE || ongoing_token == VALUE){
 			if (strcmp(name,nombre)==0){
 				fprintf(replacedFile,"%s",valor);
 			}else{

@@ -51,6 +51,7 @@ letter [a-zA-Z]
 {letter}({letter}|{digit})* {strcpy(name,yytext); return CODE;}
 {digit}({digit})* {strcpy(name,yytext); return VALUE;}
 . {strcpy(name,yytext);return CODE;}
+<<EOF>> {  return EOF;}
 [^ \t\n"]+   { strcpy(name,yytext);}
 
 
@@ -89,7 +90,8 @@ void openFilePath(){
 }
 void replace_define(FILE* fInput,char* nombre, char* valor){
 
-	FILE* replacedFile = tmpfile();
+	//FILE* replacedFile = tmpfile();
+	FILE* replacedFile = fopen("outputFile.txt","w+");
 	int ongoing_token;
 	while((ongoing_token= yylex())!= EOF){
 		ongoing_token = yylex();
@@ -105,7 +107,7 @@ void replace_define(FILE* fInput,char* nombre, char* valor){
 				fprintf(replacedFile, "#define ");
 			}
 		}
-		if(ongoing_token == CODE || ongoing_token == INCLUDE || ongoing_token == FILENAME || ongoing_token == DEFINE){
+		if(ongoing_token == CODE || ongoing_token == INCLUDE || ongoing_token == FILENAME || ongoing_token == DEFINE || ongoing_token == VALUE){
 			if (strcmp(name,nombre)==0){
 				fprintf(replacedFile,"%s",valor);
 			}else{
