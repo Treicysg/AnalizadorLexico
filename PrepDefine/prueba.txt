@@ -1,4 +1,6 @@
 #define AGE 10
+#define PROVINCIA Guanacaste
+
 
 int main()
 {

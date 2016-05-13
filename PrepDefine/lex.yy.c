@@ -1990,9 +1990,47 @@ void openFilePath(){
 		printf("Error al abrir el archivo %s\n", name);
 	}
 }
+void replace_define(FILE* fInput,char* nombre, char* valor){
 
-void processDefine(){
+	FILE* replacedFile = tmpfile();
+	int ongoing_token;
+	while((ongoing_token= yylex())!= EOF){
+		ongoing_token = yylex();
+		if(ongoing_token == DEFINE){
+			int n_tkn = yylex();
+			while(n_tkn == SPACE || n_tkn==TAB){
+				n_tkn = yylex();
+			}
+			if (strcmp(name,nombre)==0){
+				printf("Define Repetidoooo llamado: %s. \n", nombre );
+				exit(1);
+			}else{
+				fprintf(replacedFile, "#define ");
+			}
+		}
+		if(ongoing_token == CODE || ongoing_token == INCLUDE || ongoing_token == FILENAME || ongoing_token == DEFINE){
+			if (strcmp(name,nombre)==0){
+				fprintf(replacedFile,"%s",valor);
+			}else{
+				fprintf(replacedFile,"%s",name);
+      }
 
+		}else if (ongoing_token==SPACE){
+			fprintf(replacedFile,"%s"," ");
+		}else if (ongoing_token == NEWLINE){
+			fprintf(replacedFile,"%s","\n");
+    }else if (ongoing_token== TAB){
+			fprintf(replacedFile,"%s","\t");
+    }
+	}
+	fseek(replacedFile,0,SEEK_SET);
+  YY_BUFFER_STATE bufferDefine = yy_create_buffer(replacedFile,YY_BUF_SIZE);
+  yy_switch_to_buffer(bufferDefine);
+
+	}
+
+void processDefine(FILE* fpObjeto){
+//Esto es lo que iria dentro del while
 	int current_token = yylex();
 	if(current_token == DEFINE ){
 		string cname;
@@ -2003,31 +2041,32 @@ void processDefine(){
 
 
 		current_token = yylex();// espacio
-		if(current_token == SPACE){
-			printf("You are going for a good way!! Continue\n");
-		}
 		current_token = yylex();// espera encontrar un valor
-		if(current_token == VALUE){
+		if(current_token == VALUE || current_token == CODE){
 			printf("Lo que se espera que haya en el valor es: %s\n", name);
 			strcpy(value,name);
 		}
 
-		if(current_token==NEWLINE){
-			printf("I am here!");
-		}
+		//una vez encontrados,llamamos función que lo reemplaza
+		replace_define(fpObjeto,cname,value);
+
+		//if(current_token==NEWLINE){
+			//printf("I am here!");
+		//}
 
 		printf("Nombre:%s\nValor:%s\n", cname,value);
 	}
 
 }
 
-//void change value(FILE* fInput,char* nombre, char* valor){}
+
 
 main(int argc,char *argv){
 	yyin = fopen( "prueba.txt", "r" );
+	FILE *output = fopen("outputFile.txt","w");
 	//printf("Cantidad de includes: %d, Cantidad de defines: %d\n",includeCounter,defineCounter);
 	//printf("El nombre del archivo: %s \n",name);
 	//openFilePath();
-	processDefine();
+	processDefine(output);
 }
 
