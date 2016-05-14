@@ -1,6 +1,5 @@
-#include "hola.
-
-
 codigo 1
+
+#include "prueba.txt"
 
 el primer pedacito de codigo

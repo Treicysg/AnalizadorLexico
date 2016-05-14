@@ -3,11 +3,10 @@
 #endif
 
 /*--------------------------------------------Contiene todos los datos globales---------------------------------------*/
-
 /*Representa el conjunto de tipos de tokens*/
 typedef enum token_types{
   PLUS, MUL, MINUS, IFSYS, ELSESYS, LPAREN, RPAREN, EQUAL, ASSIGN, CORCHL, CORCHR, SEMICOLON, ID, NUMBER, STRING, DOUBLEQUOTE, LESSMORE,
-	WHILELOOP, FORLOOP, LEQ, GEQ,LESS,GREATER,COMMA,PERIOD,UNKNOWN,INCLUDE, DEFINE, FILENAME,
+	WHILELOOP, FORLOOP, LEQ, GEQ,LESS,GREATER,COMMA,PERIOD,UNKNOWN,INCLUDE, DEFINE, FILENAME,QUOTES,LIBRARY,
 	CODIGO,SPACE,NEWLINE,VARIABLE, QUOTATION, TAB,CASE,CHAR,CONST,CONTINUE,DEFAULT, DO,DOUBLE,ENUM,EXTERN,FLOAT,GOTO,INT, LONG, REGISTER, RETURN,SHORT, BACKSLASH,
 	SIGNED, SIZEOF, STATIC,STRUCT,SWITCH,TYPEDEF,UNION, UNSIGNED, VOID, VOLATILE, NOTEQUAL, ARROW, QUESTIONMARK, COLON, AND, OR, DIV, AUTO, BREAK, NOT,
 	PLUSPLUS, MINUSMINUS, PLUSEQUAL, MINUSEQUAL, MULEQUAL, DIVEQUAL, MODEQUAL, SHLEQUAL, SHREQUAL, ANDEQUAL, OREQUAL, ROOFEQUAL, BITAND, BITOR, ROOF, TAIL,
@@ -15,6 +14,11 @@ typedef enum token_types{
 } token;
 /*------------------------------------------------------------------------------------------------------------------------*/
 typedef enum {false=0, true=1} bool;
-
+void open_file();
 void openFilePath(YY_BUFFER_STATE buffer,FILE *output);
 void readIncludeFile(FILE *file, FILE *output);
+void check_all_tokens(YY_BUFFER_STATE buffer);
+void clear_includedFilesList();
+void preprocess_file(FILE *originalFile, char* filename);
+void add_includedFile(char* filename);
+bool isIncluded(char* filename);

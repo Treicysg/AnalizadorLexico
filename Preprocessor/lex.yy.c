@@ -368,8 +368,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 8
-#define YY_END_OF_BUFFER 9
+#define YY_NUM_RULES 10
+#define YY_END_OF_BUFFER 11
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -377,11 +377,12 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[28] =
+static yyconst flex_int16_t yy_accept[35] =
     {   0,
-        0,    0,    9,    7,    2,    3,    7,    4,    0,    0,
-        0,    0,    4,    0,    0,    6,    0,    0,    0,    0,
-        0,    0,    1,    0,    0,    5,    0
+        0,    0,   11,    9,    2,    3,    4,    9,    9,    6,
+        0,    0,    0,    0,    0,    6,    0,    0,    0,    0,
+        8,    0,    0,    0,    0,    0,    5,    0,    0,    1,
+        0,    0,    7,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -391,15 +392,15 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    2,    1,    4,    5,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    6,    1,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    1,    1,    1,
-        1,    1,    1,    1,    8,    8,    8,    8,    8,    8,
-        8,    8,    8,    8,    8,    8,    8,    8,    8,    8,
-        8,    8,    8,    8,    8,    8,    8,    8,    8,    8,
-        1,    1,    1,    1,    1,    1,    8,    8,    9,   10,
+        7,    7,    7,    7,    7,    7,    7,    1,    1,    8,
+        1,    9,    1,    1,   10,   10,   10,   10,   10,   10,
+       10,   10,   10,   10,   10,   10,   10,   10,   10,   10,
+       10,   10,   10,   10,   10,   10,   10,   10,   10,   10,
+        1,    1,    1,    1,    1,    1,   10,   10,   11,   12,
 
-       11,   12,    8,    8,   13,    8,    8,   14,    8,   15,
-        8,    8,    8,    8,    8,    8,   16,    8,    8,    8,
-        8,    8,    1,    1,    1,    1,    1,    1,    1,    1,
+       13,   14,   10,   10,   15,   10,   10,   16,   10,   17,
+       10,   10,   10,   10,   10,   10,   18,   10,   10,   10,
+       10,   10,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -416,44 +417,48 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst flex_int32_t yy_meta[17] =
+static yyconst flex_int32_t yy_meta[19] =
     {   0,
-        1,    1,    1,    1,    1,    2,    2,    3,    3,    3,
-        3,    3,    3,    3,    3,    3
+        1,    1,    1,    1,    1,    2,    2,    1,    1,    3,
+        3,    3,    3,    3,    3,    3,    3,    3
     } ;
 
-static yyconst flex_int16_t yy_base[30] =
+static yyconst flex_int16_t yy_base[40] =
     {   0,
-        0,    0,   41,   42,   42,   42,   15,   34,    0,   28,
-       23,    0,   31,   24,   26,   28,   20,   18,   16,   11,
-       15,   14,   42,   12,   16,   17,   42,   27,   19
+        0,    0,   49,   50,   50,   50,   50,   17,    0,   42,
+        0,   34,   29,   39,    0,   38,   29,   31,    0,   35,
+       34,   24,   22,   14,   20,   13,   50,   17,   16,   50,
+       14,   24,   23,   50,   21,   31,   33,   19,   18
     } ;
 
-static yyconst flex_int16_t yy_def[30] =
+static yyconst flex_int16_t yy_def[40] =
     {   0,
-       27,    1,   27,   27,   27,   27,   27,   28,    7,   27,
-       27,   29,   28,   27,   27,   29,   27,   27,   27,   27,
-       27,   27,   27,   27,   27,   27,    0,   27,   27
+       34,    1,   34,   34,   34,   34,   34,   34,   35,   36,
+        8,   34,   34,   37,   38,   36,   34,   34,   39,   37,
+       38,   34,   34,   39,   34,   34,   34,   34,   34,   34,
+       34,   34,   34,    0,   34,   34,   34,   34,   34
     } ;
 
-static yyconst flex_int16_t yy_nxt[59] =
+static yyconst flex_int16_t yy_nxt[69] =
     {   0,
-        4,    5,    6,    4,    7,    4,    4,    8,    8,    8,
-        8,    8,    8,    8,    8,    8,    9,   26,   26,   26,
-       26,   16,   25,   24,   10,   23,   22,   11,   13,   13,
-       21,   20,   19,   12,   18,   17,   12,   15,   14,   12,
-       27,    3,   27,   27,   27,   27,   27,   27,   27,   27,
-       27,   27,   27,   27,   27,   27,   27,   27
+        4,    5,    6,    7,    8,    4,    4,    9,    4,   10,
+       10,   10,   10,   10,   10,   10,   10,   10,   11,   19,
+       24,   21,   27,   14,   33,   33,   32,   31,   12,   30,
+       29,   13,   16,   16,   20,   20,   28,   26,   25,   15,
+       19,   23,   22,   15,   19,   18,   17,   15,   34,    3,
+       34,   34,   34,   34,   34,   34,   34,   34,   34,   34,
+       34,   34,   34,   34,   34,   34,   34,   34
     } ;
 
-static yyconst flex_int16_t yy_chk[59] =
+static yyconst flex_int16_t yy_chk[69] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    7,   25,   26,   25,
-       26,   29,   24,   22,    7,   21,   20,    7,   28,   28,
-       19,   18,   17,   16,   15,   14,   13,   11,   10,    8,
-        3,   27,   27,   27,   27,   27,   27,   27,   27,   27,
-       27,   27,   27,   27,   27,   27,   27,   27
+        1,    1,    1,    1,    1,    1,    1,    1,    8,   24,
+       39,   38,   24,   35,   33,   32,   31,   29,    8,   28,
+       26,    8,   36,   36,   37,   37,   25,   23,   22,   21,
+       20,   18,   17,   16,   14,   13,   12,   10,    3,   34,
+       34,   34,   34,   34,   34,   34,   34,   34,   34,   34,
+       34,   34,   34,   34,   34,   34,   34,   34
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -479,7 +484,10 @@ char *yytext;
 	int includeCounter = 0;
 	int defineCounter = 0;
 	char name[1024] = "";
-#line 483 "lex.yy.c"
+	int current_token;
+	char included_Files[50][512];
+	int includedFiles_count = 0;
+#line 491 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -666,12 +674,12 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 14 "preprocessor.l"
+#line 17 "preprocessor.l"
 
   /* ------------------------------------------------------------------------------------------------ Rules */
 
 
-#line 675 "lex.yy.c"
+#line 683 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -724,13 +732,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 28 )
+				if ( yy_current_state >= 35 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 42 );
+		while ( yy_base[yy_current_state] != 50 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -756,50 +764,60 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 18 "preprocessor.l"
-{ECHO;defineCounter++;strcpy(name,yytext); return DEFINE;}
+#line 21 "preprocessor.l"
+{defineCounter++;strcpy(name,yytext); return DEFINE;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 19 "preprocessor.l"
+#line 22 "preprocessor.l"
 {strcpy(name, yytext); return SPACE;}
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 20 "preprocessor.l"
+#line 23 "preprocessor.l"
 {strcpy(name,"");return NEWLINE;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 21 "preprocessor.l"
-{strcpy(name,yytext); return CODIGO;}
+#line 24 "preprocessor.l"
+{strcpy(name,yytext);return QUOTES;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 22 "preprocessor.l"
-{includeCounter++; return INCLUDE;}
+#line 25 "preprocessor.l"
+{strcpy(name, yytext); return LIBRARY;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 23 "preprocessor.l"
-{strcpy(name,yytext);printf("%s\n",yytext);return FILENAME; }
-	YY_BREAK
-case YY_STATE_EOF(INITIAL):
-#line 24 "preprocessor.l"
-{  return EOF;}
+#line 26 "preprocessor.l"
+{strcpy(name,yytext); return CODIGO;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 25 "preprocessor.l"
-{strcpy(name,yytext);return CODIGO;}
+#line 27 "preprocessor.l"
+{strcpy(name,yytext);includeCounter++; return INCLUDE;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 32 "preprocessor.l"
+#line 28 "preprocessor.l"
+{strcpy(name,yytext);return FILENAME; }
+	YY_BREAK
+case YY_STATE_EOF(INITIAL):
+#line 29 "preprocessor.l"
+{strcpy(name,"EOF"); return EOF;}
+	YY_BREAK
+case 9:
+YY_RULE_SETUP
+#line 30 "preprocessor.l"
+{strcpy(name,yytext);return CODIGO;}
+	YY_BREAK
+case 10:
+YY_RULE_SETUP
+#line 37 "preprocessor.l"
 ECHO;
 	YY_BREAK
-#line 803 "lex.yy.c"
+#line 821 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1089,7 +1107,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 28 )
+			if ( yy_current_state >= 35 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1117,11 +1135,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 28 )
+		if ( yy_current_state >= 35 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 27);
+	yy_is_jam = (yy_current_state == 34);
 
 	return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1795,36 +1813,50 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 32 "preprocessor.l"
+#line 37 "preprocessor.l"
 
 
 	/* --------------------------------------------------------------------------------------------------Code */
 
 void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
-	int current_token;
 	yy_switch_to_buffer (buffer); // Nos pasamos al buffer principal.
+	printf("Llevamos %d files incluidos\n", includedFiles_count);
 
 	while((current_token= yylex())!= EOF){
 		// Mientras haya algo que leer...
-
 		if(current_token == INCLUDE){
-			current_token = yylex(); // obtiene archivo
-
-			if (current_token == FILENAME){
-				FILE* file = fopen(name, "r");
-				if (file) {
-						printf("leimos bien el file\n");
-						readIncludeFile(file, output);
+				current_token = yylex(); // verifica que el file path empiece con comillas
+				if(current_token == QUOTES){
+					printf("Encontramos las comillas principales\n");
+					current_token = yylex(); //obtenemos el nombre del archivo
+					if (current_token == FILENAME){
+						FILE* file = fopen(name, "r");
+						if (file) {
+								if (isIncluded(name)){
+									printf("Error, ya se ha incluido el file %s\n",name);
+									exit(0);
+								}
+								add_includedFile(name);
+								readIncludeFile(file, output);
+						}
+						else{
+							printf("Error al abrir el archivo %s\n", name);
+							exit(0);
+						}
+					}
+					else{
+						printf("Error. '%s' no es un file path valido.\n", name);
+						exit(0);
+					}
+				}
+				else if(current_token == LIBRARY){
+					// Copia datos
+					fprintf(output,"#include %s", name);
 				}
 				else{
-					printf("Error al abrir el archivo %s\n", name);
+					printf("File path no valido. faltan comillas iniciales \n");
 					exit(0);
 				}
-			}
-			else{
-				printf("Error. '%s' no es un file path valido.\n", name);
-				exit(0);
-			}
 		}
 
 		//Copiara en el output file los datos de los archivos incluidos
@@ -1841,7 +1873,37 @@ void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
 			fprintf(output,"%s", "\n");
 		}
 	}
+}
 
+void check_all_tokens(YY_BUFFER_STATE buffer){
+	yy_switch_to_buffer (buffer); // Nos pasamos al buffer principal.
+
+	while((current_token= yylex())!= EOF){
+		if(current_token == INCLUDE){
+			printf("INCLUDE = %s\n", name);
+		}
+		else if(current_token == DEFINE){
+			printf("DEFINE = %s\n", name);
+		}
+		else if(current_token == SPACE){
+			printf("SPACE = %s\n", name);
+		}
+		else if(current_token == NEWLINE){
+			printf("NEWLINE = %s\n", name);
+		}
+		else if(current_token == QUOTES){
+			printf("QUOTES = %s\n", name);
+		}
+		else if(current_token == CODIGO){
+			printf("CODIGO = %s\n", name);
+		}
+		else if(current_token == INCLUDE){
+			printf("INCLUDE = %s\n", name);
+		}
+		else if(current_token == FILENAME){
+			printf("FILENAME = %s\n", name);
+		}
+	}
 }
 
 void readIncludeFile(FILE *file, FILE *output){
@@ -1851,7 +1913,6 @@ void readIncludeFile(FILE *file, FILE *output){
 			if(output){
 				YY_BUFFER_STATE bufferInclude = yy_create_buffer(file,YY_BUF_SIZE);
 				if(bufferInclude){
-					printf("Si hay un buffer INclude");
 					yypush_buffer_state(YY_CURRENT_BUFFER);
 					openFilePath(bufferInclude,output);
 					yypop_buffer_state ();
@@ -1886,22 +1947,56 @@ void processDefine(){
 
 }
 
-main(int argc,char *argv){
-	char filename [100]="";
-	printf( "Ingrese el archivo: ");
-	scanf("%s",filename);
-	FILE *originalFile = fopen( filename, "r" );
+void clear_includedFilesList(){
+	int i;
+  for(i = 0;i < 50;i++){
+    strcpy(included_Files[i],"NULL");
+  }
+}
 
+void add_includedFile(char* filename){
+	if(includedFiles_count == 50){
+		printf("Ya no se pueden incluir mas files\n");
+		exit(0);
+	}
+	strcpy(included_Files[includedFiles_count],filename);
+	includedFiles_count ++;
+
+}
+
+bool isIncluded(char* filename){
+	int i = 0;
+	bool isIncluded = false;
+	while(i<50){
+		if(strcmp(filename,included_Files[i])==0){
+			isIncluded = true;
+		}
+		i++;
+	}
+	return isIncluded;
+}
+
+void preprocess_file(FILE *originalFile, char* filename){
 	if(originalFile){
+		add_includedFile(filename);
 		YY_BUFFER_STATE buffer = yy_create_buffer(originalFile,YY_BUF_SIZE); //Creamos buffer para almacenar y recorrer el file original
 	  FILE *output = fopen("outputFile.txt","w");
 	 	openFilePath(buffer, output);
+	 	//processDefine();
+	 	//check_all_tokens(buffer);
 		fclose(originalFile);
 	}
 	else{
 		printf("Error al abrir el archivo especificado. Intentelo nuevamente.");
 		exit(0);
 	}
+}
 
+main(int argc,char *argv){
+	char filename [100]="";
+	printf( "Ingrese el archivo: ");
+	scanf("%s",filename);
+	FILE *originalFile = fopen( filename, "r" );
+	preprocess_file(originalFile, filename);
 }
 
