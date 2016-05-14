@@ -119,20 +119,12 @@ void processDefine(){
 }
 
 main(int argc,char *argv){
-	char filename [100]="";
-	printf( "Ingrese el archivo: ");
-	scanf("%s",filename);
-	FILE *originalFile = fopen( filename, "r" );
+	FILE *originalFile = fopen( "prueba.txt", "r" );
+	FILE *output = fopen("outputFile.txt","w");
 
-	if(originalFile){
-		YY_BUFFER_STATE buffer = yy_create_buffer(originalFile,YY_BUF_SIZE); //Creamos buffer para almacenar y recorrer el file original
-	  FILE *output = fopen("outputFile.txt","w");
-	 	openFilePath(buffer, output);
-		fclose(originalFile);
-	}
-	else{
-		printf("Error al abrir el archivo especificado. Intentelo nuevamente.");
-		exit(0);
-	}
+	//Creamos buffer para almacenar y recorrer el file original
+	YY_BUFFER_STATE buffer = yy_create_buffer(originalFile,YY_BUF_SIZE);
 
+	openFilePath(buffer, output);
+	//processDefine();
 }
