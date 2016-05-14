@@ -368,8 +368,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 33
-#define YY_END_OF_BUFFER 34
+#define YY_NUM_RULES 31
+#define YY_END_OF_BUFFER 32
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -377,16 +377,15 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[78] =
+static yyconst flex_int16_t yy_accept[63] =
     {   0,
-        0,    0,   34,   31,    2,    4,    7,   31,   14,   15,
-       11,    9,   27,   10,   28,   31,   30,   20,   25,   17,
-       26,   29,   31,   29,   29,   29,   29,   18,   19,   32,
-        0,   32,   32,    6,    5,   30,   23,   16,   24,   29,
-        8,   29,   29,   12,   29,    0,    0,   32,   32,   29,
-       22,   29,    0,    0,   32,   32,   13,   29,    0,    0,
-       32,   32,   21,    0,    0,   32,   32,    0,    0,    1,
-       32,    1,    0,   32,    0,    3,    0
+        0,    0,   32,   30,    2,    3,   11,   30,   16,   17,
+       15,   13,   27,   14,   28,   29,   22,   25,   19,   26,
+        8,   30,    8,    8,    8,    8,   20,   21,    0,    0,
+        0,   29,   23,   18,   24,    0,    8,   12,    8,    8,
+        4,    8,    0,    0,   10,    8,    7,    8,    0,    0,
+        5,    8,    0,    0,    6,    0,    0,    1,    0,    0,
+        9,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -395,16 +394,16 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    2,    1,    4,    5,    1,    1,    1,    1,    6,
-        7,    8,    9,   10,   11,   12,   13,   14,   14,   14,
-       14,   14,   14,   14,   14,   14,   14,    1,   15,   16,
-       17,   18,    1,    1,   19,   19,   19,   19,   19,   19,
-       19,   19,   19,   19,   19,   19,   19,   19,   19,   19,
-       19,   19,   19,   19,   19,   19,   19,   19,   19,   19,
-        1,   20,    1,    1,    1,    1,   19,   19,   21,   22,
+        7,    8,    9,   10,   11,   12,    1,   13,   13,   13,
+       13,   13,   13,   13,   13,   13,   13,    1,   14,   15,
+       16,   17,    1,    1,   18,   18,   18,   18,   18,   18,
+       18,   18,   18,   18,   18,   18,   18,   18,   18,   18,
+       18,   18,   18,   18,   18,   18,   18,   18,   18,   18,
+        1,   19,    1,    1,    1,    1,   18,   18,   20,   21,
 
-       23,   24,   19,   25,   26,   19,   19,   27,   19,   28,
-       29,   19,   19,   30,   31,   19,   32,   19,   33,   19,
-       19,   19,   34,    1,   35,    1,    1,    1,    1,    1,
+       22,   23,   18,   24,   25,   18,   18,   26,   18,   27,
+       28,   18,   18,   29,   30,   18,   31,   18,   32,   18,
+       18,   18,   33,    1,   34,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -421,74 +420,70 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst flex_int32_t yy_meta[36] =
+static yyconst flex_int32_t yy_meta[35] =
     {   0,
-        1,    2,    2,    2,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1
+        1,    2,    2,    1,    1,    1,    1,    3,    1,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    1,    1
     } ;
 
-static yyconst flex_int16_t yy_base[79] =
+static yyconst flex_int16_t yy_base[65] =
     {   0,
-        0,    0,  104,    0,  105,  105,  105,   34,    0,    0,
-       90,    0,    0,    0,    0,   94,   87,    0,   83,   82,
-       81,   47,   69,   69,   66,   70,   68,    0,    0,    0,
-       36,   69,   63,    0,    0,   76,    0,    0,    0,    0,
-        0,   58,   58,    0,   61,   63,   57,   60,   62,   59,
-        0,   54,   43,   44,   38,   36,    0,   36,   31,   28,
-       26,   21,    0,   24,   19,   27,   27,   25,   25,    0,
-       23,  105,   22,   35,   38,   39,  105,   43
+        0,    0,   92,   93,   93,   93,   93,   33,   93,   93,
+       93,   93,   93,   93,   93,   78,   93,   74,   73,   72,
+       75,   59,   24,   25,   26,   27,   93,   93,   38,   63,
+       57,   70,   93,   93,   93,    0,   70,   93,   30,   32,
+       69,   31,   57,   59,   66,   33,   65,   36,   51,   49,
+       62,   35,   46,   41,   59,   48,   31,   93,   24,   62,
+       63,   93,   66,   38
     } ;
 
-static yyconst flex_int16_t yy_def[79] =
+static yyconst flex_int16_t yy_def[65] =
     {   0,
-       77,    1,   77,   78,   77,   77,   77,   78,   78,   78,
-       78,   78,   78,   78,   78,   78,   78,   78,   78,   78,
-       78,   78,   78,   22,   22,   22,   22,   78,   78,   78,
-       77,   78,   78,   78,   78,   78,   78,   78,   78,   22,
-       78,   22,   22,   22,   22,   77,   77,   78,   78,   22,
-       22,   22,   77,   77,   78,   78,   22,   22,   77,   77,
-       78,   78,   22,   77,   77,   78,   78,   77,   77,   78,
-       78,   77,   77,   78,   77,   77,    0,   77
+       62,    1,   62,   62,   62,   62,   62,   62,   62,   62,
+       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
+       63,   62,   63,   63,   63,   63,   62,   62,   62,   62,
+       62,   62,   62,   62,   62,   64,   63,   62,   63,   63,
+       63,   63,   62,   62,   64,   63,   63,   63,   62,   62,
+       63,   63,   62,   62,   63,   62,   62,   62,   62,   62,
+       62,    0,   62,   62
     } ;
 
-static yyconst flex_int16_t yy_nxt[141] =
+static yyconst flex_int16_t yy_nxt[128] =
     {   0,
         4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
-       14,   15,   16,   17,   18,   19,   20,   21,   22,   23,
-       22,   22,   24,   25,   22,   26,   22,   22,   22,   22,
-       22,   22,   27,   28,   29,   31,   76,   31,   76,   76,
-       76,   76,   76,   30,   75,   74,   73,   72,   71,   70,
-       69,   68,   67,   66,   65,   32,   64,   46,   63,   33,
-       40,   47,   62,   61,   60,   40,   59,   40,   40,   40,
-       40,   40,   40,   40,   40,   40,   40,   40,   40,   40,
-       58,   57,   56,   55,   54,   53,   52,   51,   50,   36,
-       49,   48,   45,   44,   43,   42,   41,   39,   38,   37,
+       14,   15,   16,   17,   18,   19,   20,   21,   22,   21,
+       21,   23,   24,   21,   25,   21,   21,   21,   21,   21,
+       21,   26,   27,   28,   29,   36,   36,   36,   36,   29,
+       45,   36,   36,   36,   36,   60,   36,   36,   41,   39,
+       42,   59,   40,   30,   51,   48,   55,   31,   30,   46,
+       47,   52,   31,   61,   61,   61,   61,   37,   37,   58,
+       36,   57,   56,   36,   54,   53,   36,   36,   50,   49,
+       36,   36,   32,   44,   43,   38,   36,   35,   34,   33,
+       32,   62,    3,   62,   62,   62,   62,   62,   62,   62,
 
-       36,   35,   34,   77,    3,   77,   77,   77,   77,   77,
-       77,   77,   77,   77,   77,   77,   77,   77,   77,   77,
-       77,   77,   77,   77,   77,   77,   77,   77,   77,   77,
-       77,   77,   77,   77,   77,   77,   77,   77,   77,   77
+       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
+       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
+       62,   62,   62,   62,   62,   62,   62
     } ;
 
-static yyconst flex_int16_t yy_chk[141] =
+static yyconst flex_int16_t yy_chk[128] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    8,   74,   31,   74,   75,
-       76,   75,   76,   78,   73,   71,   69,   68,   67,   66,
-       65,   64,   62,   61,   60,    8,   59,   31,   58,    8,
-       22,   31,   56,   55,   54,   22,   53,   22,   22,   22,
-       22,   22,   22,   22,   22,   22,   22,   22,   22,   22,
-       52,   50,   49,   48,   47,   46,   45,   43,   42,   36,
-       33,   32,   27,   26,   25,   24,   23,   21,   20,   19,
+        1,    1,    1,    1,    8,   23,   24,   25,   26,   29,
+       64,   39,   42,   40,   46,   59,   52,   48,   25,   23,
+       26,   57,   24,    8,   46,   42,   52,    8,   29,   39,
+       40,   48,   29,   60,   61,   60,   61,   63,   63,   56,
+       55,   54,   53,   51,   50,   49,   47,   45,   44,   43,
+       41,   37,   32,   31,   30,   22,   21,   20,   19,   18,
+       16,    3,   62,   62,   62,   62,   62,   62,   62,   62,
 
-       17,   16,   11,    3,   77,   77,   77,   77,   77,   77,
-       77,   77,   77,   77,   77,   77,   77,   77,   77,   77,
-       77,   77,   77,   77,   77,   77,   77,   77,   77,   77,
-       77,   77,   77,   77,   77,   77,   77,   77,   77,   77
+       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
+       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
+       62,   62,   62,   62,   62,   62,   62
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -510,16 +505,13 @@ char *yytext;
 #line 4 "preprocessor.l"
 	#include <stdio.h>
 	#include <ctype.h>
-	#include <string.h>
 	#include "global.h"
 	int includeCounter = 0;
 	int defineCounter = 0;
 	char name[1024] = "";
 	#define MAXIDLEN 33
 	typedef char string[MAXIDLEN];
-
-
-#line 523 "lex.yy.c"
+#line 515 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -706,12 +698,12 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 19 "preprocessor.l"
+#line 16 "preprocessor.l"
 
   /* ------------------------------------------------------------------------------------------------ Rules */
 
 
-#line 715 "lex.yy.c"
+#line 707 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -764,13 +756,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 78 )
+				if ( yy_current_state >= 63 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 105 );
+		while ( yy_base[yy_current_state] != 93 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -796,175 +788,165 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 23 "preprocessor.l"
-{ECHO; printf("Encontre un define \n");strcpy(name,yytext); return DEFINE;}
+#line 20 "preprocessor.l"
+{ECHO;defineCounter++;strcpy(name,yytext); return DEFINE;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 24 "preprocessor.l"
+#line 21 "preprocessor.l"
 {strcpy(name, yytext); return SPACE;}
 	YY_BREAK
 case 3:
+/* rule 3 can match eol */
 YY_RULE_SETUP
-#line 25 "preprocessor.l"
-{includeCounter++; printf("Encontre un include \n"); return INCLUDE; }
+#line 22 "preprocessor.l"
+{strcpy(name,"");return NEWLINE;}
 	YY_BREAK
 case 4:
-/* rule 4 can match eol */
 YY_RULE_SETUP
-#line 26 "preprocessor.l"
-{strcpy(name,"");return NEWLINE;}
+#line 23 "preprocessor.l"
+{strcpy(name,yytext);    return CODIGO; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 27 "preprocessor.l"
-{ return COMMENTOPEN;}
+#line 24 "preprocessor.l"
+{strcpy(name,yytext);return CODIGO;  }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 28 "preprocessor.l"
-{ return COMMENTCLOSE;}
+#line 25 "preprocessor.l"
+{strcpy(name,yytext); return CODIGO;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 29 "preprocessor.l"
-{strcpy(name,yytext);return CODE;}
+#line 26 "preprocessor.l"
+{strcpy(name,yytext);  return CODIGO;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 30 "preprocessor.l"
-{strcpy(name,yytext);  return CODE; }
+#line 27 "preprocessor.l"
+{strcpy(name,yytext); return CODIGO;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 31 "preprocessor.l"
-{strcpy(name,yytext);  return CODE; }
+#line 28 "preprocessor.l"
+{includeCounter++; return INCLUDE;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 32 "preprocessor.l"
-{strcpy(name,yytext);     return CODE; }
+#line 29 "preprocessor.l"
+{strcpy(name,yytext);printf("%s\n",yytext);return FILENAME; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 33 "preprocessor.l"
-{strcpy(name,yytext);       return CODE;}
+#line 30 "preprocessor.l"
+{strcpy(name,yytext);return CODIGO;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 34 "preprocessor.l"
-{strcpy(name,yytext);    return CODE; }
+#line 31 "preprocessor.l"
+{strcpy(name,yytext);  return CODIGO; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 35 "preprocessor.l"
-{strcpy(name,yytext);return CODE;  }
+#line 32 "preprocessor.l"
+{strcpy(name,yytext);  return CODIGO; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 36 "preprocessor.l"
-{strcpy(name,yytext); return CODE;    }
+#line 33 "preprocessor.l"
+{strcpy(name,yytext);     return CODIGO; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 37 "preprocessor.l"
-{strcpy(name,yytext);    return CODE; }
+#line 34 "preprocessor.l"
+{strcpy(name,yytext);       return CODIGO;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 38 "preprocessor.l"
-{strcpy(name,yytext); return CODE;   }
+#line 35 "preprocessor.l"
+{strcpy(name,yytext); return CODIGO;    }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 39 "preprocessor.l"
-{strcpy(name,yytext); return CODE;      }
+#line 36 "preprocessor.l"
+{strcpy(name,yytext);    return CODIGO; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 40 "preprocessor.l"
-{strcpy(name,yytext);return CODE;     }
+#line 37 "preprocessor.l"
+{strcpy(name,yytext); return CODIGO;   }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 41 "preprocessor.l"
-{strcpy(name,yytext);return CODE;    }
+#line 38 "preprocessor.l"
+{strcpy(name,yytext); return CODIGO;      }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 42 "preprocessor.l"
-{strcpy(name,yytext);  return CODE;}
+#line 39 "preprocessor.l"
+{strcpy(name,yytext);return CODIGO;     }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 43 "preprocessor.l"
-{strcpy(name,yytext); return CODE;}
+#line 40 "preprocessor.l"
+{strcpy(name,yytext);return CODIGO;    }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 44 "preprocessor.l"
-{strcpy(name,yytext);  return CODE;}
+#line 41 "preprocessor.l"
+{strcpy(name,yytext);  return CODIGO;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 45 "preprocessor.l"
-{strcpy(name,yytext);  return CODE;   }
+#line 42 "preprocessor.l"
+{strcpy(name,yytext);  return CODIGO;   }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 46 "preprocessor.l"
-{strcpy(name,yytext);  return CODE;   }
+#line 43 "preprocessor.l"
+{strcpy(name,yytext);  return CODIGO;   }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 47 "preprocessor.l"
-{strcpy(name,yytext);  return CODE;    }
+#line 44 "preprocessor.l"
+{strcpy(name,yytext);  return CODIGO;    }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 48 "preprocessor.l"
-{strcpy(name,yytext);return CODE;     }
+#line 45 "preprocessor.l"
+{strcpy(name,yytext);return CODIGO;     }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 49 "preprocessor.l"
-{strcpy(name,yytext);  return CODE;    }
+#line 46 "preprocessor.l"
+{strcpy(name,yytext);  return CODIGO;    }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 50 "preprocessor.l"
-{strcpy(name,yytext);    return CODE;  }
+#line 47 "preprocessor.l"
+{strcpy(name,yytext);    return CODIGO;  }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 51 "preprocessor.l"
-{strcpy(name,yytext); return CODE;}
+#line 48 "preprocessor.l"
+{strcpy(name,yytext); return VALUE;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 52 "preprocessor.l"
-{strcpy(name,yytext); return VALUE;}
+#line 49 "preprocessor.l"
+{strcpy(name,yytext);return CODIGO;}
+	YY_BREAK
+case YY_STATE_EOF(INITIAL):
+#line 50 "preprocessor.l"
+{  return EOF;}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 53 "preprocessor.l"
-{strcpy(name,yytext);return CODE;}
-	YY_BREAK
-case YY_STATE_EOF(INITIAL):
-#line 54 "preprocessor.l"
-{  return EOF;}
-	YY_BREAK
-case 32:
-YY_RULE_SETUP
-#line 55 "preprocessor.l"
-{ strcpy(name,yytext);}
-	YY_BREAK
-case 33:
-YY_RULE_SETUP
-#line 61 "preprocessor.l"
+#line 57 "preprocessor.l"
 ECHO;
 	YY_BREAK
-#line 968 "lex.yy.c"
+#line 950 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1254,7 +1236,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 78 )
+			if ( yy_current_state >= 63 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1282,11 +1264,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 78 )
+		if ( yy_current_state >= 63 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 77);
+	yy_is_jam = (yy_current_state == 62);
 
 	return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1960,116 +1942,168 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 61 "preprocessor.l"
+#line 57 "preprocessor.l"
 
 
 	/* --------------------------------------------------------------------------------------------------Code */
-void copyIntoFile(FILE *file){
+	void replace_define(FILE* fInput,char* nombre, char* valor){
+
+		//FILE* replacedFile = tmpfile();
+		FILE* replacedFile = fopen("eliminar.txt","w+");
+		int ongoing_token;
+		while((ongoing_token= yylex())!= EOF){
+      printf("Rondaaa\n");
+			if(ongoing_token == DEFINE){
+				int n_tkn = yylex();
+				while(n_tkn == SPACE || n_tkn==TAB){
+					n_tkn = yylex();
+				}
+				if (strcmp(name,nombre)==0){
+					printf("Define Repetidoooo llamado: %s. \n", nombre );
+					exit(1);
+				}else{
+					fprintf(replacedFile,"#define ");
+					fprintf(replacedFile,"%s",name);
+				}
+			}
+
+		  else if (ongoing_token == SPACE){
+				printf("Espacio");
+				fprintf(replacedFile,"%s","  ");
+			}
+			else if(ongoing_token == VALUE){
+				printf("VALUEE");
+				fprintf(replacedFile,"%s",name);
+			}
+			else if(ongoing_token == FILENAME){
+				printf("Filename");
+				if (strcmp(name,nombre)==0){
+					fprintf(replacedFile,"%s",valor);
+				}else{
+					fprintf(replacedFile,"%s",name);
+      	}
+			}
+			else if(ongoing_token == CODIGO){
+				printf("CODIGOOO");
+				if (strcmp(name,nombre)==0){
+					fprintf(replacedFile,"%s",valor);
+				}else{
+					fprintf(replacedFile,"%s",name);
+      	}
+
+
+			}else if (ongoing_token == NEWLINE){
+				printf("nuevaLinea");
+				fprintf(replacedFile,"%s","\n");
+    	}else if (ongoing_token== TAB){
+				printf("tab");
+				fprintf(replacedFile,"%s","\t");
+    	}
+
+
+		}
+
+}
+
+void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
+	int current_token;
+	yy_switch_to_buffer (buffer); // Nos pasamos al buffer principal.
+
+	while((current_token= yylex())!= EOF){
+		// Mientras haya algo que leer...
+
+		if(current_token == INCLUDE){
+			current_token = yylex(); // obtiene archivo
+
+			if (current_token == FILENAME){
+				FILE* file = fopen(name, "r");
+				if (file) {
+						printf("leimos bien el file\n");
+						readIncludeFile(file, output);
+				}
+				else{
+					printf("Error al abrir el archivo %s\n", name);
+					exit(0);
+				}
+			}
+			else{
+				printf("Error. '%s' no es un file path valido.\n", name);
+				exit(0);
+			}
+		}
+		else if(current_token == DEFINE ){
+			string cname;
+			string value;
+			current_token = yylex(); //espacio
+			yylex(); //nombre
+			strcpy(cname,name); //copia nombre
+			current_token = yylex();// espacio
+			current_token = yylex();// espera encontrar un valor
+			if(current_token == VALUE || current_token == CODIGO){
+				//printf("Lo que se espera que haya en el valor es: %s\n", name);
+				strcpy(value,name);
+			}
+
+			//una vez encontrados,llamamos función que lo reemplaza
+			replace_define(output,cname,value);
+
+			printf("Nombre:%s\nValor:%s\n", cname,value);
+		}
+
+		//Copiara en el output file los datos de los archivos incluidos
+		else if(current_token == CODIGO){
+			// Copia datos
+			fprintf(output,"%s", name);
+		}
+		else if(current_token == SPACE){
+			// Copia espacios
+			fprintf(output,"%s", name);
+		}
+		else if(current_token == NEWLINE){
+			// Copia cambios de linea
+			fprintf(output,"%s", "\n");
+		}
+	}
+
+}
+
+
+
+void readIncludeFile(FILE *file, FILE *output){
 		char a;
 		int c;
-		FILE *output = fopen("outputFile.txt","w");
 		if (file){
-				while ((c = getc(file)) != EOF){
-					putc(c, output);
+			if(output){
+				YY_BUFFER_STATE bufferInclude = yy_create_buffer(file,YY_BUF_SIZE);
+				if(bufferInclude){
+					printf("Si hay un buffer INclude");
+					yypush_buffer_state(YY_CURRENT_BUFFER);
+					openFilePath(bufferInclude,output);
+					yypop_buffer_state ();
+					yylex();
 				}
-				fclose(file);
+				else{
+					printf("Error con el nuevo buffer Include");
+				}
+			}
+			else{
+				printf("Problem with output file");
+			}
 		}
 		else{
-			printf("Problem opening outputFile\n");
+			printf("Problem with incluyeme file\n");
 		}
 	}
-
-void openFilePath(){
-	printf("Entre a la funcion que va a abrir el archivo %s\n", name);
-	yylex();
-	FILE* file = fopen(name, "r");
-	if (file) {
-			printf("leimos bien el file\n");
-			copyIntoFile(file);
-
-	}
-	else{
-		printf("Error al abrir el archivo %s\n", name);
-	}
-}
-void replace_define(FILE* fInput,char* nombre, char* valor){
-
-	//FILE* replacedFile = tmpfile();
-	FILE* replacedFile = fopen("outputFile.txt","w+");
-	int ongoing_token;
-	while((ongoing_token= yylex())!= EOF){
-		ongoing_token = yylex();
-		if(ongoing_token == DEFINE){
-			int n_tkn = yylex();
-			while(n_tkn == SPACE || n_tkn==TAB){
-				n_tkn = yylex();
-			}
-			if (strcmp(name,nombre)==0){
-				printf("Define Repetidoooo llamado: %s. \n", nombre );
-				exit(1);
-			}else{
-				fprintf(replacedFile, "#define ");
-			}
-		}
-		if(ongoing_token == CODE || ongoing_token == INCLUDE || ongoing_token == FILENAME || ongoing_token == DEFINE || ongoing_token == VALUE){
-			if (strcmp(name,nombre)==0){
-				fprintf(replacedFile,"%s",valor);
-			}else{
-				fprintf(replacedFile,"%s",name);
-      }
-
-		}else if (ongoing_token==SPACE){
-			fprintf(replacedFile,"%s"," ");
-		}else if (ongoing_token == NEWLINE){
-			fprintf(replacedFile,"%s","\n");
-    }else if (ongoing_token== TAB){
-			fprintf(replacedFile,"%s","\t");
-    }
-	}
-	fseek(replacedFile,0,SEEK_SET);
-  YY_BUFFER_STATE bufferDefine = yy_create_buffer(replacedFile,YY_BUF_SIZE);
-  yy_switch_to_buffer(bufferDefine);
-
-	}
-
-void processDefine(FILE* fpObjeto){
-//Esto es lo que iria dentro del while
-	int current_token = yylex();
-	if(current_token == DEFINE ){
-		string cname;
-		string value;
-		current_token = yylex(); //espacio
-		yylex(); //nombre
-		strcpy(cname,name);
-
-
-		current_token = yylex();// espacio
-		current_token = yylex();// espera encontrar un valor
-		if(current_token == VALUE || current_token == CODE){
-			printf("Lo que se espera que haya en el valor es: %s\n", name);
-			strcpy(value,name);
-		}
-
-		//una vez encontrados,llamamos función que lo reemplaza
-		replace_define(fpObjeto,cname,value);
-
-		//if(current_token==NEWLINE){
-			//printf("I am here!");
-		//}
-
-		printf("Nombre:%s\nValor:%s\n", cname,value);
-	}
-
-}
-
 
 
 main(int argc,char *argv){
-	yyin = fopen( "prueba.txt", "r" );
+	FILE *originalFile = fopen( "prueba.txt", "r" );
 	FILE *output = fopen("outputFile.txt","w");
-	//printf("Cantidad de includes: %d, Cantidad de defines: %d\n",includeCounter,defineCounter);
-	//printf("El nombre del archivo: %s \n",name);
-	//openFilePath();
-	processDefine(output);
+
+	//Creamos buffer para almacenar y recorrer el file original
+	YY_BUFFER_STATE buffer = yy_create_buffer(originalFile,YY_BUF_SIZE);
+
+	openFilePath(buffer, output);
+
 }
 

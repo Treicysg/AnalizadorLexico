@@ -1,7 +1,5 @@
 #define AGE 10
-#define PROVINCIA Guanacaste
-
-
+#define YEAR AGE
 int main()
 {
    printf("La edad es %d years old.\n",AGE);
