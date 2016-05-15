@@ -1,0 +1,8 @@
+
+int main()
+{
+  int sirvo;
+  sirvo = 2015;
+   printf(La edad es %d years old.\n,10);
+   return 0;
+}

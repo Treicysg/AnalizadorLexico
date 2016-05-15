@@ -10,6 +10,8 @@
 	int current_token;
 	char included_Files[50][512];
 	int includedFiles_count = 0;
+	#define MAXIDLEN 33
+ typedef char string[MAXIDLEN];
 %}
 
 number [0-9]
@@ -18,9 +20,10 @@ letter [a-zA-Z]
   /* ------------------------------------------------------------------------------------------------ Rules */
 
 
-#[ \t]*define {defineCounter++;strcpy(name,yytext); return DEFINE;}
+#[ \t]*define[ \t]+ {defineCounter++;strcpy(name,yytext); return DEFINE;}
+{number}({number})* {strcpy(name,yytext); return VALUE;}
 [ \t] {strcpy(name, yytext); return SPACE;}
-[\n]	{strcpy(name,"");return NEWLINE;}
+[\n]	{strcpy(name,yytext);return NEWLINE;}
 "\"" {strcpy(name,yytext);return QUOTES;}
 "<"{letter}({letter}|{number})*("."{letter}+)+">" {strcpy(name, yytext); return LIBRARY;}
 {letter}({letter}|{number})* {strcpy(name,yytext); return CODIGO;}
@@ -36,6 +39,109 @@ letter [a-zA-Z]
 
 %%
 	/* --------------------------------------------------------------------------------------------------Code */
+
+	YY_BUFFER_STATE replace_define(char* nombre, char* valor){
+		FILE* processed_File = fopen("fileDefine.txt","w+");
+	  int ongoing_token;
+	  while((ongoing_token= yylex())!= EOF){
+	   if(ongoing_token == DEFINE){
+			 ongoing_token = yylex(); //Obtenemos el nombre de la variable
+	    if (strcmp(name,nombre)==0){
+	     printf("Define Repetidoooo llamado: %s. \n", nombre );
+	     exit(1);
+	    }else{
+	     fprintf(processed_File,"#define ");
+	     fprintf(processed_File,"%s",name);
+	    }
+	   }
+		 else if (ongoing_token == SPACE){
+	    //printf("Espacio");
+	    fprintf(processed_File,"%s",name);
+	   }
+	   else if(ongoing_token == VALUE){
+	    //printf("VALUEE");
+	    fprintf(processed_File,"%s",name);
+	   }
+	   else if(ongoing_token == FILENAME){
+	    //printf("Filename");
+	    if (strcmp(name,nombre)==0){
+	     fprintf(processed_File,"%s",valor);
+	    }else{
+	     fprintf(processed_File,"%s",name);
+	       }
+	   }
+	   else if(ongoing_token == CODIGO){
+	    //printf("CODIGOOO");
+	    if (strcmp(name,nombre)==0){
+	     fprintf(processed_File,"%s",valor);
+	    }else{
+	     fprintf(processed_File,"%s",name);
+	       }
+
+	   }else if (ongoing_token == NEWLINE){
+	    //printf("nuevaLinea");
+	    fprintf(processed_File,"%s","\n");
+	   }
+		 else if (ongoing_token== TAB){
+	    //printf("tab");
+	    fprintf(processed_File,"%s","\t");
+	    }
+
+	  }
+		fseek(processed_File,0,SEEK_SET);
+    YY_BUFFER_STATE bufferDefine = yy_create_buffer(processed_File,YY_BUF_SIZE);
+		return bufferDefine;
+	}
+
+	void processDefine(YY_BUFFER_STATE bufferFinal,FILE* processed_File){
+		yy_switch_to_buffer (bufferFinal); // Nos pasamos al buffer principal.
+
+		while((current_token= yylex())!= EOF){
+			// Mientras haya algo que leer...
+			if(current_token == DEFINE){
+				printf("Estoy procesando el define\n");
+			   string cname;
+			   string value;
+			   yylex(); //nombre
+			   strcpy(cname,name); //copia nombre
+			   current_token = yylex();// espacio
+			   current_token = yylex();// espera encontrar un valor
+			   if(current_token == VALUE || current_token == CODIGO){
+			    //printf("Lo que se espera que haya en el valor es: %s\n", name);
+			    strcpy(value,name);
+			   }
+				 //printf("Current Token %s\n", name);
+			   //una vez encontrados,llamamos función que lo reemplaza
+				 //printf("Se reemplaza -> Nombre:%s\nValor:%s\n", cname,value);
+				 yylex();
+			   YY_BUFFER_STATE bufferDef = replace_define(cname,value);
+				 yy_switch_to_buffer (bufferDef);
+				 //check_all_tokens(bufferDef);
+			}
+			//Copiara en el output file los datos de los archivos incluidos
+			else if(current_token == CODIGO){
+				// Copia datos
+				fprintf(processed_File,"%s", name);
+			}
+			else if(current_token == SPACE){
+				// Copia espacios
+				fprintf(processed_File,"%s", name);
+			}
+			else if(current_token == NEWLINE){
+				// Copia cambios de linea
+				fprintf(processed_File,"%s", "\n");
+			}
+			else if(current_token == FILENAME){
+				// Copia cambios de linea
+				fprintf(processed_File,"%s", "\n");
+			}
+			else if(current_token == VALUE){
+				// Copia cambios de linea
+				fprintf(processed_File,"%s", name);
+			}
+		}
+	}
+
 
 void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
 	yy_switch_to_buffer (buffer); // Nos pasamos al buffer principal.
@@ -91,6 +197,22 @@ void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
 			// Copia cambios de linea
 			fprintf(output,"%s", "\n");
 		}
+		else if(current_token == DEFINE){
+			// Copia cambios de linea
+			fprintf(output,"%s", name);
+		}
+		else if(current_token == VALUE){
+			// Copia cambios de linea
+			fprintf(output,"%s",name);
+		}
+		else if(current_token == QUOTES){
+			// Copia cambios de linea
+			fprintf(output,"%s",name);
+		}
+		else if(current_token == LIBRARY){
+			// Copia cambios de linea
+			fprintf(output,"%s", name);
+		}
 	}
 }
 
@@ -122,6 +244,12 @@ void check_all_tokens(YY_BUFFER_STATE buffer){
 		else if(current_token == FILENAME){
 			printf("FILENAME = %s\n", name);
 		}
+		else if(current_token == VALUE){
+			printf("VALUE = %s\n", name);
+		}
+		else if(current_token == LIBRARY){
+			printf("LIBRARY = %s\n", name);
+		}
 	}
 }
 
@@ -150,21 +278,7 @@ void readIncludeFile(FILE *file, FILE *output){
 		}
 	}
 
-void processDefine(){
-	char cname [1024];
-	char value [1024];
-	int current_token = yylex();
-	if(current_token == DEFINE ){
-		current_token = yylex(); //espacio
-		yylex(); //nombre
-		strcpy(cname,name);
-		yylex();// espacio
-		yylex();
-		strcpy(value,name);
-		printf("Nombre:%s\nValor:%s\n", cname,value);
-	}
 
-}
 
 void clear_includedFilesList(){
 	int i;
@@ -201,9 +315,17 @@ void preprocess_file(FILE *originalFile, char* filename){
 		YY_BUFFER_STATE buffer = yy_create_buffer(originalFile,YY_BUF_SIZE); //Creamos buffer para almacenar y recorrer el file original
 	  FILE *output = fopen("outputFile.txt","w");
 	 	openFilePath(buffer, output);
-	 	//processDefine();
-	 	//check_all_tokens(buffer);
+		fclose(output);
 		fclose(originalFile);
+
+		FILE *final_input = fopen("outputFile.txt","r");
+		if(final_input){
+			YY_BUFFER_STATE bufferFinal = yy_create_buffer(final_input,YY_BUF_SIZE); //Creamos buffer para almacenar y recorrer el file con todos los includes
+			FILE *processed_File = fopen("processedFile.txt","w");
+			processDefine(bufferFinal,processed_File);
+			//check_all_tokens(bufferFinal);
+			fclose(processed_File);
+		}
 	}
 	else{
 		printf("Error al abrir el archivo especificado. Intentelo nuevamente.");
