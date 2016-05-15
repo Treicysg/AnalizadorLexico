@@ -1,8 +1,13 @@
+codigo 1
+
+el primer pedacito de codigo
+
 
 int main()
 {
   int sirvo;
   sirvo = 2015;
    printf(La edad es %d years old.\n,10);
+  lal = 30;
    return 0;
 }
