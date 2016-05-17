@@ -130,8 +130,9 @@ char 		\'(\\.|[^"])*\'
 		scanf("%s",filename);
 		file = fopen( filename, "r" );
 		YY_BUFFER_STATE bufferFinal = yy_create_buffer(file,YY_BUF_SIZE);
-		getNextToken();
+		getNextToken(bufferFinal);
 	}
+	
 
 	token getNextToken(YY_BUFFER_STATE buffer){
 		printf("holaaa");

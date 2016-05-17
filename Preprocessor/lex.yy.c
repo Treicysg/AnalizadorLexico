@@ -2375,7 +2375,36 @@ void yyfree (void * ptr )
 		scanf("%s",filename);
 		file = fopen( filename, "r" );
 		YY_BUFFER_STATE bufferFinal = yy_create_buffer(file,YY_BUF_SIZE);
-		getNextToken();
+		getNextToken(bufferFinal);
+	}
+	
+	token scanner(YY_BUFFER_STATE buffer){
+		yy_switch_to_buffer (buffer); // Nos pasamos al buffer principal.
+		int next_token;
+		while((next_token= yylex())!= EOF){
+			if(next_token == PLUS){
+				printf("PLUS = %s\n", name);
+				return PLUS;
+			}
+			else if(next_token == MUL){
+				printf("MUL = %s\n", name);
+				return MUL;
+			}
+			else if(next_token == MINUS){
+				printf("MINUS = %s\n", name);
+				return MINUS;
+			}
+			else if(next_token == IFSYS){
+				printf("IFSYS = %s\n", name);
+				return IFSYS;
+			}
+			else{
+				printf("No encontre ninguno/n");
+				return UNKNOWN;
+				
+			}
+		}
+		
 	}
 
 	token getNextToken(YY_BUFFER_STATE buffer){
