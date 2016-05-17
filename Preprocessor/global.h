@@ -2,6 +2,8 @@
 #define GLOBAL_H
 #endif
 
+/*--Definicion de variables-----------------------------------------------------------------------------------------------*/
+FILE *file;
 /*--------------------------------------------Contiene todos los datos globales---------------------------------------*/
 /*Representa el conjunto de tipos de tokens*/
 typedef enum token_types{
@@ -22,3 +24,5 @@ void clear_includedFilesList();
 void preprocess_file(FILE *originalFile, char* filename);
 void add_includedFile(char* filename);
 bool isIncluded(char* filename);
+
+token getNextToken();
