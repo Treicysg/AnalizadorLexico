@@ -1,2 +1,17 @@
-int e;
-e = 0;
+#define AGE 10
+#define YEAR 2015
+#define MAXDEF 30
+codigo 1
+
+el primer pedacito de codigo
+
+
+GRACIAS LANG
+int main()
+{
+  int sirvo;
+  sirvo = YEAR;
+   printf("La edad es %d years old.\n",AGE);
+  lal = MAXDEF;
+   return 0;
+}
