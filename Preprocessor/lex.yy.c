@@ -632,7 +632,7 @@ char *yytext;
 	#include <stdio.h>
 	#include <ctype.h>
 	#include "global.h"
-	char name[1024] = "";
+	char name[512] = "";
 /* ------------------------------------------------------------------------------------------------ Rules */
 #line 638 "lex.yy.c"
 
@@ -2377,41 +2377,15 @@ void yyfree (void * ptr )
 		YY_BUFFER_STATE bufferFinal = yy_create_buffer(file,YY_BUF_SIZE);
 		getNextToken(bufferFinal);
 	}
-	
-	token scanner(YY_BUFFER_STATE buffer){
-		yy_switch_to_buffer (buffer); // Nos pasamos al buffer principal.
-		int next_token;
-		while((next_token= yylex())!= EOF){
-			if(next_token == PLUS){
-				printf("PLUS = %s\n", name);
-				return PLUS;
-			}
-			else if(next_token == MUL){
-				printf("MUL = %s\n", name);
-				return MUL;
-			}
-			else if(next_token == MINUS){
-				printf("MINUS = %s\n", name);
-				return MINUS;
-			}
-			else if(next_token == IFSYS){
-				printf("IFSYS = %s\n", name);
-				return IFSYS;
-			}
-			else{
-				printf("No encontre ninguno/n");
-				return UNKNOWN;
-				
-			}
-		}
-		
-	}
 
-	token getNextToken(YY_BUFFER_STATE buffer){
-		printf("holaaa");
+
+	estructura getNextToken(YY_BUFFER_STATE buffer){
 		yy_switch_to_buffer (buffer); // Nos pasamos al buffer principal.
-		int next_token;
-		while((next_token= yylex())!= EOF){
+		int next_token = yylex();
+		estructura identifiedToken;
+		strcpy(identifiedToken.value,name);
+
+
 			if(next_token == PLUS){
 				printf("PLUS = %s\n", name);
 			}
@@ -2711,6 +2685,7 @@ void yyfree (void * ptr )
 			else{
 				printf("NO enconntre el token para este character: %s\n",name);
 			}
-		}
+
+			return identifiedToken;
 	}
 

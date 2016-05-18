@@ -333,7 +333,7 @@ void preprocess_file(FILE *originalFile, char* filename){
 	}
 }
 
-main(int argc,char *argv){
+void readFile(){
 	char filename [100]="";
 	printf( "Ingrese el archivo: ");
 	scanf("%s",filename);

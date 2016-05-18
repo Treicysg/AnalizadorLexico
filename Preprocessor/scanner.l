@@ -2,7 +2,7 @@
 	#include <stdio.h>
 	#include <ctype.h>
 	#include "global.h"
-	char name[1024] = "";
+	char name[512] = "";
 %}
 
 D			[0-9]
@@ -132,13 +132,15 @@ char 		\'(\\.|[^"])*\'
 		YY_BUFFER_STATE bufferFinal = yy_create_buffer(file,YY_BUF_SIZE);
 		getNextToken(bufferFinal);
 	}
-	
 
-	token getNextToken(YY_BUFFER_STATE buffer){
-		printf("holaaa");
+
+	estructura getNextToken(YY_BUFFER_STATE buffer){
 		yy_switch_to_buffer (buffer); // Nos pasamos al buffer principal.
-		int next_token;
-		while((next_token= yylex())!= EOF){
+		int next_token = yylex();
+		estructura identifiedToken;
+		strcpy(identifiedToken.value,name);
+
+
 			if(next_token == PLUS){
 				printf("PLUS = %s\n", name);
 			}
@@ -438,5 +440,6 @@ char 		\'(\\.|[^"])*\'
 			else{
 				printf("NO enconntre el token para este character: %s\n",name);
 			}
-		}
+
+			return identifiedToken;
 	}

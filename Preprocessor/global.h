@@ -4,6 +4,7 @@
 
 /*--Definicion de variables-----------------------------------------------------------------------------------------------*/
 FILE *file;
+
 /*--------------------------------------------Contiene todos los datos globales---------------------------------------*/
 /*Representa el conjunto de tipos de tokens*/
 typedef enum token_types{
@@ -16,6 +17,13 @@ typedef enum token_types{
 } token;
 /*------------------------------------------------------------------------------------------------------------------------*/
 typedef enum {false=0, true=1} bool;
+
+typedef struct estructura{
+  int token_type;
+  char value[512];
+} estructura;
+
+
 void open_file();
 void openFilePath(YY_BUFFER_STATE buffer,FILE *output);
 void readIncludeFile(FILE *file, FILE *output);
@@ -25,4 +33,4 @@ void preprocess_file(FILE *originalFile, char* filename);
 void add_includedFile(char* filename);
 bool isIncluded(char* filename);
 
-token getNextToken();
+estructura getNextToken();
