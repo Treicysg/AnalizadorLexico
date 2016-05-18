@@ -3,6 +3,7 @@ codigo 1
 el primer pedacito de codigo
 
 
+GRACIAS LANG
 int main()
 {
   int sirvo;

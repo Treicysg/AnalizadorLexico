@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <string.h> /* memset */
 #include <stdlib.h>
-#include "global.h"
-#include "preprocessor.l"
-#include "scanner.l"
+#include "prep_preprocessor.h"
+
 
 int main( int argc, char *argv[] )
 {
   readFile();
+  scanFile();
 }

@@ -1,3 +1,7 @@
+%option yylineno
+%option header-file = "prep_scanner.h"
+%option outfile = "prep_scanner.c"
+%option noyywrap
 %{
 	#include <stdio.h>
 	#include <ctype.h>
@@ -124,11 +128,8 @@ char 		\'(\\.|[^"])*\'
 
 %%
 	/* --------------------------------------------------------------------------------------------------Code */
-	main(int argc,char *argv){
-		char filename [100]="";
-		printf( "Ingrese el archivo ya preprocesado: ");
-		scanf("%s",filename);
-		file = fopen( filename, "r" );
+	void scanFile(){
+		file = fopen( "processedFile.txt", "r" );
 		YY_BUFFER_STATE bufferFinal = yy_create_buffer(file,YY_BUF_SIZE);
 		getNextToken(bufferFinal);
 	}

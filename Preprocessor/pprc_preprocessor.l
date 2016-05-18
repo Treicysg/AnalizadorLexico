@@ -1,12 +1,15 @@
 	/* ------------------------------------------------------------------------------------------------Definitions */
-
+%option yylineno
+%option header-file = "prep_preprocessor.h"
+%option outfile = "prep_preprocessor.c"
+%option noyywrap
 %{
 	#include <stdio.h>
 	#include <ctype.h>
 	#include "global.h"
 	int includeCounter = 0;
 	int defineCounter = 0;
-	char name[1024] = "";
+	char _name[1024] = "";
 	int current_token;
 	char included_Files[50][512];
 	int includedFiles_count = 0;
@@ -20,17 +23,17 @@ letter [a-zA-Z]
   /* ------------------------------------------------------------------------------------------------ Rules */
 
 
-#[ \t]*define[ \t]+ {defineCounter++;strcpy(name,yytext); return DEFINE;}
-{number}({number})* {strcpy(name,yytext); return VALUE;}
-[ \t] {strcpy(name, yytext); return SPACE;}
-[\n]	{strcpy(name,yytext);return NEWLINE;}
-"\"" {strcpy(name,yytext);return QUOTES;}
-"<"{letter}({letter}|{number})*("."{letter}+)+">" {strcpy(name, yytext); return LIBRARY;}
-{letter}({letter}|{number})* {strcpy(name,yytext); return CODIGO;}
-#[ \t]*include[ \t]+ {strcpy(name,yytext);includeCounter++; return INCLUDE;}
-{letter}({letter}|{number})*("."{letter}+)+ {strcpy(name,yytext);return FILENAME; }
-<<EOF>> {strcpy(name,"EOF"); return EOF;}
-. {strcpy(name,yytext);return CODIGO;}
+#[ \t]*define[ \t]+ {defineCounter++;strcpy(_name,yytext); return DEFINE;}
+{number}({number})* {strcpy(_name,yytext); return VALUE;}
+[ \t] {strcpy(_name, yytext); return SPACE;}
+[\n]	{strcpy(_name,yytext);return NEWLINE;}
+"\"" {strcpy(_name,yytext);return QUOTES;}
+"<"{letter}({letter}|{number})*("."{letter}+)+">" {strcpy(_name, yytext); return LIBRARY;}
+{letter}({letter}|{number})* {strcpy(_name,yytext); return CODIGO;}
+#[ \t]*include[ \t]+ {strcpy(_name,yytext);includeCounter++; return INCLUDE;}
+{letter}({letter}|{number})*("."{letter}+)+ {strcpy(_name,yytext);return FILENAME; }
+<<EOF>> {strcpy(_name,"EOF"); return EOF;}
+. {strcpy(_name,yytext);return CODIGO;}
 
 
 
@@ -46,36 +49,36 @@ letter [a-zA-Z]
 	  while((ongoing_token= yylex())!= EOF){
 	   if(ongoing_token == DEFINE){
 			 ongoing_token = yylex(); //Obtenemos el nombre de la variable
-	    if (strcmp(name,nombre)==0){
+	    if (strcmp(_name,nombre)==0){
 	     printf("Define Repetidoooo llamado: %s. \n", nombre );
 	     exit(1);
 	    }else{
 	     fprintf(processed_File,"#define ");
-	     fprintf(processed_File,"%s",name);
+	     fprintf(processed_File,"%s",_name);
 	    }
 	   }
 		 else if (ongoing_token == SPACE){
 	    //printf("Espacio");
-	    fprintf(processed_File,"%s",name);
+	    fprintf(processed_File,"%s",_name);
 	   }
 	   else if(ongoing_token == VALUE){
 	    //printf("VALUEE");
-	    fprintf(processed_File,"%s",name);
+	    fprintf(processed_File,"%s",_name);
 	   }
 	   else if(ongoing_token == FILENAME){
-	    //printf("Filename");
-	    if (strcmp(name,nombre)==0){
+	    //printf("FILENAME");
+	    if (strcmp(_name,nombre)==0){
 	     fprintf(processed_File,"%s",valor);
 	    }else{
-	     fprintf(processed_File,"%s",name);
+	     fprintf(processed_File,"%s",_name);
 	       }
 	   }
 	   else if(ongoing_token == CODIGO){
 	    //printf("CODIGOOO");
-	    if (strcmp(name,nombre)==0){
+	    if (strcmp(_name,nombre)==0){
 	     fprintf(processed_File,"%s",valor);
 	    }else{
-	     fprintf(processed_File,"%s",name);
+	     fprintf(processed_File,"%s",_name);
 	       }
 
 	   }else if (ongoing_token == NEWLINE){
@@ -100,32 +103,32 @@ letter [a-zA-Z]
 			// Mientras haya algo que leer...
 			if(current_token == DEFINE){
 				printf("Estoy procesando el define\n");
-			   string cname;
+			   string c_name;
 			   string value;
 			   yylex(); //nombre
-			   strcpy(cname,name); //copia nombre
+			   strcpy(c_name,_name); //copia nombre
 			   current_token = yylex();// espacio
 			   current_token = yylex();// espera encontrar un valor
 			   if(current_token == VALUE || current_token == CODIGO){
-			    //printf("Lo que se espera que haya en el valor es: %s\n", name);
-			    strcpy(value,name);
+			    //printf("Lo que se espera que haya en el valor es: %s\n", _name);
+			    strcpy(value,_name);
 			   }
-				 //printf("Current Token %s\n", name);
+				 //printf("Current Token %s\n", _name);
 			   //una vez encontrados,llamamos función que lo reemplaza
-				 //printf("Se reemplaza -> Nombre:%s\nValor:%s\n", cname,value);
+				 //printf("Se reemplaza -> Nombre:%s\nValor:%s\n", c_name,value);
 				 yylex();
-			   YY_BUFFER_STATE bufferDef = replace_define(cname,value);
+			   YY_BUFFER_STATE bufferDef = replace_define(c_name,value);
 				 yy_switch_to_buffer (bufferDef);
 				 //check_all_tokens(bufferDef);
 			}
 			//Copiara en el output file los datos de los archivos incluidos
 			else if(current_token == CODIGO){
 				// Copia datos
-				fprintf(processed_File,"%s", name);
+				fprintf(processed_File,"%s", _name);
 			}
 			else if(current_token == SPACE){
 				// Copia espacios
-				fprintf(processed_File,"%s", name);
+				fprintf(processed_File,"%s", _name);
 			}
 			else if(current_token == NEWLINE){
 				// Copia cambios de linea
@@ -137,7 +140,7 @@ letter [a-zA-Z]
 			}
 			else if(current_token == VALUE){
 				// Copia cambios de linea
-				fprintf(processed_File,"%s", name);
+				fprintf(processed_File,"%s", _name);
 			}
 		}
 	}
@@ -155,28 +158,28 @@ void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
 					printf("Encontramos las comillas principales\n");
 					current_token = yylex(); //obtenemos el nombre del archivo
 					if (current_token == FILENAME){
-						FILE* file = fopen(name, "r");
+						FILE* file = fopen(_name, "r");
 						if (file) {
-								if (isIncluded(name)){
-									printf("Error, ya se ha incluido el file %s\n",name);
+								if (isIncluded(_name)){
+									printf("Error, ya se ha incluido el file %s\n",_name);
 									exit(0);
 								}
-								add_includedFile(name);
+								add_includedFile(_name);
 								readIncludeFile(file, output);
 						}
 						else{
-							printf("Error al abrir el archivo %s\n", name);
+							printf("Error al abrir el archivo %s\n", _name);
 							exit(0);
 						}
 					}
 					else{
-						printf("Error. '%s' no es un file path valido.\n", name);
+						printf("Error. '%s' no es un file path valido.\n", _name);
 						exit(0);
 					}
 				}
 				else if(current_token == LIBRARY){
 					// Copia datos
-					fprintf(output,"#include %s", name);
+					fprintf(output,"#include %s", _name);
 				}
 				else{
 					printf("File path no valido. faltan comillas iniciales \n");
@@ -187,11 +190,11 @@ void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
 		//Copiara en el output file los datos de los archivos incluidos
 		else if(current_token == CODIGO){
 			// Copia datos
-			fprintf(output,"%s", name);
+			fprintf(output,"%s", _name);
 		}
 		else if(current_token == SPACE){
 			// Copia espacios
-			fprintf(output,"%s", name);
+			fprintf(output,"%s", _name);
 		}
 		else if(current_token == NEWLINE){
 			// Copia cambios de linea
@@ -199,19 +202,19 @@ void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
 		}
 		else if(current_token == DEFINE){
 			// Copia cambios de linea
-			fprintf(output,"%s", name);
+			fprintf(output,"%s", _name);
 		}
 		else if(current_token == VALUE){
 			// Copia cambios de linea
-			fprintf(output,"%s",name);
+			fprintf(output,"%s",_name);
 		}
 		else if(current_token == QUOTES){
 			// Copia cambios de linea
-			fprintf(output,"%s",name);
+			fprintf(output,"%s",_name);
 		}
 		else if(current_token == LIBRARY){
 			// Copia cambios de linea
-			fprintf(output,"%s", name);
+			fprintf(output,"%s", _name);
 		}
 	}
 }
@@ -221,34 +224,34 @@ void check_all_tokens(YY_BUFFER_STATE buffer){
 
 	while((current_token= yylex())!= EOF){
 		if(current_token == INCLUDE){
-			printf("INCLUDE = %s\n", name);
+			printf("INCLUDE = %s\n", _name);
 		}
 		else if(current_token == DEFINE){
-			printf("DEFINE = %s\n", name);
+			printf("DEFINE = %s\n", _name);
 		}
 		else if(current_token == SPACE){
-			printf("SPACE = %s\n", name);
+			printf("SPACE = %s\n", _name);
 		}
 		else if(current_token == NEWLINE){
-			printf("NEWLINE = %s\n", name);
+			printf("NEWLINE = %s\n", _name);
 		}
 		else if(current_token == QUOTES){
-			printf("QUOTES = %s\n", name);
+			printf("QUOTES = %s\n", _name);
 		}
 		else if(current_token == CODIGO){
-			printf("CODIGO = %s\n", name);
+			printf("CODIGO = %s\n", _name);
 		}
 		else if(current_token == INCLUDE){
-			printf("INCLUDE = %s\n", name);
+			printf("INCLUDE = %s\n", _name);
 		}
 		else if(current_token == FILENAME){
-			printf("FILENAME = %s\n", name);
+			printf("FILENAME = %s\n", _name);
 		}
 		else if(current_token == VALUE){
-			printf("VALUE = %s\n", name);
+			printf("VALUE = %s\n", _name);
 		}
 		else if(current_token == LIBRARY){
-			printf("LIBRARY = %s\n", name);
+			printf("LIBRARY = %s\n", _name);
 		}
 	}
 }
