@@ -1,12 +1,7 @@
-#define AGE 10
-#define YEAR 2015
-#define MAXDEF 30
-codigo 1
+/*int e;
+e = 0;
+*/
 
-el primer pedacito de codigo
-
-
-GRACIAS LANG
 int main()
 {
   int sirvo;

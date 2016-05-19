@@ -1,14 +1,12 @@
-codigo 1
+/*int e;
+e = 0;
+*/
 
-el primer pedacito de codigo
-
-
-GRACIAS LANG
 int main()
 {
   int sirvo;
-  sirvo = 2015;
-   printf(La edad es %d years old.\n,10);
-  lal = 30;
+  sirvo = YEAR;
+   printf(La edad es %d years old.\n,AGE);
+  lal = MAXDEF;
    return 0;
 }

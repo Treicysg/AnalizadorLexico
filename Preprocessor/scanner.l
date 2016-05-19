@@ -7,6 +7,8 @@
 	#include <ctype.h>
 	#include "global.h"
 	char name[512] = "";
+	int insertedTokens = 0;
+
 %}
 
 D			[0-9]
@@ -72,6 +74,8 @@ char 		\'(\\.|[^"])*\'
 "[" { strcpy(name,yytext); return LBRACKET;}
 "]" { strcpy(name,yytext); return RBRACKET;}
 "\\" { strcpy(name,yytext); return BACKSLASH;}
+"/*" { strcpy(name,yytext);return COMMENTOPEN;}
+"*/" { strcpy(name,yytext);return COMMENTCLOSE;}
 
 ":" { strcpy(name,yytext); return COLON;}
 "?" { strcpy(name,yytext); return QUESTIONMARK;}
@@ -122,325 +126,68 @@ char 		\'(\\.|[^"])*\'
 [\n]	{strcpy(name,yytext); return NEWLINE;}
 
 {letter}({letter}|{number}|{number})* { strcpy(name,yytext); return ID;}
-{number}+             { strcpy(name,yytext); return NUMBER;}
+{number}+ { strcpy(name,yytext); return NUMBER;}
 .	{ strcpy(name,yytext); return UNKNOWN;}
 
 
 %%
 	/* --------------------------------------------------------------------------------------------------Code */
+
+
+	void count_tokens(int pToken){
+		if (isInserted(pToken)){
+		}
+		else{
+			insertTokenType(pToken);
+		}
+	}
+
+	bool isInserted(int pTokenType){
+		int i = 0;
+		bool isInserted = false;
+		while(i<105){
+			if(pTokenType == token_type[i]){
+				isInserted = true;
+				token_cuantity[i] ++; 	//Actualizo la cantidad de types registrados
+			}
+			i++;
+		}
+		return isInserted;
+	}
+
+	void insertTokenType(int pTokenType){
+
+		token_type[insertedTokens] = pTokenType;
+		insertedTokens++;
+
+	}
+
 	void scanFile(){
 		file = fopen( "processedFile.txt", "r" );
 		YY_BUFFER_STATE bufferFinal = yy_create_buffer(file,YY_BUF_SIZE);
-		getNextToken(bufferFinal);
+		estructura t ;
+		t = getNextToken(bufferFinal);
+		while(t.token_type != EOF){
+			t = getNextToken(bufferFinal);
+		}
 	}
-
 
 	estructura getNextToken(YY_BUFFER_STATE buffer){
 		yy_switch_to_buffer (buffer); // Nos pasamos al buffer principal.
 		int next_token = yylex();
+		if (next_token == COMMENTOPEN){
+			printf("Encontre el inicio d un comment!\n");
+			while(next_token != COMMENTCLOSE){
+				next_token = yylex();
+			}
+			printf("Encontre el final del comment %s\n", name);
+			next_token = yylex();
+		}
 		estructura identifiedToken;
+		identifiedToken.token_type = next_token;
 		strcpy(identifiedToken.value,name);
 
-
-			if(next_token == PLUS){
-				printf("PLUS = %s\n", name);
-			}
-			else if(next_token == MUL){
-				printf("MUL = %s\n", name);
-			}
-			else if(next_token == MINUS){
-				printf("MINUS = %s\n", name);
-			}
-			else if(next_token == IFSYS){
-				printf("IFSYS = %s\n", name);
-			}
-			else if(next_token == ELSESYS){
-				printf("ELSESYS = %s\n", name);
-			}
-			else if(next_token ==  ASSIGN){
-				printf(" ASSIGN = %s\n", name);
-			}
-			else if(next_token == CORCHL){
-				printf("CORCHL = %s\n", name);
-			}
-			else if(next_token == CORCHR){
-				printf("CORCHR = %s\n", name);
-			}
-			else if(next_token == SEMICOLON){
-				printf("SEMICOLON = %s\n", name);
-			}
-			else if(next_token == ID){
-				printf("ID = %s\n", name);
-			}
-			else if(next_token == NUMBER){
-				printf("NUMBER = %s\n", name);
-			}
-			else if(next_token == STRING){
-				printf("STRING = %s\n", name);
-			}
-			else if(next_token == DOUBLEQUOTE){
-				printf("DOUBLEQUOTE = %s\n", name);
-			}
-			else if(next_token == LESSMORE){
-				printf("LESSMORE = %s\n", name);
-			}
-
-			else if(next_token == WHILELOOP){
-				printf("WHILELOOP = %s\n", name);
-			}
-			else if(next_token == FORLOOP){
-				printf("FORLOOP = %s\n", name);
-			}
-			else if(next_token == LEQ){
-				printf("LEQ = %s\n", name);
-			}
-			else if(next_token == GEQ){
-				printf("GEQ = %s\n", name);
-			}
-			else if(next_token == LESS){
-				printf("LESS = %s\n", name);
-			}
-			else if(next_token == GREATER){
-				printf("GREATER = %s\n", name);
-			}
-			else if(next_token == COMMA){
-				printf("COMMA = %s\n", name);
-			}
-			else if(next_token == PERIOD){
-				printf("PERIOD = %s\n", name);
-			}
-			else if(next_token == UNKNOWN){
-				printf("UNKNOWN = %s\n", name);
-			}
-			else if(next_token == INCLUDE){
-				printf("INCLUDE = %s\n", name);
-			}
-			else if(next_token == DEFINE){
-				printf("DEFINE = %s\n", name);
-			}
-			else if(next_token == FILENAME){
-				printf("FILENAME = %s\n", name);
-			}
-
-			else if(next_token == QUOTES){
-				printf("QUOTES = %s\n", name);
-			}
-			else if(next_token == LIBRARY){
-				printf("LIBRARY = %s\n", name);
-			}
-			else if(next_token == VALUE){
-				printf("VALUE = %s\n", name);
-			}
-			else if(next_token == CODIGO){
-				printf("CODIGO = %s\n", name);
-			}
-			else if(next_token == SPACE){
-				printf("SPACE = %s\n", name);
-			}
-			else if(next_token == NEWLINE){
-				printf("NEWLINE = %s\n", name);
-			}
-			else if(next_token == VARIABLE){
-				printf("VARIABLE = %s\n", name);
-			}
-			else if(next_token == QUOTATION){
-				printf("QUOTATION = %s\n", name);
-			}
-			else if(next_token == TAB){
-				printf("TAB = %s\n", name);
-			}
-			else if(next_token == CASE){
-				printf("CASE = %s\n", name);
-			}
-			else if(next_token == CHAR){
-				printf("CHAR = %s\n", name);
-			}
-			else if(next_token == CONST){
-				printf("CONST = %s\n", name);
-			}
-			else if(next_token == CONTINUE){
-				printf("CONTINUE = %s\n", name);
-			}
-			else if(next_token == DEFAULT){
-				printf("DEFAULT = %s\n", name);
-			}
-			else if(next_token == DO){
-				printf("DO = %s\n", name);
-			}
-			else if(next_token == DOUBLE){
-				printf("DOUBLE = %s\n", name);
-			}
-			else if(next_token == ENUM){
-				printf("ENUM = %s\n", name);
-			}
-			else if(next_token == EXTERN){
-				printf("EXTERN = %s\n", name);
-			}
-			else if(next_token == FLOAT){
-				printf("FLOAT = %s\n", name);
-			}
-			else if(next_token == GOTO){
-				printf("GOTO = %s\n", name);
-			}
-			else if(next_token == INT){
-				printf("INT = %s\n", name);
-			}
-			else if(next_token == LONG){
-				printf("LONG = %s\n", name);
-			}
-			else if(next_token == REGISTER){
-				printf("REGISTER = %s\n", name);
-			}
-			else if(next_token == RETURN){
-				printf("RETURN = %s\n", name);
-			}
-			else if(next_token == SHORT){
-				printf("SHORT = %s\n", name);
-			}
-			else if(next_token == BACKSLASH){
-				printf("BACKSLASH = %s\n", name);
-			}
-			else if(next_token == SIGNED){
-				printf("SIGNED = %s\n", name);
-			}
-			else if(next_token == SIZEOF){
-				printf("SIZEOF = %s\n", name);
-			}
-			else if(next_token == STATIC){
-				printf("STATIC = %s\n", name);
-			}
-			else if(next_token == STRUCT){
-				printf("STRUCT = %s\n", name);
-			}
-			else if(next_token == SWITCH){
-				printf("SWITCH = %s\n", name);
-			}
-			else if(next_token == TYPEDEF){
-				printf("TYPEDEF = %s\n", name);
-			}
-			else if(next_token == UNION){
-				printf("UNION = %s\n", name);
-			}
-			else if(next_token == UNSIGNED){
-				printf("UNSIGNED = %s\n", name);
-			}
-			else if(next_token == VOID){
-				printf("VOID = %s\n", name);
-			}
-			else if(next_token == VOLATILE){
-				printf("VOLATILE = %s\n", name);
-			}
-			else if(next_token == NOTEQUAL){
-				printf("NOTEQUAL = %s\n", name);
-			}
-			else if(next_token == ARROW){
-				printf("ARROW = %s\n", name);
-			}
-			else if(next_token == QUESTIONMARK){
-				printf("QUESTIONMARK = %s\n", name);
-			}
-			else if(next_token == COLON){
-				printf("COLON = %s\n", name);
-			}
-			else if(next_token == AND){
-				printf("AND = %s\n", name);
-			}
-			else if(next_token == OR){
-				printf("OR = %s\n", name);
-			}
-			else if(next_token == DIV){
-				printf("DIV = %s\n", name);
-			}
-			else if(next_token == AUTO){
-				printf("AUTO = %s\n", name);
-			}
-			else if(next_token == BREAK){
-				printf("BREAK = %s\n", name);
-			}
-			else if(next_token == NOT){
-				printf("NOT = %s\n", name);
-			}
-			else if(next_token == PLUSPLUS){
-				printf("PLUSPLUS = %s\n", name);
-			}
-			else if(next_token == MINUSMINUS){
-				printf("MINUSMINUS = %s\n", name);
-			}
-			else if(next_token == PLUSEQUAL){
-				printf("PLUSEQUAL = %s\n", name);
-			}
-			else if(next_token == MINUSEQUAL){
-				printf("MINUSEQUAL = %s\n", name);
-			}
-			else if(next_token == MULEQUAL){
-				printf("MULEQUAL = %s\n", name);
-			}
-			else if(next_token == DIVEQUAL){
-				printf("DIVEQUAL = %s\n", name);
-			}
-			else if(next_token == MODEQUAL){
-				printf("MODEQUAL = %s\n", name);
-			}
-			else if(next_token == SHLEQUAL){
-				printf("SHLEQUAL = %s\n", name);
-			}
-			else if(next_token == SHREQUAL){
-				printf("SHREQUAL = %s\n", name);
-			}
-			else if(next_token == ANDEQUAL){
-				printf("ANDEQUAL = %s\n", name);
-			}
-			else if(next_token == OREQUAL){
-				printf("OREQUAL = %s\n", name);
-			}
-			else if(next_token == ROOFEQUAL){
-				printf("ROOFEQUAL = %s\n", name);
-			}
-			else if(next_token == BITAND){
-				printf("BITAND = %s\n", name);
-			}
-			else if(next_token == BITOR){
-				printf("BITOR = %s\n", name);
-			}
-			else if(next_token == ROOF){
-				printf("ROOF = %s\n", name);
-			}
-			else if(next_token == TAIL){
-				printf("TAIL = %s\n", name);
-			}
-			else if(next_token == LBRACKET){
-				printf("LBRACKET = %s\n", name);
-			}
-			else if(next_token == RBRACKET){
-				printf("RBRACKET = %s\n", name);
-			}
-			else if(next_token == SHL){
-				printf("SHL = %s\n", name);
-			}
-			else if(next_token == SHR){
-				printf("SHR = %s\n", name);
-			}
-			else if(next_token == MOD){
-				printf("MOD = %s\n", name);
-			}
-			else if(next_token == SINGLEQUOTE){
-				printf("SINGLEQUOTE = %s\n", name);
-			}
-			else if(next_token == COMMENTOPEN){
-				printf("COMMENTOPEN = %s\n", name);
-			}
-			else if(next_token == COMMENTCLOSE){
-				printf("COMMENTCLOSE = %s\n", name);
-			}
-			else if(next_token == UNDERSCORE){
-				printf("UNDERSCORE = %s\n", name);
-			}
-			else if(next_token == CHARACTER){
-				printf("CHARACTER = %s\n", name);
-			}
-			else{
-				printf("NO enconntre el token para este character: %s\n",name);
-			}
-
-			return identifiedToken;
+		printf("%s", identifiedToken.value);
+		count_tokens(identifiedToken.token_type);
+		return identifiedToken;
 	}

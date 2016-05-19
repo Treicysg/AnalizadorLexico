@@ -1,8 +1,4 @@
-#define AGE 10
-#define YEAR 2015
-#include "incluyeme.txt"
-
-GRACIAS LANG
+#include "scanner.h"
 int main()
 {
   int sirvo;

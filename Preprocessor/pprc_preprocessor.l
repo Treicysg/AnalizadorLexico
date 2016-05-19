@@ -219,6 +219,12 @@ void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
 	}
 }
 
+void clear_token_buffer(){
+	memset(token_type, 0, 105);
+	memset(token_cuantity, 0, 105);
+}
+
+
 void check_all_tokens(YY_BUFFER_STATE buffer){
 	yy_switch_to_buffer (buffer); // Nos pasamos al buffer principal.
 
