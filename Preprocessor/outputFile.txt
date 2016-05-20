@@ -1,12 +1,4 @@
-/*int e;
-e = 0;
-*/
-
 int main()
 {
-  int sirvo;
-  sirvo = YEAR;
-   printf("La edad es %d years old.\n",AGE);
-  lal = MAXDEF;
-   return 0;
+  i = 6;
 }

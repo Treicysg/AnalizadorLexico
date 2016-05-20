@@ -5,7 +5,7 @@
 /*--Definicion de variables-----------------------------------------------------------------------------------------------*/
 FILE *file;
 int token_type[105];
-int token_cuantity[105];
+int token_quantity[105];
 
 /*--------------------------------------------Contiene todos los datos globales---------------------------------------*/
 /*Representa el conjunto de tipos de tokens*/
@@ -40,5 +40,6 @@ void clear_token_buffer();
 void count_tokens(int pToken);
 bool isInserted(int pTokenType);
 void insertTokenType(int pTokenType);
+void checkRegisteredTokens();
 
 void createBeamer();

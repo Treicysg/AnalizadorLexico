@@ -2430,6 +2430,12 @@ void yyfree (void * ptr )
 
 	/* --------------------------------------------------------------------------------------------------Code */
 
+	void checkRegisteredTokens(){
+		int i;
+		for(i=0; i < insertedTokens; i++){
+			printf("token type = %d --> %d\n", token_type[i],token_quantity[i]);
+		}
+	}
 
 	void count_tokens(int pToken){
 		if (isInserted(pToken)){
@@ -2445,7 +2451,7 @@ void yyfree (void * ptr )
 		while(i<105){
 			if(pTokenType == token_type[i]){
 				isInserted = true;
-				token_cuantity[i] ++; 	//Actualizo la cantidad de types registrados
+				token_quantity[i] ++; 	//Actualizo la cantidad de types registrados
 			}
 			i++;
 		}
@@ -2455,6 +2461,7 @@ void yyfree (void * ptr )
 	void insertTokenType(int pTokenType){
 
 		token_type[insertedTokens] = pTokenType;
+		token_quantity[insertedTokens] ++;
 		insertedTokens++;
 
 	}

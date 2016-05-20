@@ -2070,7 +2070,7 @@ void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
 
 void clear_token_buffer(){
 	memset(token_type, 0, 105);
-	memset(token_cuantity, 0, 105);
+	memset(token_quantity, 0, 105);
 }
 
 
