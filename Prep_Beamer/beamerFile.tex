@@ -1,5 +1,7 @@
 \documentclass[10, usernames, dvipsnames]{beamer}
 \usepackage{color}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
 \usepackage{dirtytalk}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
@@ -63,4 +65,64 @@ El An\'alisis L\'exico consiste en descomponer un fuente de entrada en categor\'
  \textcolor{SkyBlue}{\} }
 
  \end{frame}
+\begin{frame} 
+\frametitle{Histograma} 
+\begin{tikzpicture} 
+\begin{axis}[ 
+x tick label style={
+/pgf/number format/1000 sep=},
+ylabel=Cantidad de Tokens,
+enlargelimits=0.05,
+legend style={at={(0.5,-0.1)},
+anchor=north,legend columns=-1},
+ybar interval=0.7,
+]
+\addplot 
+coordinates {(49,1)};
+(33,13)};
+(12,2)};
+(5,3)};
+(6,3)};
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+\begin{frame} 
+\begin{tikzpicture} 
+\begin{axis}[ 
+x tick label style={
+/pgf/number format/1000 sep=},
+ylabel=Cantidad de Tokens,
+enlargelimits=0.05,
+legend style={at={(0.5,-0.1)},
+anchor=north,legend columns=-1},
+ybar interval=0.7,
+]
+\addplot 
+coordinates {(34,6)};
+(9,2)};
+(3,1)};
+(13,3)};
+(7,2)};
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+\begin{frame} 
+\begin{tikzpicture} 
+\begin{axis}[ 
+x tick label style={
+/pgf/number format/1000 sep=},
+ylabel=Cantidad de Tokens,
+enlargelimits=0.05,
+legend style={at={(0.5,-0.1)},
+anchor=north,legend columns=-1},
+ybar interval=0.7,
+]
+\addplot 
+coordinates {(14,2)};
+(11,2)};
+(10,3)};
+(-1,2)};
+\end{axis}
+\end{tikzpicture}
+\end{frame} 
 \end{document}
