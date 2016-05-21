@@ -2470,10 +2470,70 @@ void yyfree (void * ptr )
 		file = fopen( "processedFile.txt", "r" );
 		YY_BUFFER_STATE bufferFinal = yy_create_buffer(file,YY_BUF_SIZE);
 		estructura t ;
+
+
+		//Presentación Beamer. Parte 1
+
+		FILE* beamerFile = fopen( "beamerFile.tex", "w+" );
+		int slide_lines = 0;
+	  /*fprintf(beamerFile,"\\documentclass[pdflatex,compress]{beamer} \n");
+	  fprintf(beamerFile, "\\usetheme{Dresden}\n");
+	  fprintf(beamerFile, "\\usecolortheme{whale}\n");
+	  fprintf(beamerFile, "\\setbeamercolor{itemize item}{fg=darkred!80!black}\n");*/
+
+	  fprintf(beamerFile, "\\documentclass[10, usernames, dvipsnames]{beamer}\n");
+		fprintf(beamerFile, "\\usepackage{color}\n");
+		fprintf(beamerFile, "\\usepackage[spanish]{babel}\n");
+		//fprintf(beamerFile, "\\setbeamercolor{normal text}{bg=white!80}\n");
+	  fprintf(beamerFile, "\\setbeamercolor{itemize item}{fg=darkred!80!black}\n");
+	  fprintf(beamerFile,"\\begin{document} \n");
+	  fprintf(beamerFile, "\\title{\n");
+		fprintf(beamerFile, "\\begin{LARGE}\n");
+		fprintf(beamerFile, "Instituto Tecnol\\'ogico de Costa Rica\n");
+		fprintf(beamerFile, "\\end{LARGE}\n");
+		fprintf(beamerFile, "\\newline\n");
+		fprintf(beamerFile, "\\begin{Large}\n");
+		fprintf(beamerFile, "\\\\Compiladores e Int\\'erpretes\n");
+		fprintf(beamerFile, "\\\\Proyecto \\#2: Analizador L\\'exico\n");
+		fprintf(beamerFile, "\\\\Profesor: Francisco Torres\n");
+		fprintf(beamerFile, "\\end{Large}\n");
+	  fprintf(beamerFile, "}\n");
+	  fprintf(beamerFile, "\\author{Dennisse Rojas Casanova\n");
+	  fprintf(beamerFile, "\\\\Treicy S\\'anchez Guti\\'errez}\n");
+		fprintf(beamerFile, "\\date{25 de Mayo, 2016}\n");
+	  fprintf(beamerFile,"\\maketitle \n");
+
+		//Parte 1 :Flex y Scanner
+	  fprintf(beamerFile,"\\begin{frame} \n");
+	  fprintf(beamerFile,"\\frametitle{An\\'alisis L\\'exico y Flex} \n");
+	  fprintf(beamerFile,"El An\\'alisis L\\'exico consiste en descomponer un fuente de entrada en categor\\'ias l\\'exicas m\\'inimas llamadas tokens.");
+	  fprintf(beamerFile,"Un programa en Flex consiste b\\'asicamente en una lista de expresiones regulares que definen acciones a ejecutar cuando ocurre un match.");
+	  fprintf(beamerFile,"\\end{frame} \n");
+		fprintf(beamerFile, "\\begin{frame}\n");
+
 		t = getNextToken(bufferFinal);
 		while(t.token_type != EOF){
-			t = getNextToken(bufferFinal);
+			if(slide_lines == 10) {
+			fprintf(beamerFile, "\\end{frame}\n");
+			fprintf(beamerFile, "\\begin{frame}\n");
+			slide_lines = 0;
+			}
+			switch(t.token_type){
+				case NUMBER:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "BurntOrange", t.value);
+					break;
+
+				}
+				t = getNextToken(bufferFinal);
 		}
+
+		//Final del Archivo
+		fprintf(beamerFile, "\\end{frame}\n");
+		fprintf(beamerFile,"\\end{document}");
+		fclose(beamerFile);
+		system("pdflatex beamerFile.tex");
+		system("evince beamerFile.pdf");
+
 	}
 
 	estructura getNextToken(YY_BUFFER_STATE buffer){

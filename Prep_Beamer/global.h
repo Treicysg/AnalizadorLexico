@@ -41,5 +41,3 @@ void count_tokens(int pToken);
 bool isInserted(int pTokenType);
 void insertTokenType(int pTokenType);
 void checkRegisteredTokens();
-
-void createBeamer();
