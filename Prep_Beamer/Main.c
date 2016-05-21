@@ -11,6 +11,6 @@ int main( int argc, char *argv[] )
   //clear_token_buffer();
   scanFile();
   //createBeamer();
-  checkRegisteredTokens();
+  //checkRegisteredTokens();
 
 }
