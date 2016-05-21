@@ -1,0 +1,4 @@
+#define MAXDEF 30
+codigo 1
+
+el primer pedacito de codigo
