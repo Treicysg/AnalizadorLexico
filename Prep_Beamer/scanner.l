@@ -226,8 +226,8 @@ char 		\'(\\.|[^"])*\'
 			fprintf(beamerFile, "\\end{frame}\n");
 			fprintf(beamerFile, "\\begin{frame}\n");
 			slide_lines = 0;
-
 			}
+
 			switch(t.token_type){
 				case NUMBER:
 					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "RedViolet", t.value);
@@ -493,38 +493,40 @@ char 		\'(\\.|[^"])*\'
 
 		fprintf(beamerFile,"\\addplot \n");
 		fprintf(beamerFile,"coordinates {");
-		for(i=0; i < insertedTokens; i++){
+		for(i=0; i < insertedTokens; i++) {
 
 
 			if(included_tokens == 5){
-				fprintf(beamerFile,"\\end{axis}\n");
-				fprintf(beamerFile,"\\end{tikzpicture}\n");
-				fprintf(beamerFile, "\\end{frame}\n");
-				fprintf(beamerFile,"\\begin{frame} \n");
-				fprintf(beamerFile,"\\begin{tikzpicture} \n");
-				fprintf(beamerFile,"\\begin{axis}[ \n");
-				fprintf(beamerFile,"x tick label style={\n");
-				fprintf(beamerFile,"/pgf/number format/1000 sep=},\n");
-				fprintf(beamerFile,"ylabel=Cantidad de Tokens,\n");
-				fprintf(beamerFile,"enlargelimits=0.05,\n");
-				fprintf(beamerFile,"legend style={at={(0.5,-0.1)},\n");
-				fprintf(beamerFile,"anchor=north,legend columns=-1},\n");
-				fprintf(beamerFile,"ybar interval=0.7,\n");
-				fprintf(beamerFile,"]\n");
+				  fprintf(beamerFile,"};\n");
+					fprintf(beamerFile,"\\end{axis}\n");
+					fprintf(beamerFile,"\\end{tikzpicture}\n");
+					fprintf(beamerFile, "\\end{frame}\n");
+					fprintf(beamerFile,"\\begin{frame} \n");
+					fprintf(beamerFile,"\\begin{tikzpicture} \n");
+					fprintf(beamerFile,"\\begin{axis}[ \n");
+					fprintf(beamerFile,"x tick label style={\n");
+					fprintf(beamerFile,"/pgf/number format/1000 sep=},\n");
+					fprintf(beamerFile,"ylabel=Cantidad de Tokens,\n");
+					fprintf(beamerFile,"enlargelimits=0.05,\n");
+					fprintf(beamerFile,"legend style={at={(0.5,-0.1)},\n");
+					fprintf(beamerFile,"anchor=north,legend columns=-1},\n");
+					fprintf(beamerFile,"ybar interval=0.7,\n");
+					fprintf(beamerFile,"]\n");
 
-				fprintf(beamerFile,"\\addplot \n");
-				fprintf(beamerFile,"coordinates {");
-				included_tokens = 0;
-			  }
+					fprintf(beamerFile,"\\addplot \n");
+					fprintf(beamerFile,"coordinates {");
+					included_tokens = 0;
+			}
 
 			fprintf(beamerFile, "(%d,", token_type[i]);
 			fprintf(beamerFile, "%d)", token_quantity[i]);
 			included_tokens+=1;
-			fprintf(beamerFile,"};\n");
-
-			}
 
 
+	 }
+
+
+		fprintf(beamerFile,"};\n");
 		fprintf(beamerFile,"\\end{axis}\n");
 		fprintf(beamerFile,"\\end{tikzpicture}\n");
 		fprintf(beamerFile,"\\end{frame} \n");
