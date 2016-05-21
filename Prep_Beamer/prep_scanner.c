@@ -2476,14 +2476,16 @@ void yyfree (void * ptr )
 
 		FILE* beamerFile = fopen( "beamerFile.tex", "w+" );
 		int slide_lines = 0;
-	  /*fprintf(beamerFile,"\\documentclass[pdflatex,compress]{beamer} \n");
-	  fprintf(beamerFile, "\\usetheme{Dresden}\n");
-	  fprintf(beamerFile, "\\usecolortheme{whale}\n");
-	  fprintf(beamerFile, "\\setbeamercolor{itemize item}{fg=darkred!80!black}\n");*/
+		int i;
+		bool n_quote = true;
+
+
 
 	  fprintf(beamerFile, "\\documentclass[10, usernames, dvipsnames]{beamer}\n");
 		fprintf(beamerFile, "\\usepackage{color}\n");
+		fprintf(beamerFile, "\\usepackage{dirtytalk}\n");
 		fprintf(beamerFile, "\\usepackage[spanish]{babel}\n");
+		fprintf(beamerFile, "\\usepackage[utf8]{inputenc}\n");
 		//fprintf(beamerFile, "\\setbeamercolor{normal text}{bg=white!80}\n");
 	  fprintf(beamerFile, "\\setbeamercolor{itemize item}{fg=darkred!80!black}\n");
 	  fprintf(beamerFile,"\\begin{document} \n");
@@ -2517,11 +2519,246 @@ void yyfree (void * ptr )
 			fprintf(beamerFile, "\\end{frame}\n");
 			fprintf(beamerFile, "\\begin{frame}\n");
 			slide_lines = 0;
+
 			}
 			switch(t.token_type){
 				case NUMBER:
-					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "BurntOrange", t.value);
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "RedViolet", t.value);
 					break;
+				//Operadores Lógicos
+				case AND:
+					fprintf(beamerFile, "\\textcolor{%s}{ \\%c\\%c }\n", "Goldenrod", yytext[0], yytext[1]);
+					break;
+				case OR:
+					fprintf(beamerFile, "\\textcolor{%s}{ $%s$ }\n", "Dandelion", t.value);
+					break;
+				case NOT:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "Goldenrod", t.value);
+					break;
+
+				//Operadores Aritméticos
+
+				case PLUS:
+				case MINUS:
+				case MUL:
+				case DIV:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "SpringGreen", t.value);
+					break;
+
+				case IFSYS:
+				case ELSESYS:
+				case WHILELOOP:
+				case FORLOOP:
+				case AUTO:
+				case BREAK:
+				case CASE:
+				case CHAR:
+				case CONST:
+				case CONTINUE:
+				case DEFAULT:
+				case DO:
+				case DOUBLE:
+				case ENUM:
+				case EXTERN:
+				case FLOAT:
+				case GOTO:
+				case INT:
+				case LONG:
+				case REGISTER:
+				case RETURN:
+				case SHORT:
+				case SIGNED:
+				case SIZEOF:
+				case STATIC:
+				case STRUCT:
+				case SWITCH:
+				case TYPEDEF:
+				case UNION:
+				case UNSIGNED:
+				case VOID:
+				case VOLATILE:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "OrangeRed", t.value);
+					break;
+
+				case TAB:
+					fprintf(beamerFile, "\\textcolor{%s}{\\%s }\n", "White", "  " );
+					break;
+				case SPACE:
+					fprintf(beamerFile, "\\textcolor{%s}{\\ }\n", "White");
+					break;
+				case NEWLINE:
+					fprintf(beamerFile, "\n ");
+					slide_lines++;
+					break;
+
+				case COLON:
+	 			case SEMICOLON:
+	 			case COMMA:
+	 			case PERIOD:
+	 			case QUESTIONMARK:
+	 				fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "Sepia", t.value);
+	 				break;
+	 			case UNDERSCORE:
+	 				fprintf(beamerFile, "\\textcolor{%s}{\\%s}\n", "Sepia", t.value);
+	 				break;
+
+				case BACKSLASH:
+					fprintf(beamerFile, "\\textcolor{%s}{%s }\n", "Gray", "\\textbackslash");
+					break;
+					case ASSIGN:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "Salmon", t.value);
+					break;
+
+
+				//PARENTHESES
+				case LPAREN:
+				case RPAREN:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "SkyBlue", t.value);
+					break;
+				case CORCHR:
+				case CORCHL:
+					fprintf(beamerFile, "\\textcolor{%s}{\\%s }\n", "SkyBlue", t.value);
+					break;
+				case LBRACKET:
+				case RBRACKET:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "SkyBlue", t.value);
+					break;
+
+				case SINGLEQUOTE:
+	 				fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "BurntOrange", t.value);
+	 				break;
+	 			case DOUBLEQUOTE:
+	 				fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "BurntOrange", t.value);
+	 				break;
+
+				case SHLEQUAL:
+				case SHREQUAL:
+				case PLUSPLUS:
+				case MINUSMINUS:
+				case PLUSEQUAL:
+				case MINUSEQUAL:
+				case MULEQUAL:
+				case DIVEQUAL:
+				case MODEQUAL:
+				case ANDEQUAL:
+				case OREQUAL:
+				case ROOFEQUAL:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "Apricot", t.value);
+					break;
+				case EQUAL:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "OliveGreen", "$==$");
+					break;
+				case NOTEQUAL:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "OliveGreen", "$!=$");
+					break;
+				case LEQ:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "OliveGreen", "\\textless =");
+					break;
+				case GEQ:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "OliveGreen", "\\textgreater =");
+					break;
+				case LESS:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "OliveGreen", "\\textless");
+					break;
+				case GREATER:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "OliveGreen", "\\textgreater");
+					break;
+				case LESSMORE:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "OliveGreen", "\\textless\\textgreater");
+					break;
+
+
+				case ARROW:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "Fuchsia", "-\\textgreater");
+					break;
+				case TAIL:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "MidnightBlue", "\\textasciitilde");
+					break;
+				case BITAND:
+				case BITOR:
+				case ROOF:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "MidnightBlue", "\\textasciicircum");
+					break;
+				case SHL:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "MidnightBlue", "\\textless\\textless");
+					break;
+				case SHR:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "MidnightBlue", "\\textgreater\\textgreater");
+					break;
+
+				case ID:
+
+					i = 0;
+					fprintf(beamerFile, "\\textcolor{%s}{", "Violet");
+					while(i < yyleng) {
+						if (yytext[i] == '_') {
+							fprintf(beamerFile, "\\_");
+						} else {
+							fprintf(beamerFile, "%c", yytext[i]);
+						}
+						i++;
+					}
+
+					fprintf(beamerFile, "}");
+					break;
+				case STRING:
+					n_quote = true;
+					i = 1;
+					fprintf(beamerFile, "\\textcolor{%s}{\\say{", "Orchid");
+					while(n_quote) {
+
+						if(yytext[i] == '"'){
+							n_quote = false;
+						} else if(yytext[i] == '|'){
+							fprintf(beamerFile, " $\%c$ ", yytext[i]);
+						} else if(yytext[i] == '{' || yytext[i] == '}' || yytext[i] == '%' || yytext[i] == '&' || yytext[i] == '#' || yytext[i] == '_') {
+							fprintf(beamerFile, " \\%c ", yytext[i]);
+						} else if(yytext[i] == '\\') {
+							fprintf(beamerFile, " \\%s ", "textbackslash ");
+						} else if(yytext[i] == '~') {
+							fprintf(beamerFile, " \\%s ", "textasciitilde ");
+						} else if(yytext[i] == '<') {
+							fprintf(beamerFile, " \\%s ", "textless ");
+						} else if(yytext[i] == '>') {
+							fprintf(beamerFile, " \\%s ", "textgreater ");
+						} else if(yytext[i] == '^') {
+							fprintf(beamerFile, " \\%s ", "textasciicircum ");
+						} else {
+							fprintf(beamerFile, "%c", yytext[i]);
+						}
+						i++;
+					}
+					fprintf(beamerFile, "}}\n");
+					break;
+					case CHARACTER:
+						n_quote = true;
+						i = 1;
+						fprintf(beamerFile, "\\textcolor{%s}{\\lq ", "Orchid");
+						while(n_quote) {
+
+							if(yytext[i] == '\''){
+								n_quote = false;
+							} else if(yytext[i] == '|'){
+								fprintf(beamerFile, " $\%c$ ", yytext[i]);
+							} else if(yytext[i] == '{' || yytext[i] == '}' || yytext[i] == '%' || yytext[i] == '&' || yytext[i] == '#' || yytext[i] == '_') {
+								fprintf(beamerFile, " \\%c ", yytext[i]);
+							} else if(yytext[i] == '\\') {
+								fprintf(beamerFile, " \\%s ", "textbackslash");
+							} else if(yytext[i] == '~') {
+								fprintf(beamerFile, " \\%s ", "textasciitilde");
+							} else if(yytext[i] == '<') {
+								fprintf(beamerFile, " \\%s ", "textless");
+							} else if(yytext[i] == '>') {
+								fprintf(beamerFile, " \\%s ", "textgreater");
+							} else if(yytext[i] == '^') {
+								fprintf(beamerFile, " \\%s ", "textasciicircum");
+							} else {
+								fprintf(beamerFile, "%c", yytext[i]);
+							}
+							i++;
+						}
+						fprintf(beamerFile, "\\rq}\n");
+						break;
 
 				}
 				t = getNextToken(bufferFinal);
