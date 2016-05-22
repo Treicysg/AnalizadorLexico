@@ -1,7 +1,7 @@
-\documentclass[10, usernames, dvipsnames]{beamer}
+\documentclass[8, usernames, dvipsnames]{beamer}
 \usepackage{color}
 \usepackage{pgfplots}
-\pgfplotsset{width=10cm,compat=1.9}
+\pgfplotsset{width=11.5cm,compat=1.9}
 \usepackage{dirtytalk}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
@@ -26,8 +26,7 @@ Instituto Tecnol\'ogico de Costa Rica
 \frametitle{An\'alisis L\'exico y Flex} 
 El An\'alisis L\'exico consiste en descomponer un fuente de entrada en categor\'ias l\'exicas m\'inimas llamadas tokens.Un programa en Flex consiste b\'asicamente en una lista de expresiones regulares que definen acciones a ejecutar cuando ocurre un match.\end{frame} 
 \begin{frame}
-
- \textcolor{OrangeRed}{void}
+\textcolor{OrangeRed}{void}
 \textcolor{White}{\ }
 \textcolor{Violet}{open}\textcolor{Sepia}{\_}
 \textcolor{Violet}{file}\textcolor{SkyBlue}{(}
@@ -41,7 +40,7 @@ El An\'alisis L\'exico consiste en descomponer un fuente de entrada en categor\'
 \textcolor{White}{\ }
 \textcolor{Violet}{filename}\textcolor{White}{\ }
 \textcolor{SkyBlue}{[}
-\textcolor{RedViolet}{100}
+\textcolor{SeaGreen}{100}
 \textcolor{SkyBlue}{]}
 \textcolor{Salmon}{=}
 \textcolor{Sepia}{;}
@@ -83,216 +82,17 @@ El An\'alisis L\'exico consiste en descomponer un fuente de entrada en categor\'
 
  \textcolor{SkyBlue}{\} }
 
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{read}\textcolor{Sepia}{\_}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{open}\textcolor{Sepia}{\_}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
  \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{len}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{ftell}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SpringGreen}{/}
-\textcolor{SpringGreen}{/}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{malloc}\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{sizeof}
-\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{char}
-\textcolor{SkyBlue}{)}
-\textcolor{White}{\ }
-\textcolor{SpringGreen}{*}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{len}\textcolor{SpringGreen}{+}
-\textcolor{RedViolet}{1}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{else}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{printf}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{Problema}\textcolor{White}{\ }
-\textcolor{Violet}{al}\textcolor{White}{\ }
-\textcolor{Violet}{abrir}\textcolor{White}{\ }
-\textcolor{Violet}{el}\textcolor{White}{\ }
-\textcolor{Violet}{archivo}\textcolor{Gray}{\textbackslash }
-\textcolor{Violet}{n}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{exit}\textcolor{SkyBlue}{(}
-\textcolor{RedViolet}{0}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- 
- \textcolor{SkyBlue}{\} }
-
- \end{frame}
-\begin{frame}
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{close}\textcolor{Sepia}{\_}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{fclose}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{buffer}\textcolor{Sepia}{\_}
-\textcolor{OrangeRed}{char}
-\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{char}
-\textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{charPos}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{]}
-\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- 
- \end{frame}
-\begin{frame}
-\textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{clear}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{memset}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{RedViolet}{0}
-\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{RedViolet}{5}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{charPos}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{RedViolet}{0}
-\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Violet}{check}\textcolor{Sepia}{\_}
-\textcolor{Violet}{reserved}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{int}
-\textcolor{White}{\ }
-\textcolor{Violet}{letter}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{bool}\textcolor{White}{\ }
-\textcolor{Violet}{reserved}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SpringGreen}{/}
-\textcolor{SpringGreen}{/}
-\textcolor{Violet}{Recorrer}\textcolor{White}{\ }
-\textcolor{Violet}{el}\textcolor{White}{\ }
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Violet}{buffer}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{revisando}\textcolor{White}{\ }
-\textcolor{Violet}{su}\textcolor{White}{\ }
-\textcolor{Violet}{primera}\textcolor{White}{\ }
-\textcolor{Violet}{letra}
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{for}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{letter}\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{RedViolet}{0}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{letter}\textcolor{White}{\ }
-\textcolor{OliveGreen}{\textless}
-\textcolor{White}{\ }
-\textcolor{Violet}{len}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tb}\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{letter}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{White}{\ }
+\begin{frame} 
+\frametitle{Histograma} 
+\begin{tikzpicture} 
+\begin{axis}[ 
+symbolic x coords={Reservadas, Identificadores,Literales,Operadores, Delimitadores},xtick=data
+]
+\addplot[ybar,fill=Turquoise]  
+coordinates {
+(Reservadas,2)(Identificadores,14)(Literales,1)(Operadores,3)(Delimitadores,19)};
+\end{axis}
+\end{tikzpicture}
+\end{frame} 
+\end{document}
