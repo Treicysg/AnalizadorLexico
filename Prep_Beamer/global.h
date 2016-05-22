@@ -41,4 +41,4 @@ void count_tokens(int pToken);
 bool isInserted(int pTokenType);
 void insertTokenType(int pTokenType);
 void checkRegisteredTokens();
-const char * getTokenName(int tkn_type);
+void getTokenName(int tkn_type, char * to_filled);
