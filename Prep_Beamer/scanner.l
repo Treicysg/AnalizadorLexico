@@ -80,6 +80,7 @@ string 		\"(\\.|[^"])*\"
 "\\" { strcpy(name,yytext); return BACKSLASH;}
 "/*" { strcpy(name,yytext);return COMMENTOPEN;}
 "*/" { strcpy(name,yytext);return COMMENTCLOSE;}
+"//" { strcpy(name,yytext);return UNCLOSEDCOMMENT;}
 
 ":" { delimiters ++;strcpy(name,yytext); return COLON;}
 "?" { strcpy(name,yytext); return QUESTIONMARK;}
@@ -592,6 +593,12 @@ void toHex(FILE* file) {
 				next_token = yylex();
 			}
 			printf("Encontre el final del comment %s\n", name);
+			next_token = yylex();
+		}
+		if(next_token == UNCLOSEDCOMMENT){
+			while(next_token != NEWLINE){
+				next_token = yylex();
+			}
 			next_token = yylex();
 		}
 		estructura identifiedToken;
