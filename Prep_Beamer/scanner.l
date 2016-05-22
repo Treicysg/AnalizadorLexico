@@ -8,6 +8,11 @@
 	#include "global.h"
 	char name[512] = "";
 	int insertedTokens = 0;
+	int palabras_reservadas = 0;
+	int identifiers = 0;
+	int literals = 0;
+	int operators = 0;
+	int delimiters = 0;
 
 %}
 
@@ -28,105 +33,105 @@ string 		\"(\\.|[^"])*\"
 char 		\'(\\.|[^"])*\'
 %%
 
-"<<=" { strcpy(name,yytext); return SHLEQUAL;}
-">>=" { strcpy(name,yytext); return SHREQUAL;}
-"++" { strcpy(name,yytext); return PLUSPLUS;}
-"--" { strcpy(name,yytext); return MINUSMINUS;}
-"+=" { strcpy(name,yytext); return PLUSEQUAL;}
-"-=" { strcpy(name,yytext); return MINUSEQUAL;}
-"*=" { strcpy(name,yytext); return MULEQUAL;}
-"/=" { strcpy(name,yytext); return DIVEQUAL;}
-"%=" { strcpy(name,yytext); return MODEQUAL;}
-"&=" { strcpy(name,yytext); return ANDEQUAL;}
-"|=" { strcpy(name,yytext); return OREQUAL;}
-"^="  { strcpy(name,yytext); return ROOFEQUAL;}
-"->" { strcpy(name,yytext); return ARROW;}
-"==" { strcpy(name,yytext); return EQUAL;}
-"!=" { strcpy(name,yytext); return NOTEQUAL;}
-"&&" { strcpy(name,yytext); return AND;}
-"||" { strcpy(name,yytext); return OR;}
-"<<" { strcpy(name,yytext); return SHL;}
-">>" { strcpy(name,yytext); return SHR;}
-"<=" { strcpy(name,yytext); return LEQ; }
-">=" { strcpy(name,yytext); return GEQ;}
-"<>" { strcpy(name,yytext); return LESSMORE;}
-"=" { strcpy(name,yytext); return ASSIGN;}
-"+" { strcpy(name,yytext); return PLUS;   }
-"-" { strcpy(name,yytext); return MINUS; }
-"*" { strcpy(name,yytext); return MUL; }
-"/" { strcpy(name,yytext); return DIV; }
-"&" { strcpy(name,yytext); return BITAND;}
-"|" { strcpy(name,yytext); return BITOR;}
-"^" { strcpy(name,yytext); return ROOF;}
-"~" { strcpy(name,yytext); return TAIL;}
-"%" { strcpy(name,yytext); return MOD;}
-"<" { strcpy(name,yytext); return LESS;}
-">" { strcpy(name,yytext); return GREATER;}
+"<<=" {operators ++; strcpy(name,yytext); return SHLEQUAL;}
+">>=" { operators ++;strcpy(name,yytext); return SHREQUAL;}
+"++" { operators ++;strcpy(name,yytext); return PLUSPLUS;}
+"--" { operators ++;strcpy(name,yytext); return MINUSMINUS;}
+"+=" { operators ++;strcpy(name,yytext); return PLUSEQUAL;}
+"-=" { operators ++;strcpy(name,yytext); return MINUSEQUAL;}
+"*=" { operators ++;strcpy(name,yytext); return MULEQUAL;}
+"/=" { operators ++;strcpy(name,yytext); return DIVEQUAL;}
+"%=" { operators ++;strcpy(name,yytext); return MODEQUAL;}
+"&=" { operators ++;strcpy(name,yytext); return ANDEQUAL;}
+"|=" { operators ++;strcpy(name,yytext); return OREQUAL;}
+"^="  { operators ++;strcpy(name,yytext); return ROOFEQUAL;}
+"->" { operators ++;strcpy(name,yytext); return ARROW;}
+"==" { operators ++;strcpy(name,yytext); return EQUAL;}
+"!=" { operators ++;strcpy(name,yytext); return NOTEQUAL;}
+"&&" { operators ++;strcpy(name,yytext); return AND;}
+"||" { operators ++;strcpy(name,yytext); return OR;}
+"<<" { operators ++;strcpy(name,yytext); return SHL;}
+">>" { operators ++;strcpy(name,yytext); return SHR;}
+"<=" { operators ++;strcpy(name,yytext); return LEQ; }
+">=" { operators ++;strcpy(name,yytext); return GEQ;}
+"<>" { operators ++;strcpy(name,yytext); return LESSMORE;}
+"=" { operators ++;strcpy(name,yytext); return ASSIGN;}
+"+" { operators ++;strcpy(name,yytext); return PLUS;   }
+"-" { operators ++;strcpy(name,yytext); return MINUS; }
+"*" { operators ++;strcpy(name,yytext); return MUL; }
+"/" { operators ++;strcpy(name,yytext); return DIV; }
+"&" { operators ++;strcpy(name,yytext); return BITAND;}
+"|" { operators ++;strcpy(name,yytext); return BITOR;}
+"^" { operators ++;strcpy(name,yytext); return ROOF;}
+"~" { operators ++;strcpy(name,yytext); return TAIL;}
+"%" { operators ++;strcpy(name,yytext); return MOD;}
+"<" { operators ++;strcpy(name,yytext); return LESS;}
+">" { operators ++;strcpy(name,yytext); return GREATER;}
 {string} { strcpy(name,yytext); return STRING;}
 {char} { strcpy(name,yytext); return CHARACTER;}
 "_" { strcpy(name,yytext); return UNDERSCORE;}
 
 "'" { strcpy(name,yytext); return SINGLEQUOTE;}
-"(" { strcpy(name,yytext); return LPAREN;}
-")" { strcpy(name,yytext); return RPAREN;}
-"{" { strcpy(name,yytext); return CORCHL;}
-"}" { strcpy(name,yytext); return CORCHR;}
-"[" { strcpy(name,yytext); return LBRACKET;}
-"]" { strcpy(name,yytext); return RBRACKET;}
+"(" { delimiters ++;strcpy(name,yytext); return LPAREN;}
+")" { delimiters ++;strcpy(name,yytext); return RPAREN;}
+"{" { delimiters ++;strcpy(name,yytext); return CORCHL;}
+"}" { delimiters ++;strcpy(name,yytext); return CORCHR;}
+"[" { delimiters ++;strcpy(name,yytext); return LBRACKET;}
+"]" { delimiters ++;strcpy(name,yytext); return RBRACKET;}
 "\\" { strcpy(name,yytext); return BACKSLASH;}
 "/*" { strcpy(name,yytext);return COMMENTOPEN;}
 "*/" { strcpy(name,yytext);return COMMENTCLOSE;}
 
-":" { strcpy(name,yytext); return COLON;}
+":" { delimiters ++;strcpy(name,yytext); return COLON;}
 "?" { strcpy(name,yytext); return QUESTIONMARK;}
-"!" { strcpy(name,yytext); return NOT;}
-";" { strcpy(name,yytext); return SEMICOLON;}
-"," { strcpy(name,yytext); return COMMA;}
-"." { strcpy(name,yytext); return PERIOD;}
+"!" { operators++; strcpy(name,yytext); return NOT;}
+";" { delimiters ++;strcpy(name,yytext); return SEMICOLON;}
+"," { delimiters ++;strcpy(name,yytext); return COMMA;}
+"." { delimiters ++;strcpy(name,yytext); return PERIOD;}
 "\"" { strcpy(name,yytext); return DOUBLEQUOTE;}
 
-"if" {strcpy(name,yytext); return IFSYS; }
-"else" {strcpy(name,yytext); return ELSESYS;}
-"while" {strcpy(name,yytext); return WHILELOOP;}
-"for" {strcpy(name,yytext); return FORLOOP;}
-"auto" { strcpy(name,yytext); return AUTO;}
-"break" { strcpy(name,yytext); return BREAK;}
-"case" { strcpy(name,yytext); return CASE;}
-"char" { strcpy(name,yytext); return CHAR;}
-"const" { strcpy(name,yytext); return CONST;}
-"continue" {strcpy(name,yytext); return CONTINUE;}
+"if" { palabras_reservadas ++;strcpy(name,yytext); return IFSYS; }
+"else" { palabras_reservadas ++;strcpy(name,yytext); return ELSESYS;}
+"while" { palabras_reservadas ++;strcpy(name,yytext); return WHILELOOP;}
+"for" { palabras_reservadas ++;strcpy(name,yytext); return FORLOOP;}
+"auto" { palabras_reservadas ++; strcpy(name,yytext); return AUTO;}
+"break" { palabras_reservadas ++; strcpy(name,yytext); return BREAK;}
+"case" { palabras_reservadas ++; strcpy(name,yytext); return CASE;}
+"char" { palabras_reservadas ++; strcpy(name,yytext); return CHAR;}
+"const" { palabras_reservadas ++; strcpy(name,yytext); return CONST;}
+"continue" { palabras_reservadas ++;strcpy(name,yytext); return CONTINUE;}
 
-"default" { strcpy(name,yytext); return DEFAULT;}
-"do" {strcpy(name,yytext); return DO;}
-"double" {strcpy(name,yytext); return DOUBLE;}
-"enum" {strcpy(name,yytext); return ENUM;}
-"extern" {strcpy(name,yytext); return EXTERN;}
-"float" { strcpy(name,yytext); return FLOAT;}
-"goto" { strcpy(name,yytext); return GOTO;}
-"int" { strcpy(name,yytext); return INT;}
+"default" { palabras_reservadas ++; strcpy(name,yytext); return DEFAULT;}
+"do" { palabras_reservadas ++;strcpy(name,yytext); return DO;}
+"double" { palabras_reservadas ++;strcpy(name,yytext); return DOUBLE;}
+"enum" { palabras_reservadas ++;strcpy(name,yytext); return ENUM;}
+"extern" { palabras_reservadas ++;strcpy(name,yytext); return EXTERN;}
+"float" { palabras_reservadas ++; strcpy(name,yytext); return FLOAT;}
+"goto" { palabras_reservadas ++; strcpy(name,yytext); return GOTO;}
+"int" { palabras_reservadas ++; strcpy(name,yytext); return INT;}
 
-"long" {strcpy(name,yytext); return LONG;}
-"register" { strcpy(name,yytext); return REGISTER;}
-"return" { return RETURN;}
-"short" { strcpy(name,yytext); return SHORT;}
-"signed" { strcpy(name,yytext); return SIGNED;}
-"sizeof" { strcpy(name,yytext); return SIZEOF;}
-"static" {strcpy(name,yytext); return STATIC;}
-"struct" {strcpy(name,yytext); return STRUCT;}
-"switch" {strcpy(name,yytext); return SWITCH;}
-"typedef" {strcpy(name,yytext); return TYPEDEF;}
-"union" { strcpy(name,yytext); return UNION;}
-"unsigned" { strcpy(name,yytext); return UNSIGNED;}
-"void" { strcpy(name,yytext); return VOID;}
-"volatile" {strcpy(name,yytext); return VOLATILE;}
+"long" { palabras_reservadas ++;strcpy(name,yytext); return LONG;}
+"register" { palabras_reservadas ++; strcpy(name,yytext); return REGISTER;}
+"return" { palabras_reservadas ++; return RETURN;}
+"short" { palabras_reservadas ++; strcpy(name,yytext); return SHORT;}
+"signed" { palabras_reservadas ++; strcpy(name,yytext); return SIGNED;}
+"sizeof" { palabras_reservadas ++; strcpy(name,yytext); return SIZEOF;}
+"static" { palabras_reservadas ++;strcpy(name,yytext); return STATIC;}
+"struct" { palabras_reservadas ++;strcpy(name,yytext); return STRUCT;}
+"switch" { palabras_reservadas ++;strcpy(name,yytext); return SWITCH;}
+"typedef" { palabras_reservadas ++;strcpy(name,yytext); return TYPEDEF;}
+"union" { palabras_reservadas ++; strcpy(name,yytext); return UNION;}
+"unsigned" { palabras_reservadas ++; strcpy(name,yytext); return UNSIGNED;}
+"void" { palabras_reservadas ++; strcpy(name,yytext); return VOID;}
+"volatile" { palabras_reservadas ++;strcpy(name,yytext); return VOLATILE;}
 
  <<EOF>> { strcpy(name,yytext); return EOF;}
  [\t] 	{strcpy(name,yytext); return TAB;}
  " " { strcpy(name,yytext); return SPACE;}
 [\n]	{strcpy(name,yytext); return NEWLINE;}
 
-{letter}({letter}|{number}|{number})* { strcpy(name,yytext); return ID;}
-{number}+ { strcpy(name,yytext); return NUMBER;}
+{letter}({letter}|{number}|{number})* { identifiers ++; strcpy(name,yytext); return ID;}
+{number}+ { literals ++; strcpy(name,yytext); return NUMBER;}
 .	{ strcpy(name,yytext); return UNKNOWN;}
 
 
@@ -134,10 +139,11 @@ char 		\'(\\.|[^"])*\'
 	/* --------------------------------------------------------------------------------------------------Code */
 
 	void checkRegisteredTokens(){
-		int i;
-		for(i=0; i < insertedTokens; i++){
-			printf("token type = %d --> %d\n", token_type[i],token_quantity[i]);
-		}
+		printf("PALABRAS RESERVADAS ---> %d\n", palabras_reservadas);
+		printf("IDENTIFICADORES ---> %d\n", identifiers);
+		printf("LITERALS ---> %d\n", literals);
+		printf("OPERADORES ---> %d\n", operators);
+		printf("DELIMITADORES ---> %d\n", delimiters);
 	}
 
 	void count_tokens(int pToken){
@@ -565,6 +571,5 @@ char 		\'(\\.|[^"])*\'
 		strcpy(identifiedToken.value,name);
 
 		printf("%s", identifiedToken.value);
-		count_tokens(identifiedToken.token_type);
 		return identifiedToken;
 	}

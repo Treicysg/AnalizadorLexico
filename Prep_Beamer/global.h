@@ -7,6 +7,8 @@ FILE *file;
 int token_type[105];
 int token_quantity[105];
 
+
+
 /*--------------------------------------------Contiene todos los datos globales---------------------------------------*/
 /*Representa el conjunto de tipos de tokens*/
 typedef enum token_types{
