@@ -7,7 +7,7 @@
 
 int main( int argc, char *argv[] )
 {
-  //readFile();
+  readFile();
   //clear_token_buffer();
   scanFile();
   //createBeamer();

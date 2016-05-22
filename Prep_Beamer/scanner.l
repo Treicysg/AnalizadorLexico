@@ -30,7 +30,7 @@ number         [0-9]
 letter        [a-zA-Z]
 under 		  "_"
 string 		\"(\\.|[^"])*\"
-char 		\'(\\.|[^"])*\'
+
 %%
 
 "<<=" {operators ++; strcpy(name,yytext); return SHLEQUAL;}
@@ -68,7 +68,6 @@ char 		\'(\\.|[^"])*\'
 "<" { operators ++;strcpy(name,yytext); return LESS;}
 ">" { operators ++;strcpy(name,yytext); return GREATER;}
 {string} { strcpy(name,yytext); return STRING;}
-{char} { strcpy(name,yytext); return CHARACTER;}
 "_" { strcpy(name,yytext); return UNDERSCORE;}
 
 "'" { strcpy(name,yytext); return SINGLEQUOTE;}
@@ -109,6 +108,25 @@ char 		\'(\\.|[^"])*\'
 "float" { palabras_reservadas ++; strcpy(name,yytext); return FLOAT;}
 "goto" { palabras_reservadas ++; strcpy(name,yytext); return GOTO;}
 "int" { palabras_reservadas ++; strcpy(name,yytext); return INT;}
+
+
+"printf" { palabras_reservadas ++; strcpy(name,yytext); return PRINTF;}
+"fprintf" {palabras_reservadas ++; strcpy(name,yytext); return FPRINTF;}
+"fopen" {palabras_reservadas ++; strcpy(name,yytext); return FOPEN;}
+"fclose" {palabras_reservadas ++; strcpy(name,yytext); return FCLOSE;}
+"system" {palabras_reservadas ++; strcpy(name,yytext); return SYSTEM;}
+"strcpy" {palabras_reservadas ++; strcpy(name,yytext); return STRCPY;}
+"strcmp" {palabras_reservadas ++; strcpy(name,yytext); return STRCMP;}
+"exit" {palabras_reservadas ++; strcpy(name,yytext); return EXIT;}
+"true" {palabras_reservadas ++; strcpy(name,yytext); return TRUE;}
+"false" {palabras_reservadas ++; strcpy(name,yytext); return FALSE;}
+"toupper" {palabras_reservadas ++; strcpy(name,yytext); return TOUPPER;}
+"feof" {palabras_reservadas ++; strcpy(name,yytext); return FEOF;}
+"getc" {palabras_reservadas ++; strcpy(name,yytext); return GETC;}
+"memset" {palabras_reservadas ++; strcpy(name,yytext); return MEMSET;}
+"malloc" {palabras_reservadas ++; strcpy(name,yytext); return MALLOC;}
+"calloc" {palabras_reservadas ++; strcpy(name,yytext); return CALLOC;}
+
 
 "long" { palabras_reservadas ++;strcpy(name,yytext); return LONG;}
 "register" { palabras_reservadas ++; strcpy(name,yytext); return REGISTER;}
@@ -174,6 +192,16 @@ char 		\'(\\.|[^"])*\'
 		insertedTokens++;
 
 	}
+
+void toHex(FILE* file) {
+	char outword[33];
+	int i,len;
+	len = strlen(yytext);
+	for(i = 0; i<len; i++) {
+		sprintf(outword + i * 2, "%02X", yytext[i]);
+	}
+	fprintf(file, " \\textcolor{Red}{%s}\n",  outword);
+}
 
 	void scanFile(){
 		file = fopen( "processedFile.txt", "r" );
@@ -305,6 +333,26 @@ char 		\'(\\.|[^"])*\'
 					slide_lines++;
 					break;
 
+				case FPRINTF:
+				case PRINTF:
+				case FOPEN:
+				case FCLOSE:
+				case MALLOC:
+				case SYSTEM:
+				case CALLOC:
+				case STRCPY:
+				case STRCMP:
+				case EXIT:
+				case TRUE:
+				case FALSE:
+				case TOUPPER:
+				case FEOF:
+				case GETC:
+				case MEMSET:
+					fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "OrangeRed", t.value);
+					break;
+
+
 				case COLON:
 	 			case SEMICOLON:
 	 			case COMMA:
@@ -344,6 +392,9 @@ char 		\'(\\.|[^"])*\'
 	 			case DOUBLEQUOTE:
 	 				fprintf(beamerFile, "\\textcolor{%s}{%s}\n", "BurntOrange", t.value);
 	 				break;
+				case MOD:
+					fprintf(beamerFile, "\\textcolor{%s}{\\%s}\n", "Apricot", t.value);
+					break;
 
 				case SHLEQUAL:
 				case SHREQUAL:
@@ -472,6 +523,9 @@ char 		\'(\\.|[^"])*\'
 							i++;
 						}
 						fprintf(beamerFile, "\\rq}\n");
+						break;
+					case UNKNOWN:
+						toHex(beamerFile);
 						break;
 
 				}

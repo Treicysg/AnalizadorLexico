@@ -26,7 +26,8 @@ Instituto Tecnol\'ogico de Costa Rica
 \frametitle{An\'alisis L\'exico y Flex} 
 El An\'alisis L\'exico consiste en descomponer un fuente de entrada en categor\'ias l\'exicas m\'inimas llamadas tokens.Un programa en Flex consiste b\'asicamente en una lista de expresiones regulares que definen acciones a ejecutar cuando ocurre un match.\end{frame} 
 \begin{frame}
-\textcolor{OrangeRed}{void}
+
+ \textcolor{OrangeRed}{void}
 \textcolor{White}{\ }
 \textcolor{Violet}{open}\textcolor{Sepia}{\_}
 \textcolor{Violet}{file}\textcolor{SkyBlue}{(}
@@ -48,7 +49,8 @@ El An\'alisis L\'exico consiste en descomponer un fuente de entrada en categor\'
  \textcolor{White}{\ }
 \textcolor{White}{\ }
 \textcolor{White}{\ }
-\textcolor{Violet}{printf}\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{printf}
+\textcolor{SkyBlue}{(}
 \textcolor{White}{\ }
 \textcolor{Violet}{Enter}\textcolor{White}{\ }
 \textcolor{Violet}{a}\textcolor{White}{\ }
@@ -62,6 +64,7 @@ El An\'alisis L\'exico consiste en descomponer un fuente de entrada en categor\'
 \textcolor{White}{\ }
 \textcolor{White}{\ }
 \textcolor{Violet}{scanf}\textcolor{SkyBlue}{(}
+\textcolor{Apricot}{\%}
 \textcolor{Violet}{s}\textcolor{Sepia}{,}
 \textcolor{Violet}{filename}\textcolor{SkyBlue}{)}
 \textcolor{Sepia}{;}
@@ -72,7 +75,8 @@ El An\'alisis L\'exico consiste en descomponer un fuente de entrada en categor\'
 \textcolor{Violet}{file}\textcolor{White}{\ }
 \textcolor{Salmon}{=}
 \textcolor{White}{\ }
-\textcolor{Violet}{fopen}\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{fopen}
+\textcolor{SkyBlue}{(}
 \textcolor{White}{\ }
 \textcolor{Violet}{filename}\textcolor{Sepia}{,}
 \textcolor{White}{\ }
@@ -80,6 +84,1012 @@ El An\'alisis L\'exico consiste en descomponer un fuente de entrada en categor\'
 \textcolor{SkyBlue}{)}
 \textcolor{Sepia}{;}
 
+ \textcolor{SkyBlue}{\} }
+
+ 
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{read}\textcolor{Sepia}{\_}
+\textcolor{Violet}{file}\textcolor{SkyBlue}{(}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{Violet}{open}\textcolor{Sepia}{\_}
+\textcolor{Violet}{file}\textcolor{SkyBlue}{(}
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \end{frame}
+\begin{frame}
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{if}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{file}\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{Violet}{len}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{Violet}{ftell}\textcolor{SkyBlue}{(}
+\textcolor{Violet}{file}\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SpringGreen}{/}
+\textcolor{SpringGreen}{/}
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{malloc}
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{sizeof}
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{char}
+\textcolor{SkyBlue}{)}
+\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{len}\textcolor{SpringGreen}{+}
+\textcolor{SeaGreen}{1}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{else}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{printf}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{Problema}\textcolor{White}{\ }
+\textcolor{Violet}{al}\textcolor{White}{\ }
+\textcolor{Violet}{abrir}\textcolor{White}{\ }
+\textcolor{Violet}{el}\textcolor{White}{\ }
+\textcolor{Violet}{archivo}\textcolor{Gray}{\textbackslash }
+\textcolor{Violet}{n}\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{exit}
+\textcolor{SkyBlue}{(}
+\textcolor{SeaGreen}{0}
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ 
+ \textcolor{SkyBlue}{\} }
+
+ \end{frame}
+\begin{frame}
+
+ 
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{close}\textcolor{Sepia}{\_}
+\textcolor{Violet}{file}\textcolor{SkyBlue}{(}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{fclose}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{file}\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{SkyBlue}{\} }
+
+ 
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{buffer}\textcolor{Sepia}{\_}
+\textcolor{OrangeRed}{char}
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{char}
+\textcolor{White}{\ }
+\textcolor{Violet}{c}\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{charPos}\textcolor{Apricot}{++}
+\textcolor{SkyBlue}{]}
+\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{Violet}{c}\textcolor{Sepia}{;}
+
+ \textcolor{SkyBlue}{\} }
+
+ 
+ \end{frame}
+\begin{frame}
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{clear}\textcolor{Sepia}{\_}
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{(}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{memset}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{Sepia}{,}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{0}
+\textcolor{Sepia}{,}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{5}
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{Violet}{charPos}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{0}
+\textcolor{Sepia}{;}
+
+ \textcolor{SkyBlue}{\} }
+
+ 
+ \textcolor{Violet}{token}\textcolor{White}{\ }
+\textcolor{Violet}{check}\textcolor{Sepia}{\_}
+\textcolor{Violet}{reserved}\textcolor{SkyBlue}{(}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{letter}\textcolor{Sepia}{,}
+\textcolor{White}{\ }
+\textcolor{Violet}{c}\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{Violet}{bool}\textcolor{White}{\ }
+\textcolor{Violet}{reserved}\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{SpringGreen}{/}
+\textcolor{SpringGreen}{/}
+\textcolor{Violet}{Recorrer}\textcolor{White}{\ }
+\textcolor{Violet}{el}\textcolor{White}{\ }
+\textcolor{Violet}{token}\textcolor{White}{\ }
+\textcolor{Violet}{buffer}\textcolor{Sepia}{,}
+\textcolor{White}{\ }
+\textcolor{Violet}{revisando}\textcolor{White}{\ }
+\textcolor{Violet}{su}\textcolor{White}{\ }
+\textcolor{Violet}{primera}\textcolor{White}{\ }
+\textcolor{Violet}{letra}
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{for}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{letter}\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{0}
+\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{Violet}{letter}\textcolor{White}{\ }
+\textcolor{OliveGreen}{\textless}
+\textcolor{White}{\ }
+\textcolor{Violet}{len}\textcolor{Sepia}{\_}
+\textcolor{Violet}{tb}\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{Violet}{letter}\textcolor{Apricot}{++}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \end{frame}
+\begin{frame}
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{if}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{White}{\ }
+\textcolor{BurntOrange}{'}
+\textcolor{Violet}{B}\textcolor{BurntOrange}{'}
+\textcolor{OliveGreen}{$==$}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{toupper}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{letter}\textcolor{SkyBlue}{]}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{Violet}{reserved}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{true}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{for}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{c}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{0}
+\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{Violet}{c}\textcolor{White}{\ }
+\textcolor{OliveGreen}{\textless}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{5}
+\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{Violet}{c}\textcolor{Apricot}{++}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{if}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{begin}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{c}\textcolor{SkyBlue}{]}
+\textcolor{White}{\ }
+\textcolor{OliveGreen}{$!=$}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{toupper}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{letter}\textcolor{Apricot}{++}
+\textcolor{SkyBlue}{]}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{Violet}{reserved}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{false}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{break}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{if}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{reserved}\textcolor{White}{\ }
+\textcolor{OliveGreen}{$==$}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{true}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{	}
+\textcolor{White}{\ }
+\textcolor{Violet}{BEGIN}\textcolor{Sepia}{;}
+
+ \end{frame}
+\begin{frame}
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+\textcolor{OrangeRed}{else}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{	}
+\textcolor{White}{\ }
+\textcolor{Violet}{ID}\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ 
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{break}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+\textcolor{OrangeRed}{else}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{if}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{BurntOrange}{'}
+\textcolor{Violet}{E}\textcolor{BurntOrange}{'}
+\textcolor{White}{\ }
+\textcolor{OliveGreen}{$==$}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{toupper}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{letter}\textcolor{SkyBlue}{]}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{Violet}{reserved}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{true}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{for}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{c}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{0}
+\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{Violet}{c}\textcolor{White}{\ }
+\textcolor{OliveGreen}{\textless}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{3}
+\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{Violet}{c}\textcolor{Apricot}{++}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{if}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{end}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{c}\textcolor{SkyBlue}{]}
+\textcolor{White}{\ }
+\textcolor{OliveGreen}{$!=$}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{toupper}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{letter}\textcolor{Apricot}{++}
+\textcolor{SkyBlue}{]}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{Violet}{reserved}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{false}
+\textcolor{Sepia}{;}
+
+ \end{frame}
+\begin{frame}
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{break}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{if}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{reserved}\textcolor{White}{\ }
+\textcolor{OliveGreen}{$==$}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{true}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{	}
+\textcolor{White}{\ }
+\textcolor{Violet}{END}\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+\textcolor{OrangeRed}{else}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{	}
+\textcolor{White}{\ }
+\textcolor{Violet}{ID}\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{break}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+\textcolor{OrangeRed}{else}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{if}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{BurntOrange}{'}
+\textcolor{Violet}{W}\textcolor{BurntOrange}{'}
+\textcolor{White}{\ }
+\textcolor{OliveGreen}{$==$}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{toupper}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{letter}\textcolor{SkyBlue}{]}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \end{frame}
+\begin{frame}
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{Violet}{reserved}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{true}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{for}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{c}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{0}
+\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{Violet}{c}\textcolor{White}{\ }
+\textcolor{OliveGreen}{\textless}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{5}
+\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{Violet}{c}\textcolor{Apricot}{++}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{if}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{write}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{c}\textcolor{SkyBlue}{]}
+\textcolor{White}{\ }
+\textcolor{OliveGreen}{$!=$}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{toupper}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{letter}\textcolor{Apricot}{++}
+\textcolor{SkyBlue}{]}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{Violet}{reserved}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{false}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{break}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{if}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{reserved}\textcolor{White}{\ }
+\textcolor{OliveGreen}{$==$}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{true}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{	}
+\textcolor{White}{\ }
+\textcolor{Violet}{WRITE}\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+\textcolor{OrangeRed}{else}
+\textcolor{SkyBlue}{\{ }
+
+ \end{frame}
+\begin{frame}
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{	}
+\textcolor{White}{\ }
+\textcolor{Violet}{ID}\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{break}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+\textcolor{OrangeRed}{else}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{if}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{BurntOrange}{'}
+\textcolor{Violet}{R}\textcolor{BurntOrange}{'}
+\textcolor{White}{\ }
+\textcolor{OliveGreen}{$==$}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{toupper}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{letter}\textcolor{SkyBlue}{]}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{Violet}{reserved}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{true}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{for}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{c}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{0}
+\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{Violet}{c}\textcolor{White}{\ }
+\textcolor{OliveGreen}{\textless}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{4}
+\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{Violet}{c}\textcolor{Apricot}{++}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{if}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{read}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{c}\textcolor{SkyBlue}{]}
+\textcolor{White}{\ }
+\textcolor{OliveGreen}{$!=$}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{toupper}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{letter}\textcolor{Apricot}{++}
+\textcolor{SkyBlue}{]}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{Violet}{reserved}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{false}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{break}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \end{frame}
+\begin{frame}
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{if}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{reserved}\textcolor{White}{\ }
+\textcolor{OliveGreen}{$==$}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{true}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{	}
+\textcolor{White}{\ }
+\textcolor{Violet}{READ}\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+\textcolor{OrangeRed}{else}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{	}
+\textcolor{White}{\ }
+\textcolor{Violet}{ID}\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{break}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+\textcolor{OrangeRed}{else}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{	}
+\textcolor{White}{\ }
+\textcolor{Violet}{ID}\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \end{frame}
+\begin{frame}
+\textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \textcolor{SkyBlue}{\} }
+
+ 
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{lexical}\textcolor{Sepia}{\_}
+\textcolor{Violet}{error}\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{character}\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{printf}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{LEXICAL}\textcolor{White}{\ }
+\textcolor{Violet}{ERROR}\textcolor{White}{\ }
+\textcolor{Apricot}{\%}
+\textcolor{Violet}{d}\textcolor{Gray}{\textbackslash }
+\textcolor{Violet}{n}\textcolor{Sepia}{,}
+\textcolor{White}{\ }
+\textcolor{Violet}{character}\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{SkyBlue}{\} }
+
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{print}\textcolor{Sepia}{\_}
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{(}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{i}\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{printf}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{IMPRIMIENDO}\textcolor{White}{\ }
+\textcolor{Violet}{TOKEN}\textcolor{White}{\ }
+\textcolor{Violet}{BUFFER}\textcolor{Gray}{\textbackslash }
+\textcolor{Violet}{n}\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{SpringGreen}{/}
+\textcolor{SpringGreen}{/}
+\textcolor{Violet}{Prueba}\textcolor{White}{\ }
+\textcolor{Violet}{para}\textcolor{White}{\ }
+\textcolor{Violet}{ver}\textcolor{White}{\ }
+\textcolor{Violet}{que}\textcolor{White}{\ }
+\textcolor{Violet}{hay}\textcolor{White}{\ }
+\textcolor{Violet}{en}\textcolor{White}{\ }
+\textcolor{Violet}{el}\textcolor{White}{\ }
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{Sepia}{.}
+
+ \end{frame}
+\begin{frame}
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{for}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{i}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{0}
+\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{Violet}{i}\textcolor{White}{\ }
+\textcolor{OliveGreen}{\textless =}
+\textcolor{Violet}{len}\textcolor{Sepia}{\_}
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{Violet}{i}\textcolor{Apricot}{++}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{printf}
+\textcolor{SkyBlue}{(}
+\textcolor{Apricot}{\%}
+\textcolor{Violet}{d}\textcolor{Gray}{\textbackslash }
+\textcolor{Violet}{n}\textcolor{Sepia}{,}
+\textcolor{White}{\ }
+\textcolor{Violet}{token}\textcolor{Sepia}{\_}
+\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
+\textcolor{Violet}{i}\textcolor{SkyBlue}{]}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ \textcolor{SkyBlue}{\} }
+
+ 
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{get}\textcolor{Sepia}{\_}
+\textcolor{Violet}{tokens}\textcolor{SkyBlue}{(}
+\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{Violet}{read}\textcolor{Sepia}{\_}
+\textcolor{Violet}{file}\textcolor{SkyBlue}{(}
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{Violet}{token}\textcolor{White}{\ }
+\textcolor{Violet}{ejemplo}\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{while}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{filePos}\textcolor{White}{\ }
+\textcolor{OliveGreen}{$!=$}
+\textcolor{White}{\ }
+\textcolor{Violet}{len}\textcolor{SkyBlue}{)}
+\textcolor{SkyBlue}{\{ }
+
+ \textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{Violet}{ejemplo}\textcolor{White}{\ }
+\textcolor{Salmon}{=}
+\textcolor{White}{\ }
+\textcolor{Violet}{scanner}\textcolor{SkyBlue}{(}
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \end{frame}
+\begin{frame}
+\textcolor{White}{\   }
+\textcolor{White}{\   }
+\textcolor{OrangeRed}{printf}
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{token}\textcolor{White}{\ }
+\textcolor{Apricot}{\%}
+\textcolor{Violet}{d}\textcolor{Gray}{\textbackslash }
+\textcolor{Violet}{n}\textcolor{Sepia}{,}
+\textcolor{White}{\ }
+\textcolor{Violet}{ejemplo}\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{White}{\   }
+\textcolor{SkyBlue}{\} }
+
+ 
  \textcolor{SkyBlue}{\} }
 
  \end{frame}
@@ -91,7 +1101,7 @@ symbolic x coords={Reservadas, Identificadores,Literales,Operadores, Delimitador
 ]
 \addplot[ybar,fill=Turquoise]  
 coordinates {
-(Reservadas,2)(Identificadores,14)(Literales,1)(Operadores,3)(Delimitadores,19)};
+(Reservadas,93)(Identificadores,187)(Literales,16)(Operadores,63)(Delimitadores,281)};
 \end{axis}
 \end{tikzpicture}
 \end{frame} 
