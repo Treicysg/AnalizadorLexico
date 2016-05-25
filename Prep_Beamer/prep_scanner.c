@@ -2618,6 +2618,7 @@ void toHex(FILE* file) {
 		bool n_quote = true;
 		int included_tokens = 0;
 		int total_tkns = insertedTokens;
+		int total_sum;
 
 
 
@@ -2983,17 +2984,28 @@ void toHex(FILE* file) {
 		fprintf(beamerFile,"\\end{frame} \n");
 
 		//************************Pie
+		total_sum = (palabras_reservadas + identifiers + literals + operators + delimiters);
+		printf("%d",total_sum);
 
 		fprintf(beamerFile,"\\begin{frame} \n");
 
 		fprintf(beamerFile,"\\begin{tikzpicture}\n");
 		fprintf(beamerFile,"\\pie[rotate = 180]\n");
-		fprintf(beamerFile,"{62/\\TeX\\ Live and Mac\\TeX,\n");
-		fprintf(beamerFile,"32/MiK\\TeX\\ and Pro\\TeX t, 6/Other \\TeX}\n");
+		fprintf(beamerFile,"{%d",(100 * palabras_reservadas)/total_sum);
+		fprintf(beamerFile,"/Palabras Reservadas,\n");
+		fprintf(beamerFile,"%d",(100 * identifiers)/total_sum);
+		fprintf(beamerFile,"/Identificadores,\n");
+		fprintf(beamerFile,"%d",(100 * literals)/total_sum);
+		fprintf(beamerFile,"/Literales,\n");
+		fprintf(beamerFile,"%d",(100 * operators)/total_sum);
+		fprintf(beamerFile,"/Operadores,\n");
+		fprintf(beamerFile,"%d",(100 * delimiters)/total_sum);
+		fprintf(beamerFile,"/Delimitadores}\n");
+
+
 		fprintf(beamerFile,"\\end{tikzpicture}\n");
 
 		fprintf(beamerFile,"\\end{frame} \n");
-
 
 		//Final del Archivo
 
