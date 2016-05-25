@@ -721,7 +721,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 22 "pprc_preprocessor.l"
+#line 23 "pprc_preprocessor.l"
 
   /* ------------------------------------------------------------------------------------------------ Rules */
 
@@ -821,62 +821,62 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 26 "pprc_preprocessor.l"
+#line 27 "pprc_preprocessor.l"
 {defineCounter++;strcpy(_name,pprctext); return DEFINE;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 27 "pprc_preprocessor.l"
+#line 28 "pprc_preprocessor.l"
 {strcpy(_name,pprctext); return VALUE;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 28 "pprc_preprocessor.l"
+#line 29 "pprc_preprocessor.l"
 {strcpy(_name, pprctext); return SPACE;}
 	YY_BREAK
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 29 "pprc_preprocessor.l"
+#line 30 "pprc_preprocessor.l"
 {strcpy(_name,pprctext);return NEWLINE;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 30 "pprc_preprocessor.l"
+#line 31 "pprc_preprocessor.l"
 {strcpy(_name,pprctext);return QUOTES;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 31 "pprc_preprocessor.l"
+#line 32 "pprc_preprocessor.l"
 {strcpy(_name, pprctext); return LIBRARY;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 32 "pprc_preprocessor.l"
+#line 33 "pprc_preprocessor.l"
 {strcpy(_name,pprctext); return CODIGO;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 33 "pprc_preprocessor.l"
+#line 34 "pprc_preprocessor.l"
 {strcpy(_name,pprctext);includeCounter++; return INCLUDE;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 34 "pprc_preprocessor.l"
+#line 35 "pprc_preprocessor.l"
 {strcpy(_name,pprctext);return FILENAME; }
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 35 "pprc_preprocessor.l"
+#line 36 "pprc_preprocessor.l"
 {strcpy(_name,"EOF"); return EOF;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 36 "pprc_preprocessor.l"
+#line 37 "pprc_preprocessor.l"
 {strcpy(_name,pprctext);return CODIGO;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 43 "pprc_preprocessor.l"
+#line 44 "pprc_preprocessor.l"
 ECHO;
 	YY_BREAK
 #line 883 "prep_preprocessor.c"
@@ -1887,7 +1887,7 @@ void pprcfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 43 "pprc_preprocessor.l"
+#line 44 "pprc_preprocessor.l"
 
 
 	/* --------------------------------------------------------------------------------------------------Code */

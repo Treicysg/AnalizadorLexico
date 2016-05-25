@@ -5,12 +5,15 @@
 \usepackage{dirtytalk}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{pgf-pie}
+\usetheme{Warsaw}
+\usecolortheme{spruce}
 \setbeamercolor{itemize item}{fg=darkred!80!black}
 \begin{document} 
 \title{
-\begin{LARGE}
-Instituto Tecnol\'ogico de Costa Rica
-\end{LARGE}
+\begin{Large}
+TEC
+\end{Large}
 \newline
 \begin{Large}
 \\Compiladores e Int\'erpretes
@@ -3568,15 +3571,22 @@ El An\'alisis L\'exico consiste en descomponer un fuente de entrada en categor\'
 
  \end{frame}
 \begin{frame} 
-\frametitle{Histograma} 
 \begin{tikzpicture} 
 \begin{axis}[ 
-symbolic x coords={Reservadas, Identificadores,Literales,Operadores, Delimitadores},xtick=data
+symbolic x coords={Reservadas, Identificadores,Literales,Operadores, Delimitadores},xtick=data,xticklabel style={anchor=base,yshift=-\baselineskip},
+nodes near coords={\pgfmathprintnumber\pgfplotspointmeta}
 ]
 \addplot[ybar,fill=Turquoise]  
 coordinates {
 (Reservadas,295)(Identificadores,1110)(Literales,24)(Operadores,250)(Delimitadores,1110)};
 \end{axis}
+\end{tikzpicture}
+\end{frame} 
+\begin{frame} 
+\begin{tikzpicture}
+\pie[rotate = 180]
+{62/\TeX\ Live and Mac\TeX,
+32/MiK\TeX\ and Pro\TeX t, 6/Other \TeX}
 \end{tikzpicture}
 \end{frame} 
 \end{document}

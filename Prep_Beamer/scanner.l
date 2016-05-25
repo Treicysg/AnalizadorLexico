@@ -224,18 +224,28 @@ void toHex(FILE* file) {
 
 	  fprintf(beamerFile, "\\documentclass[8, usernames, dvipsnames]{beamer}\n");
 		fprintf(beamerFile, "\\usepackage{color}\n");
+
 		fprintf(beamerFile, "\\usepackage{pgfplots}\n");
 		fprintf(beamerFile, "\\pgfplotsset{width=11.5cm,compat=1.9}\n");
 		fprintf(beamerFile, "\\usepackage{dirtytalk}\n");
 		fprintf(beamerFile, "\\usepackage[spanish]{babel}\n");
 		fprintf(beamerFile, "\\usepackage[utf8]{inputenc}\n");
-		//fprintf(beamerFile, "\\setbeamercolor{normal text}{bg=white!80}\n");
+
+		fprintf(beamerFile, "\\usepackage{pgf-pie}\n");
+
+		fprintf(beamerFile, "\\usetheme{Warsaw}\n");
+		fprintf(beamerFile, "\\usecolortheme{spruce}\n");
+
 	  fprintf(beamerFile, "\\setbeamercolor{itemize item}{fg=darkred!80!black}\n");
+
+
+
+
 	  fprintf(beamerFile,"\\begin{document} \n");
 	  fprintf(beamerFile, "\\title{\n");
-		fprintf(beamerFile, "\\begin{LARGE}\n");
-		fprintf(beamerFile, "Instituto Tecnol\\'ogico de Costa Rica\n");
-		fprintf(beamerFile, "\\end{LARGE}\n");
+		fprintf(beamerFile, "\\begin{Large}\n");
+		fprintf(beamerFile, "TEC\n");
+		fprintf(beamerFile, "\\end{Large}\n");
 		fprintf(beamerFile, "\\newline\n");
 		fprintf(beamerFile, "\\begin{Large}\n");
 		fprintf(beamerFile, "\\\\Compiladores e Int\\'erpretes\n");
@@ -541,10 +551,13 @@ void toHex(FILE* file) {
 
 
 		fprintf(beamerFile,"\\begin{frame} \n");
-		fprintf(beamerFile,"\\frametitle{Histograma} \n");
+
 		fprintf(beamerFile,"\\begin{tikzpicture} \n");
 		fprintf(beamerFile,"\\begin{axis}[ \n");
-		fprintf(beamerFile,"symbolic x coords={Reservadas, Identificadores,Literales,Operadores, Delimitadores},xtick=data\n");
+
+		fprintf(beamerFile,"symbolic x coords={Reservadas, Identificadores,Literales,Operadores, Delimitadores},xtick=data,xticklabel style={anchor=base,yshift=-\\baselineskip},\n");
+		fprintf(beamerFile,"nodes near coords={\\pgfmathprintnumber\\pgfplotspointmeta}\n");
+
 
 
 		fprintf(beamerFile,"]\n");
@@ -569,8 +582,17 @@ void toHex(FILE* file) {
 		fprintf(beamerFile,"\\end{tikzpicture}\n");
 		fprintf(beamerFile,"\\end{frame} \n");
 
+		//************************Pie
 
+		fprintf(beamerFile,"\\begin{frame} \n");
 
+		fprintf(beamerFile,"\\begin{tikzpicture}\n");
+		fprintf(beamerFile,"\\pie[rotate = 180]\n");
+		fprintf(beamerFile,"{62/\\TeX\\ Live and Mac\\TeX,\n");
+		fprintf(beamerFile,"32/MiK\\TeX\\ and Pro\\TeX t, 6/Other \\TeX}\n");
+		fprintf(beamerFile,"\\end{tikzpicture}\n");
+
+		fprintf(beamerFile,"\\end{frame} \n");
 
 
 		//Final del Archivo
