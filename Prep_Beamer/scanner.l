@@ -13,6 +13,7 @@
 	int literals = 0;
 	int operators = 0;
 	int delimiters = 0;
+	int token_total = 0;
 
 %}
 
@@ -32,126 +33,127 @@ under 		  "_"
 string 		\"(\\.|[^"])*\"
 
 %%
-
-"<<=" {operators ++; strcpy(name,yytext); return SHLEQUAL;}
-">>=" { operators ++;strcpy(name,yytext); return SHREQUAL;}
-"++" { operators ++;strcpy(name,yytext); return PLUSPLUS;}
-"--" { operators ++;strcpy(name,yytext); return MINUSMINUS;}
-"+=" { operators ++;strcpy(name,yytext); return PLUSEQUAL;}
-"-=" { operators ++;strcpy(name,yytext); return MINUSEQUAL;}
-"*=" { operators ++;strcpy(name,yytext); return MULEQUAL;}
-"/=" { operators ++;strcpy(name,yytext); return DIVEQUAL;}
-"%=" { operators ++;strcpy(name,yytext); return MODEQUAL;}
-"&=" { operators ++;strcpy(name,yytext); return ANDEQUAL;}
-"|=" { operators ++;strcpy(name,yytext); return OREQUAL;}
-"^="  { operators ++;strcpy(name,yytext); return ROOFEQUAL;}
-"->" { operators ++;strcpy(name,yytext); return ARROW;}
-"==" { operators ++;strcpy(name,yytext); return EQUAL;}
-"!=" { operators ++;strcpy(name,yytext); return NOTEQUAL;}
-"&&" { operators ++;strcpy(name,yytext); return AND;}
-"||" { operators ++;strcpy(name,yytext); return OR;}
-"<<" { operators ++;strcpy(name,yytext); return SHL;}
-">>" { operators ++;strcpy(name,yytext); return SHR;}
-"<=" { operators ++;strcpy(name,yytext); return LEQ; }
-">=" { operators ++;strcpy(name,yytext); return GEQ;}
-"<>" { operators ++;strcpy(name,yytext); return LESSMORE;}
-"=" { operators ++;strcpy(name,yytext); return ASSIGN;}
-"+" { operators ++;strcpy(name,yytext); return PLUS;   }
-"-" { operators ++;strcpy(name,yytext); return MINUS; }
-"*" { operators ++;strcpy(name,yytext); return MUL; }
-"/" { operators ++;strcpy(name,yytext); return DIV; }
-"&" { operators ++;strcpy(name,yytext); return BITAND;}
-"|" { operators ++;strcpy(name,yytext); return BITOR;}
-"^" { operators ++;strcpy(name,yytext); return ROOF;}
-"~" { operators ++;strcpy(name,yytext); return TAIL;}
-"%" { operators ++;strcpy(name,yytext); return MOD;}
-"<" { operators ++;strcpy(name,yytext); return LESS;}
-">" { operators ++;strcpy(name,yytext); return GREATER;}
+"<<=" {operators ++; token_total ++; strcpy(name,yytext); return SHLEQUAL;}
+">>=" { operators ++; token_total ++;strcpy(name,yytext); return SHREQUAL;}
+"++" { operators ++; token_total ++;strcpy(name,yytext); return PLUSPLUS;}
+"--" { operators ++; token_total ++;strcpy(name,yytext); return MINUSMINUS;}
+"+=" { operators ++; token_total ++;strcpy(name,yytext); return PLUSEQUAL;}
+"-=" { operators ++; token_total ++;strcpy(name,yytext); return MINUSEQUAL;}
+"*=" { operators ++; token_total ++;strcpy(name,yytext); return MULEQUAL;}
+"/=" { operators ++; token_total ++;strcpy(name,yytext); return DIVEQUAL;}
+"%=" { operators ++; token_total ++;strcpy(name,yytext); return MODEQUAL;}
+"&=" { operators ++; token_total ++;strcpy(name,yytext); return ANDEQUAL;}
+"|=" { operators ++; token_total ++;strcpy(name,yytext); return OREQUAL;}
+"^="  { operators ++; token_total ++;strcpy(name,yytext); return ROOFEQUAL;}
+"->" { operators ++; token_total ++;strcpy(name,yytext); return ARROW;}
+"==" { operators ++; token_total ++;strcpy(name,yytext); return EQUAL;}
+"!=" { operators ++; token_total ++;strcpy(name,yytext); return NOTEQUAL;}
+"&&" { operators ++; token_total ++;strcpy(name,yytext); return AND;}
+"||" { operators ++; token_total ++;strcpy(name,yytext); return OR;}
+"<<" { operators ++; token_total ++;strcpy(name,yytext); return SHL;}
+">>" { operators ++; token_total ++;strcpy(name,yytext); return SHR;}
+"<=" { operators ++; token_total ++;strcpy(name,yytext); return LEQ; }
+">=" { operators ++; token_total ++;strcpy(name,yytext); return GEQ;}
+"<>" { operators ++; token_total ++;strcpy(name,yytext); return LESSMORE;}
+"=" { operators ++; token_total ++;strcpy(name,yytext); return ASSIGN;}
+"+" { operators ++; token_total ++;strcpy(name,yytext); return PLUS;   }
+"-" { operators ++; token_total ++;strcpy(name,yytext); return MINUS; }
+"*" { operators ++; token_total ++;strcpy(name,yytext); return MUL; }
+"/" { operators ++; token_total ++;strcpy(name,yytext); return DIV; }
+"&" { operators ++; token_total ++;strcpy(name,yytext); return BITAND;}
+"|" { operators ++; token_total ++;strcpy(name,yytext); return BITOR;}
+"^" { operators ++; token_total ++;strcpy(name,yytext); return ROOF;}
+"~" { operators ++; token_total ++;strcpy(name,yytext); return TAIL;}
+"%" { operators ++; token_total ++;strcpy(name,yytext); return MOD;}
+"<" { operators ++; token_total ++;strcpy(name,yytext); return LESS;}
+">" { operators ++; token_total ++;strcpy(name,yytext); return GREATER;}
 {string} { strcpy(name,yytext); return STRING;}
 "_" { strcpy(name,yytext); return UNDERSCORE;}
 
 "'" { strcpy(name,yytext); return SINGLEQUOTE;}
-"(" { delimiters ++;strcpy(name,yytext); return LPAREN;}
-")" { delimiters ++;strcpy(name,yytext); return RPAREN;}
-"{" { delimiters ++;strcpy(name,yytext); return CORCHL;}
-"}" { delimiters ++;strcpy(name,yytext); return CORCHR;}
-"[" { delimiters ++;strcpy(name,yytext); return LBRACKET;}
-"]" { delimiters ++;strcpy(name,yytext); return RBRACKET;}
+"(" { delimiters ++; token_total ++;strcpy(name,yytext); return LPAREN;}
+")" { delimiters ++; token_total ++;strcpy(name,yytext); return RPAREN;}
+"{" { delimiters ++; token_total ++;strcpy(name,yytext); return CORCHL;}
+"}" { delimiters ++; token_total ++;strcpy(name,yytext); return CORCHR;}
+"[" { delimiters ++; token_total ++;strcpy(name,yytext); return LBRACKET;}
+"]" { delimiters ++; token_total ++;strcpy(name,yytext); return RBRACKET;}
 "\\" { strcpy(name,yytext); return BACKSLASH;}
 "/*" { strcpy(name,yytext);return COMMENTOPEN;}
 "*/" { strcpy(name,yytext);return COMMENTCLOSE;}
 "//" { strcpy(name,yytext);return UNCLOSEDCOMMENT;}
 
-":" { delimiters ++;strcpy(name,yytext); return COLON;}
+":" { delimiters ++; token_total ++;strcpy(name,yytext); return COLON;}
 "?" { strcpy(name,yytext); return QUESTIONMARK;}
-"!" { operators++; strcpy(name,yytext); return NOT;}
-";" { delimiters ++;strcpy(name,yytext); return SEMICOLON;}
-"," { delimiters ++;strcpy(name,yytext); return COMMA;}
-"." { delimiters ++;strcpy(name,yytext); return PERIOD;}
+"!" { operators++; token_total ++; strcpy(name,yytext); return NOT;}
+";" { delimiters ++; token_total ++;strcpy(name,yytext); return SEMICOLON;}
+"," { delimiters ++; token_total ++;strcpy(name,yytext); return COMMA;}
+"." { delimiters ++; token_total ++;strcpy(name,yytext); return PERIOD;}
 "\"" { strcpy(name,yytext); return DOUBLEQUOTE;}
 
-"if" { palabras_reservadas ++;strcpy(name,yytext); return IFSYS; }
-"else" { palabras_reservadas ++;strcpy(name,yytext); return ELSESYS;}
-"while" { palabras_reservadas ++;strcpy(name,yytext); return WHILELOOP;}
-"for" { palabras_reservadas ++;strcpy(name,yytext); return FORLOOP;}
-"auto" { palabras_reservadas ++; strcpy(name,yytext); return AUTO;}
-"break" { palabras_reservadas ++; strcpy(name,yytext); return BREAK;}
-"case" { palabras_reservadas ++; strcpy(name,yytext); return CASE;}
-"char" { palabras_reservadas ++; strcpy(name,yytext); return CHAR;}
-"const" { palabras_reservadas ++; strcpy(name,yytext); return CONST;}
-"continue" { palabras_reservadas ++;strcpy(name,yytext); return CONTINUE;}
+"if" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return IFSYS; }
+"else" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return ELSESYS;}
+"while" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return WHILELOOP;}
+"for" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return FORLOOP;}
+"auto" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return AUTO;}
+"break" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return BREAK;}
+"case" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return CASE;}
+"char" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return CHAR;}
+"const" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return CONST;}
+"continue" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return CONTINUE;}
 
-"default" { palabras_reservadas ++; strcpy(name,yytext); return DEFAULT;}
-"do" { palabras_reservadas ++;strcpy(name,yytext); return DO;}
-"double" { palabras_reservadas ++;strcpy(name,yytext); return DOUBLE;}
-"enum" { palabras_reservadas ++;strcpy(name,yytext); return ENUM;}
-"extern" { palabras_reservadas ++;strcpy(name,yytext); return EXTERN;}
-"float" { palabras_reservadas ++; strcpy(name,yytext); return FLOAT;}
-"goto" { palabras_reservadas ++; strcpy(name,yytext); return GOTO;}
-"int" { palabras_reservadas ++; strcpy(name,yytext); return INT;}
-
-
-"printf" { palabras_reservadas ++; strcpy(name,yytext); return PRINTF;}
-"fprintf" {palabras_reservadas ++; strcpy(name,yytext); return FPRINTF;}
-"fopen" {palabras_reservadas ++; strcpy(name,yytext); return FOPEN;}
-"fclose" {palabras_reservadas ++; strcpy(name,yytext); return FCLOSE;}
-"system" {palabras_reservadas ++; strcpy(name,yytext); return SYSTEM;}
-"strcpy" {palabras_reservadas ++; strcpy(name,yytext); return STRCPY;}
-"strcmp" {palabras_reservadas ++; strcpy(name,yytext); return STRCMP;}
-"exit" {palabras_reservadas ++; strcpy(name,yytext); return EXIT;}
-"true" {palabras_reservadas ++; strcpy(name,yytext); return TRUE;}
-"false" {palabras_reservadas ++; strcpy(name,yytext); return FALSE;}
-"toupper" {palabras_reservadas ++; strcpy(name,yytext); return TOUPPER;}
-"feof" {palabras_reservadas ++; strcpy(name,yytext); return FEOF;}
-"getc" {palabras_reservadas ++; strcpy(name,yytext); return GETC;}
-"memset" {palabras_reservadas ++; strcpy(name,yytext); return MEMSET;}
-"malloc" {palabras_reservadas ++; strcpy(name,yytext); return MALLOC;}
-"calloc" {palabras_reservadas ++; strcpy(name,yytext); return CALLOC;}
+"default" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return DEFAULT;}
+"do" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return DO;}
+"double" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return DOUBLE;}
+"enum" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return ENUM;}
+"extern" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return EXTERN;}
+"float" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return FLOAT;}
+"goto" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return GOTO;}
+"int" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return INT;}
 
 
-"long" { palabras_reservadas ++;strcpy(name,yytext); return LONG;}
-"register" { palabras_reservadas ++; strcpy(name,yytext); return REGISTER;}
-"return" { palabras_reservadas ++; return RETURN;}
-"short" { palabras_reservadas ++; strcpy(name,yytext); return SHORT;}
-"signed" { palabras_reservadas ++; strcpy(name,yytext); return SIGNED;}
-"sizeof" { palabras_reservadas ++; strcpy(name,yytext); return SIZEOF;}
-"static" { palabras_reservadas ++;strcpy(name,yytext); return STATIC;}
-"struct" { palabras_reservadas ++;strcpy(name,yytext); return STRUCT;}
-"switch" { palabras_reservadas ++;strcpy(name,yytext); return SWITCH;}
-"typedef" { palabras_reservadas ++;strcpy(name,yytext); return TYPEDEF;}
-"union" { palabras_reservadas ++; strcpy(name,yytext); return UNION;}
-"unsigned" { palabras_reservadas ++; strcpy(name,yytext); return UNSIGNED;}
-"void" { palabras_reservadas ++; strcpy(name,yytext); return VOID;}
-"volatile" { palabras_reservadas ++;strcpy(name,yytext); return VOLATILE;}
+"printf" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return PRINTF;}
+"fprintf" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return FPRINTF;}
+"fopen" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return FOPEN;}
+"fclose" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return FCLOSE;}
+"system" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return SYSTEM;}
+"strcpy" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return STRCPY;}
+"strcmp" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return STRCMP;}
+"exit" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return EXIT;}
+"true" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return TRUE;}
+"false" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return FALSE;}
+"toupper" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return TOUPPER;}
+"feof" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return FEOF;}
+"getc" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return GETC;}
+"memset" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return MEMSET;}
+"malloc" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return MALLOC;}
+"calloc" {palabras_reservadas ++; token_total ++; strcpy(name,yytext); return CALLOC;}
+
+
+"long" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return LONG;}
+"register" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return REGISTER;}
+"return" { palabras_reservadas ++; token_total ++; return RETURN;}
+"short" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return SHORT;}
+"signed" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return SIGNED;}
+"sizeof" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return SIZEOF;}
+"static" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return STATIC;}
+"struct" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return STRUCT;}
+"switch" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return SWITCH;}
+"typedef" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return TYPEDEF;}
+"union" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return UNION;}
+"unsigned" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return UNSIGNED;}
+"void" { palabras_reservadas ++; token_total ++; strcpy(name,yytext); return VOID;}
+"volatile" { palabras_reservadas ++; token_total ++;strcpy(name,yytext); return VOLATILE;}
 
  <<EOF>> { strcpy(name,yytext); return EOF;}
  [\t] 	{strcpy(name,yytext); return TAB;}
  " " { strcpy(name,yytext); return SPACE;}
 [\n]	{strcpy(name,yytext); return NEWLINE;}
 
-{letter}({letter}|{number}|{number})* { identifiers ++; strcpy(name,yytext); return ID;}
-{number}+ { literals ++; strcpy(name,yytext); return NUMBER;}
+{letter}({letter}|{number}|{number})* { identifiers ++; token_total ++; strcpy(name,yytext); return ID;}
+{number}+ { literals ++; token_total ++; strcpy(name,yytext); return NUMBER;}
 .	{ strcpy(name,yytext); return UNKNOWN;}
+
+
 
 
 %%
@@ -163,6 +165,7 @@ string 		\"(\\.|[^"])*\"
 		printf("LITERALS ---> %d\n", literals);
 		printf("OPERADORES ---> %d\n", operators);
 		printf("DELIMITADORES ---> %d\n", delimiters);
+		printf("token_total ---> %d\n", token_total);
 	}
 
 	void count_tokens(int pToken){
@@ -218,7 +221,7 @@ void toHex(FILE* file) {
 		bool n_quote = true;
 		int included_tokens = 0;
 		int total_tkns = insertedTokens;
-		int total_sum;
+
 
 
 
@@ -584,22 +587,20 @@ void toHex(FILE* file) {
 		fprintf(beamerFile,"\\end{frame} \n");
 
 		//************************Pie
-		total_sum = (palabras_reservadas + identifiers + literals + operators + delimiters);
-		printf("%d",total_sum);
 
 		fprintf(beamerFile,"\\begin{frame} \n");
 
 		fprintf(beamerFile,"\\begin{tikzpicture}\n");
 		fprintf(beamerFile,"\\pie[rotate = 180]\n");
-		fprintf(beamerFile,"{%d",(100 * palabras_reservadas)/total_sum);
+		fprintf(beamerFile,"{%.2lf",(100 * palabras_reservadas)/((double)token_total));
 		fprintf(beamerFile,"/Palabras Reservadas,\n");
-		fprintf(beamerFile,"%d",(100 * identifiers)/total_sum);
+		fprintf(beamerFile,"%.2lf",(100 * identifiers)/((double)token_total));
 		fprintf(beamerFile,"/Identificadores,\n");
-		fprintf(beamerFile,"%d",(100 * literals)/total_sum);
+		fprintf(beamerFile,"%.2lf",(100 * literals)/((double)token_total));
 		fprintf(beamerFile,"/Literales,\n");
-		fprintf(beamerFile,"%d",(100 * operators)/total_sum);
+		fprintf(beamerFile,"%.2lf",(100 * operators)/((double)token_total));
 		fprintf(beamerFile,"/Operadores,\n");
-		fprintf(beamerFile,"%d",(100 * delimiters)/total_sum);
+		fprintf(beamerFile,"%.2lf",(100 * delimiters)/((double)token_total));
 		fprintf(beamerFile,"/Delimitadores}\n");
 
 

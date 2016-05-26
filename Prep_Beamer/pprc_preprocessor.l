@@ -32,7 +32,7 @@ string 		\"(\\.|[^"])*\"
 "<"{letter}({letter}|{number})*("."{letter}+)+">" {strcpy(_name, yytext); return LIBRARY;}
 {letter}({letter}|{number})* {strcpy(_name,yytext); return CODIGO;}
 #[ \t]*include[ \t]+ {strcpy(_name,yytext);includeCounter++; return INCLUDE;}
-{letter}({letter}|{number})*("."{letter}+)+ {strcpy(_name,yytext);return FILENAME; }
+[_]*{letter}({letter}|{number}|[_]*)*("."{letter}+)+ {strcpy(_name,yytext);return FILENAME; }
 <<EOF>> {strcpy(_name,"EOF"); return EOF;}
 . {strcpy(_name,yytext);return CODIGO;}
 

@@ -131,12 +131,12 @@ void id_list(void){
 
 void read_id (expr_rec in_var){
  /*Generate code for read*/
- generate (Read,in_,Integer,);
+ generate (Read,,Integer,);
 
 }
 void write_expr (expr_rec out_expr){
 
- generate (Write, out_, Integer, );
+ generate (Write, , Integer, );
 }
 
 void expr_list(void){
@@ -155,12 +155,12 @@ void expression (expr_rec *result){
 	expr_rec left_operand, right_operand;
 	op_rec op;
     primary (&  left_operand);
-   // printf(El valor del LEFT operand es nombre = %s  valor = %d tipo = %d\n, left_, left_, left_);
+   // printf(El valor del LEFT operand es nombre = %s  valor = %d tipo = %d\n, , , );
 	while (next_token() == PLUSOP || next_token() == MINUSOP){
 		add_op (& op);
 		//printf(El valor del OPERATOR es %d\n, );
 		primary (& right_operand);
-		//printf(El valor del RIHT operand es nombre = %s  valor = %d tipo = %d\n, right_, right_, right_);
+		//printf(El valor del RIHT operand es nombre = %s  valor = %d tipo = %d\n, , , );
 		left_operand = gen_infix(left_operand, op, right_operand);
 	}
 	*result = left_operand;
@@ -248,7 +248,7 @@ const char * get_token_name(token t){
 // Translation Operations
 
 void open_outputFile(){
-	output_file = fopen (output_,w+);
+	output_file = fopen (,w+);
 }
 
 void close_outputFile(){
@@ -341,9 +341,9 @@ char* extractOP(op_rec p_operand){
 	//printf(VOY A PONER UN OPERATOR\n);
 	char* minus = Sub;
 	char* plus = Add;
-	if (p_ == MINUS){
+	if ( == MINUS){
 		return minus;
-	}else if (p_ == PLUS){
+	}else if ( == PLUS){
 		return plus;
 	}
 }
@@ -351,14 +351,14 @@ char* extractOP(op_rec p_operand){
 char* extractEXPR(expr_rec p_expr){
 	char* express_buffer;
 	express_buffer = calloc(1024, sizeof(char));
-	if (p_ == IDEXPR){
-		strcpy(express_buffer,p_);
+	if ( == IDEXPR){
+		strcpy(express_buffer,);
 		return express_buffer;
-	}else if (p_ == LITERALEXPR){
-		sprintf (express_buffer,%d,p_);
+	}else if ( == LITERALEXPR){
+		sprintf (express_buffer,%d,);
 		return express_buffer;
 	}else {
-		strcpy(express_buffer,p_);
+		strcpy(express_buffer,);
 		return express_buffer;
 	}
 
@@ -369,7 +369,7 @@ expr_rec gen_infix (expr_rec e1, op_rec op, expr_rec e2) {
 
 	expr_rec e_rec, e_rec1;
 	/*An expr_rec with temp variant set.*/
-	e_ = LITERALEXPR;
+	 = LITERALEXPR;
 	char* resultadoEXPR2;
 	resultadoEXPR2 = calloc(1024, sizeof(char));
 	char* resultadoEXPR1;
@@ -386,15 +386,15 @@ expr_rec gen_infix (expr_rec e1, op_rec op, expr_rec e2) {
 		} else {
 			resultado = numero1 - numero2;
 		}
-		e_ = resultado;
+		 = resultado;
 		return e_rec;
 	} else {
 		expr_rec e_rec1;
-		e_ = TEMPEXPR;
+		 = TEMPEXPR;
 		resultadoEXPR1 = extractEXPR(e1);
 		resultadoEXPR2 = extractEXPR(e2);
-		strncpy(e_, get_temp(), MAXIDLEN);
-		generate (extractOP(op),resultadoEXPR1,resultadoEXPR2,e_);
+		strncpy(, get_temp(), MAXIDLEN);
+		generate (extractOP(op),resultadoEXPR1,resultadoEXPR2,);
 		return e_rec1;
 	}
 }

@@ -708,9 +708,10 @@ char *yytext;
 	int literals = 0;
 	int operators = 0;
 	int delimiters = 0;
+	int token_total = 0;
 
 /* ------------------------------------------------------------------------------------------------ Rules */
-#line 714 "prep_scanner.c"
+#line 715 "prep_scanner.c"
 
 #define INITIAL 0
 
@@ -897,8 +898,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 34 "scanner.l"
-
+#line 35 "scanner.l"
 
 #line 904 "prep_scanner.c"
 
@@ -996,172 +996,172 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 36 "scanner.l"
-{operators ++; strcpy(name,yytext); return SHLEQUAL;}
+{operators ++; token_total ++; strcpy(name,yytext); return SHLEQUAL;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 37 "scanner.l"
-{ operators ++;strcpy(name,yytext); return SHREQUAL;}
+{ operators ++; token_total ++;strcpy(name,yytext); return SHREQUAL;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 38 "scanner.l"
-{ operators ++;strcpy(name,yytext); return PLUSPLUS;}
+{ operators ++; token_total ++;strcpy(name,yytext); return PLUSPLUS;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 39 "scanner.l"
-{ operators ++;strcpy(name,yytext); return MINUSMINUS;}
+{ operators ++; token_total ++;strcpy(name,yytext); return MINUSMINUS;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 40 "scanner.l"
-{ operators ++;strcpy(name,yytext); return PLUSEQUAL;}
+{ operators ++; token_total ++;strcpy(name,yytext); return PLUSEQUAL;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 41 "scanner.l"
-{ operators ++;strcpy(name,yytext); return MINUSEQUAL;}
+{ operators ++; token_total ++;strcpy(name,yytext); return MINUSEQUAL;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 42 "scanner.l"
-{ operators ++;strcpy(name,yytext); return MULEQUAL;}
+{ operators ++; token_total ++;strcpy(name,yytext); return MULEQUAL;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 43 "scanner.l"
-{ operators ++;strcpy(name,yytext); return DIVEQUAL;}
+{ operators ++; token_total ++;strcpy(name,yytext); return DIVEQUAL;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 44 "scanner.l"
-{ operators ++;strcpy(name,yytext); return MODEQUAL;}
+{ operators ++; token_total ++;strcpy(name,yytext); return MODEQUAL;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 45 "scanner.l"
-{ operators ++;strcpy(name,yytext); return ANDEQUAL;}
+{ operators ++; token_total ++;strcpy(name,yytext); return ANDEQUAL;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 46 "scanner.l"
-{ operators ++;strcpy(name,yytext); return OREQUAL;}
+{ operators ++; token_total ++;strcpy(name,yytext); return OREQUAL;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 47 "scanner.l"
-{ operators ++;strcpy(name,yytext); return ROOFEQUAL;}
+{ operators ++; token_total ++;strcpy(name,yytext); return ROOFEQUAL;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 48 "scanner.l"
-{ operators ++;strcpy(name,yytext); return ARROW;}
+{ operators ++; token_total ++;strcpy(name,yytext); return ARROW;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
 #line 49 "scanner.l"
-{ operators ++;strcpy(name,yytext); return EQUAL;}
+{ operators ++; token_total ++;strcpy(name,yytext); return EQUAL;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
 #line 50 "scanner.l"
-{ operators ++;strcpy(name,yytext); return NOTEQUAL;}
+{ operators ++; token_total ++;strcpy(name,yytext); return NOTEQUAL;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
 #line 51 "scanner.l"
-{ operators ++;strcpy(name,yytext); return AND;}
+{ operators ++; token_total ++;strcpy(name,yytext); return AND;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
 #line 52 "scanner.l"
-{ operators ++;strcpy(name,yytext); return OR;}
+{ operators ++; token_total ++;strcpy(name,yytext); return OR;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
 #line 53 "scanner.l"
-{ operators ++;strcpy(name,yytext); return SHL;}
+{ operators ++; token_total ++;strcpy(name,yytext); return SHL;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
 #line 54 "scanner.l"
-{ operators ++;strcpy(name,yytext); return SHR;}
+{ operators ++; token_total ++;strcpy(name,yytext); return SHR;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
 #line 55 "scanner.l"
-{ operators ++;strcpy(name,yytext); return LEQ; }
+{ operators ++; token_total ++;strcpy(name,yytext); return LEQ; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
 #line 56 "scanner.l"
-{ operators ++;strcpy(name,yytext); return GEQ;}
+{ operators ++; token_total ++;strcpy(name,yytext); return GEQ;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
 #line 57 "scanner.l"
-{ operators ++;strcpy(name,yytext); return LESSMORE;}
+{ operators ++; token_total ++;strcpy(name,yytext); return LESSMORE;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
 #line 58 "scanner.l"
-{ operators ++;strcpy(name,yytext); return ASSIGN;}
+{ operators ++; token_total ++;strcpy(name,yytext); return ASSIGN;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
 #line 59 "scanner.l"
-{ operators ++;strcpy(name,yytext); return PLUS;   }
+{ operators ++; token_total ++;strcpy(name,yytext); return PLUS;   }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
 #line 60 "scanner.l"
-{ operators ++;strcpy(name,yytext); return MINUS; }
+{ operators ++; token_total ++;strcpy(name,yytext); return MINUS; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
 #line 61 "scanner.l"
-{ operators ++;strcpy(name,yytext); return MUL; }
+{ operators ++; token_total ++;strcpy(name,yytext); return MUL; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
 #line 62 "scanner.l"
-{ operators ++;strcpy(name,yytext); return DIV; }
+{ operators ++; token_total ++;strcpy(name,yytext); return DIV; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
 #line 63 "scanner.l"
-{ operators ++;strcpy(name,yytext); return BITAND;}
+{ operators ++; token_total ++;strcpy(name,yytext); return BITAND;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
 #line 64 "scanner.l"
-{ operators ++;strcpy(name,yytext); return BITOR;}
+{ operators ++; token_total ++;strcpy(name,yytext); return BITOR;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
 #line 65 "scanner.l"
-{ operators ++;strcpy(name,yytext); return ROOF;}
+{ operators ++; token_total ++;strcpy(name,yytext); return ROOF;}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
 #line 66 "scanner.l"
-{ operators ++;strcpy(name,yytext); return TAIL;}
+{ operators ++; token_total ++;strcpy(name,yytext); return TAIL;}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
 #line 67 "scanner.l"
-{ operators ++;strcpy(name,yytext); return MOD;}
+{ operators ++; token_total ++;strcpy(name,yytext); return MOD;}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
 #line 68 "scanner.l"
-{ operators ++;strcpy(name,yytext); return LESS;}
+{ operators ++; token_total ++;strcpy(name,yytext); return LESS;}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
 #line 69 "scanner.l"
-{ operators ++;strcpy(name,yytext); return GREATER;}
+{ operators ++; token_total ++;strcpy(name,yytext); return GREATER;}
 	YY_BREAK
 case 35:
 /* rule 35 can match eol */
@@ -1182,32 +1182,32 @@ YY_RULE_SETUP
 case 38:
 YY_RULE_SETUP
 #line 74 "scanner.l"
-{ delimiters ++;strcpy(name,yytext); return LPAREN;}
+{ delimiters ++; token_total ++;strcpy(name,yytext); return LPAREN;}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
 #line 75 "scanner.l"
-{ delimiters ++;strcpy(name,yytext); return RPAREN;}
+{ delimiters ++; token_total ++;strcpy(name,yytext); return RPAREN;}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
 #line 76 "scanner.l"
-{ delimiters ++;strcpy(name,yytext); return CORCHL;}
+{ delimiters ++; token_total ++;strcpy(name,yytext); return CORCHL;}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
 #line 77 "scanner.l"
-{ delimiters ++;strcpy(name,yytext); return CORCHR;}
+{ delimiters ++; token_total ++;strcpy(name,yytext); return CORCHR;}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
 #line 78 "scanner.l"
-{ delimiters ++;strcpy(name,yytext); return LBRACKET;}
+{ delimiters ++; token_total ++;strcpy(name,yytext); return LBRACKET;}
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
 #line 79 "scanner.l"
-{ delimiters ++;strcpy(name,yytext); return RBRACKET;}
+{ delimiters ++; token_total ++;strcpy(name,yytext); return RBRACKET;}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
@@ -1232,7 +1232,7 @@ YY_RULE_SETUP
 case 48:
 YY_RULE_SETUP
 #line 85 "scanner.l"
-{ delimiters ++;strcpy(name,yytext); return COLON;}
+{ delimiters ++; token_total ++;strcpy(name,yytext); return COLON;}
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
@@ -1242,22 +1242,22 @@ YY_RULE_SETUP
 case 50:
 YY_RULE_SETUP
 #line 87 "scanner.l"
-{ operators++; strcpy(name,yytext); return NOT;}
+{ operators++; token_total ++; strcpy(name,yytext); return NOT;}
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
 #line 88 "scanner.l"
-{ delimiters ++;strcpy(name,yytext); return SEMICOLON;}
+{ delimiters ++; token_total ++;strcpy(name,yytext); return SEMICOLON;}
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
 #line 89 "scanner.l"
-{ delimiters ++;strcpy(name,yytext); return COMMA;}
+{ delimiters ++; token_total ++;strcpy(name,yytext); return COMMA;}
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
 #line 90 "scanner.l"
-{ delimiters ++;strcpy(name,yytext); return PERIOD;}
+{ delimiters ++; token_total ++;strcpy(name,yytext); return PERIOD;}
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
@@ -1267,242 +1267,242 @@ YY_RULE_SETUP
 case 55:
 YY_RULE_SETUP
 #line 93 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return IFSYS; }
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return IFSYS; }
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
 #line 94 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return ELSESYS;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return ELSESYS;}
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
 #line 95 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return WHILELOOP;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return WHILELOOP;}
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
 #line 96 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return FORLOOP;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return FORLOOP;}
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
 #line 97 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return AUTO;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return AUTO;}
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
 #line 98 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return BREAK;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return BREAK;}
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
 #line 99 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return CASE;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return CASE;}
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
 #line 100 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return CHAR;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return CHAR;}
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
 #line 101 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return CONST;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return CONST;}
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
 #line 102 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return CONTINUE;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return CONTINUE;}
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
 #line 104 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return DEFAULT;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return DEFAULT;}
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
 #line 105 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return DO;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return DO;}
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
 #line 106 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return DOUBLE;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return DOUBLE;}
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
 #line 107 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return ENUM;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return ENUM;}
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
 #line 108 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return EXTERN;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return EXTERN;}
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
 #line 109 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return FLOAT;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return FLOAT;}
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
 #line 110 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return GOTO;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return GOTO;}
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
 #line 111 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return INT;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return INT;}
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
 #line 114 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return PRINTF;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return PRINTF;}
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
 #line 115 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return FPRINTF;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return FPRINTF;}
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
 #line 116 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return FOPEN;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return FOPEN;}
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
 #line 117 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return FCLOSE;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return FCLOSE;}
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
 #line 118 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return SYSTEM;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return SYSTEM;}
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
 #line 119 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return STRCPY;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return STRCPY;}
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
 #line 120 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return STRCMP;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return STRCMP;}
 	YY_BREAK
 case 80:
 YY_RULE_SETUP
 #line 121 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return EXIT;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return EXIT;}
 	YY_BREAK
 case 81:
 YY_RULE_SETUP
 #line 122 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return TRUE;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return TRUE;}
 	YY_BREAK
 case 82:
 YY_RULE_SETUP
 #line 123 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return FALSE;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return FALSE;}
 	YY_BREAK
 case 83:
 YY_RULE_SETUP
 #line 124 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return TOUPPER;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return TOUPPER;}
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
 #line 125 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return FEOF;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return FEOF;}
 	YY_BREAK
 case 85:
 YY_RULE_SETUP
 #line 126 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return GETC;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return GETC;}
 	YY_BREAK
 case 86:
 YY_RULE_SETUP
 #line 127 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return MEMSET;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return MEMSET;}
 	YY_BREAK
 case 87:
 YY_RULE_SETUP
 #line 128 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return MALLOC;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return MALLOC;}
 	YY_BREAK
 case 88:
 YY_RULE_SETUP
 #line 129 "scanner.l"
-{palabras_reservadas ++; strcpy(name,yytext); return CALLOC;}
+{palabras_reservadas ++; token_total ++; strcpy(name,yytext); return CALLOC;}
 	YY_BREAK
 case 89:
 YY_RULE_SETUP
 #line 132 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return LONG;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return LONG;}
 	YY_BREAK
 case 90:
 YY_RULE_SETUP
 #line 133 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return REGISTER;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return REGISTER;}
 	YY_BREAK
 case 91:
 YY_RULE_SETUP
 #line 134 "scanner.l"
-{ palabras_reservadas ++; return RETURN;}
+{ palabras_reservadas ++; token_total ++; return RETURN;}
 	YY_BREAK
 case 92:
 YY_RULE_SETUP
 #line 135 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return SHORT;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return SHORT;}
 	YY_BREAK
 case 93:
 YY_RULE_SETUP
 #line 136 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return SIGNED;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return SIGNED;}
 	YY_BREAK
 case 94:
 YY_RULE_SETUP
 #line 137 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return SIZEOF;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return SIZEOF;}
 	YY_BREAK
 case 95:
 YY_RULE_SETUP
 #line 138 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return STATIC;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return STATIC;}
 	YY_BREAK
 case 96:
 YY_RULE_SETUP
 #line 139 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return STRUCT;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return STRUCT;}
 	YY_BREAK
 case 97:
 YY_RULE_SETUP
 #line 140 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return SWITCH;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return SWITCH;}
 	YY_BREAK
 case 98:
 YY_RULE_SETUP
 #line 141 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return TYPEDEF;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return TYPEDEF;}
 	YY_BREAK
 case 99:
 YY_RULE_SETUP
 #line 142 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return UNION;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return UNION;}
 	YY_BREAK
 case 100:
 YY_RULE_SETUP
 #line 143 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return UNSIGNED;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return UNSIGNED;}
 	YY_BREAK
 case 101:
 YY_RULE_SETUP
 #line 144 "scanner.l"
-{ palabras_reservadas ++; strcpy(name,yytext); return VOID;}
+{ palabras_reservadas ++; token_total ++; strcpy(name,yytext); return VOID;}
 	YY_BREAK
 case 102:
 YY_RULE_SETUP
 #line 145 "scanner.l"
-{ palabras_reservadas ++;strcpy(name,yytext); return VOLATILE;}
+{ palabras_reservadas ++; token_total ++;strcpy(name,yytext); return VOLATILE;}
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
 #line 147 "scanner.l"
@@ -1527,12 +1527,12 @@ YY_RULE_SETUP
 case 106:
 YY_RULE_SETUP
 #line 152 "scanner.l"
-{ identifiers ++; strcpy(name,yytext); return ID;}
+{ identifiers ++; token_total ++; strcpy(name,yytext); return ID;}
 	YY_BREAK
 case 107:
 YY_RULE_SETUP
 #line 153 "scanner.l"
-{ literals ++; strcpy(name,yytext); return NUMBER;}
+{ literals ++; token_total ++; strcpy(name,yytext); return NUMBER;}
 	YY_BREAK
 case 108:
 YY_RULE_SETUP
@@ -1541,7 +1541,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 109:
 YY_RULE_SETUP
-#line 157 "scanner.l"
+#line 159 "scanner.l"
 ECHO;
 	YY_BREAK
 #line 1548 "prep_scanner.c"
@@ -2552,7 +2552,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 157 "scanner.l"
+#line 159 "scanner.l"
 
 
 	/* --------------------------------------------------------------------------------------------------Code */
@@ -2563,6 +2563,7 @@ void yyfree (void * ptr )
 		printf("LITERALS ---> %d\n", literals);
 		printf("OPERADORES ---> %d\n", operators);
 		printf("DELIMITADORES ---> %d\n", delimiters);
+		printf("token_total ---> %d\n", token_total);
 	}
 
 	void count_tokens(int pToken){
@@ -2618,7 +2619,7 @@ void toHex(FILE* file) {
 		bool n_quote = true;
 		int included_tokens = 0;
 		int total_tkns = insertedTokens;
-		int total_sum;
+
 
 
 
@@ -2984,22 +2985,20 @@ void toHex(FILE* file) {
 		fprintf(beamerFile,"\\end{frame} \n");
 
 		//************************Pie
-		total_sum = (palabras_reservadas + identifiers + literals + operators + delimiters);
-		printf("%d",total_sum);
 
 		fprintf(beamerFile,"\\begin{frame} \n");
 
 		fprintf(beamerFile,"\\begin{tikzpicture}\n");
 		fprintf(beamerFile,"\\pie[rotate = 180]\n");
-		fprintf(beamerFile,"{%d",(100 * palabras_reservadas)/total_sum);
+		fprintf(beamerFile,"{%.2lf",(100 * palabras_reservadas)/((double)token_total));
 		fprintf(beamerFile,"/Palabras Reservadas,\n");
-		fprintf(beamerFile,"%d",(100 * identifiers)/total_sum);
+		fprintf(beamerFile,"%.2lf",(100 * identifiers)/((double)token_total));
 		fprintf(beamerFile,"/Identificadores,\n");
-		fprintf(beamerFile,"%d",(100 * literals)/total_sum);
+		fprintf(beamerFile,"%.2lf",(100 * literals)/((double)token_total));
 		fprintf(beamerFile,"/Literales,\n");
-		fprintf(beamerFile,"%d",(100 * operators)/total_sum);
+		fprintf(beamerFile,"%.2lf",(100 * operators)/((double)token_total));
 		fprintf(beamerFile,"/Operadores,\n");
-		fprintf(beamerFile,"%d",(100 * delimiters)/total_sum);
+		fprintf(beamerFile,"%.2lf",(100 * delimiters)/((double)token_total));
 		fprintf(beamerFile,"/Delimitadores}\n");
 
 
