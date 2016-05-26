@@ -1,1 +1,1 @@
-Holaaaaaaaaaaaaaaaa este es el codigo finaaaaaal
+	fprintf(output,"#include %s", _name);

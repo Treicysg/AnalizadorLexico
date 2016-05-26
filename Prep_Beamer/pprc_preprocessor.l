@@ -31,7 +31,7 @@ string 		\"(\\.|[^"])*\"
 "\"" {strcpy(_name,yytext);return QUOTES;}
 "<"{letter}({letter}|{number})*("."{letter}+)+">" {strcpy(_name, yytext); return LIBRARY;}
 {letter}({letter}|{number})* {strcpy(_name,yytext); return CODIGO;}
-#[ \t]*include[ \t]+ {strcpy(_name,yytext);includeCounter++; return INCLUDE;}
+[ \t\n]#[ \t]*include[ \t]+ {strcpy(_name,yytext);includeCounter++; return INCLUDE;}
 [_]*{letter}({letter}|{number}|[_]*)*("."{letter}+)+ {strcpy(_name,yytext);return FILENAME; }
 <<EOF>> {strcpy(_name,"EOF"); return EOF;}
 . {strcpy(_name,yytext);return CODIGO;}
@@ -52,7 +52,7 @@ string 		\"(\\.|[^"])*\"
 			 ongoing_token = yylex(); //Obtenemos el nombre de la variable
 	    if (strcmp(_name,nombre)==0){
 	     printf("Define Repetidoooo llamado: %s. \n", nombre );
-	     exit(1);
+	     //exit(1);
 	    }else{
 	     fprintf(processed_File,"#define ");
 	     fprintf(processed_File,"%s",_name);
@@ -153,6 +153,7 @@ void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
 
 	while((current_token= yylex())!= EOF){
 		// Mientras haya algo que leer...
+	
 		if(current_token == INCLUDE){
 				current_token = yylex(); // verifica que el file path empiece con comillas
 				if(current_token == QUOTES){
@@ -183,7 +184,7 @@ void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
 					fprintf(output,"#include %s", _name);
 				}
 				else{
-					printf("File path no valido. faltan comillas iniciales \n");
+					printf(" File path no valido. faltan comillas iniciales %s \n", yytext);
 					exit(0);
 				}
 		}

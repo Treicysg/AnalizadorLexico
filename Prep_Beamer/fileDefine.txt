@@ -1,14 +1,113 @@
-codigo 1
 
-el primer pedacito de codigo
+#endif
+
+#ifndef INTSTDCNOSTDCUNISTDSTDCH
+/* Special case for , since it is non-ANSI. We include it way
+ * down here because we want the user's section 1 to have been scanned first.
+ * The user has a chance to override it with an option.
+ */#include 
+#endif
+
+#ifndef INTSTDCEXTRASTDCTYPE
+STDCEXTRASTDCTYPE void *
+#endif
+
+/* Accessor methods to globals.
+   These are made visible to non-reentrant scanners for convenience. */
+
+int yylexSTDCdestroy (void );
+
+int yygetSTDCdebug (void );
+
+void yysetSTDCdebug (int debugSTDCflag  );
+
+INTSTDCEXTRASTDCTYPE yygetSTDCextra (void );
+
+void yysetSTDCextra (INTSTDCEXTRASTDCTYPE userSTDCdefined  );
+
+FILE *yygetSTDCin (void );
+
+void yysetSTDCin  (FILE * inSTDCstr  );
+
+FILE *yygetSTDCout (void );
+
+void yysetSTDCout  (FILE * outSTDCstr  );
+
+int yygetSTDCleng (void );
+
+char *yygetSTDCtext (void );
+
+int yygetSTDClineno (void );
+
+void yysetSTDClineno (int lineSTDCnumber  );
+
+/* Macros after this point can all be overridden by user definitions in
+ * section 1.
+ */
+
+#ifndef INTSTDCSKIPSTDCYYWRAP
+#ifdef STDCSTDCcplusplus
+extern C int n (void );
+#else
+extern int n (void );
+#endif
+#endif
+
+#ifndef yytext
+static void yySTDCflexSTDCstrncpy (char *,const char *,int );
+#endif
+
+#ifdef INTSTDCNEEDSTDCSTRLEN
+static int yySTDCflexSTDCstrlen (const char * );
+#endif
+
+#ifndef INTSTDCNOSTDCINPUT
+
+#endif
+
+/* Amount of stuff to slurp up with each read. */
+#ifndef INTSTDCREADSTDCBUFSTDCSIZE
+#ifdef STDCSTDCia64STDCSTDC
+/* On IA-64, the buffer size is 16k, not 8k */
+STDCREADSTDCBUFSTDCSIZE 16384
+#else
+STDCREADSTDCBUFSTDCSIZE 8192
+#endif /* STDCSTDCia64STDCSTDC */
+#endif
+
+/* Number of entries by which start-condition stack grows. */
+#ifndef INTSTDCSTARTSTDCSTACKSTDCINCR
+STDCSTARTSTDCSTACKSTDCINCR 25
+#endif
+
+/* Default declaration of generated scanner - a define so the user can
+ * easily add parameters.
+ */
+#ifndef INTSTDCDECL
+STDCDECLSTDCISSTDCOURS 1
+
+extern int yylex (void);
+
+STDCDECL int yylex (void)
+#endif /* !INTSTDCDECL */
+
+/* yySTDCgetSTDCpreviousSTDCstate - get the state just before the EOB char was reached */
+
+#undef INTSTDCNEWSTDCFILE
+#undef INTSTDCFLUSHSTDCBUFFER
+#undef yySTDCsetSTDCbol
+#undef yySTDCnewSTDCbuffer
+#undef yySTDCsetSTDCinteractive
+#undef INTSTDCDOSTDCBEFORESTDCACTION
+
+#ifdef INTSTDCDECLSTDCISSTDCOURS
+#undef INTSTDCDECLSTDCISSTDCOURS
+#undef INTSTDCDECL
+#endif
+
+#line 159 
 
 
-GRACIAS LANG
-int main()
-{
-  int sirvo;
-  sirvo = 2015;
-   printf(La edad es %d years old.\n,10);
-  lal = 30;
-   return 0;
-}
+#line 334 
+#undef HEADERSTDCHEADER
+#endif /* HSTDCH */

@@ -29,3530 +29,1242 @@ TEC
 \frametitle{An\'alisis L\'exico y Flex} 
 El An\'alisis L\'exico consiste en descomponer un fuente de entrada en categor\'ias l\'exicas m\'inimas llamadas tokens.Un programa en Flex consiste b\'asicamente en una lista de expresiones regulares que definen acciones a ejecutar cuando ocurre un match.\end{frame} 
 \begin{frame}
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Violet}{next}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{void}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
+ \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{yyHEADER}\textcolor{Sepia}{\_}
+\textcolor{Violet}{H}
+ \textcolor{SeaGreen}{1}
 
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{current}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
+ \textcolor{SeaGreen}{1}
 
  
- \textcolor{OrangeRed}{void}
+  \textcolor{Red}{23}
+\textcolor{Violet}{line}\textcolor{White}{\ }
+\textcolor{SeaGreen}{6}
 \textcolor{White}{\ }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Violet}{t}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
 
- \textcolor{White}{\   }
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{line}\textcolor{White}{\ }
+\textcolor{SeaGreen}{8}
+\textcolor{White}{\ }
+
+ 
+ \textcolor{Violet}{ALIGNED}\textcolor{White}{\ }
+\textcolor{OrangeRed}{short}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{int}
+
+ 
+ \end{frame}
+\begin{frame}
+
+ 
+ \textcolor{Sepia}{\_}
+\textcolor{Violet}{SCANNER}\textcolor{Sepia}{\_}
+\textcolor{Violet}{MAJOR}\textcolor{Sepia}{\_}
+\textcolor{Violet}{VERSION}\textcolor{White}{\ }
+\textcolor{SeaGreen}{2}
+
+ \textcolor{Sepia}{\_}
+\textcolor{Violet}{SCANNER}\textcolor{Sepia}{\_}
+\textcolor{Violet}{MINOR}\textcolor{Sepia}{\_}
+\textcolor{Violet}{VERSION}\textcolor{White}{\ }
+\textcolor{SeaGreen}{5}
+
+ \textcolor{Sepia}{\_}
+\textcolor{Violet}{SCANNER}\textcolor{Sepia}{\_}
+\textcolor{Violet}{SUBMINOR}\textcolor{Sepia}{\_}
+\textcolor{Violet}{VERSION}\textcolor{White}{\ }
+\textcolor{SeaGreen}{35}
+
+  \textcolor{Red}{23}
 \textcolor{OrangeRed}{if}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{nextev}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
 \textcolor{White}{\ }
-\textcolor{Violet}{t}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
+\textcolor{Violet}{INT}\textcolor{Sepia}{\_}
+\textcolor{Violet}{SCANNER}\textcolor{Sepia}{\_}
+\textcolor{Violet}{SUBMINOR}\textcolor{Sepia}{\_}
+\textcolor{Violet}{VERSION}\textcolor{White}{\ }
+\textcolor{OliveGreen}{\textgreater}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{0}
 
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{nextev}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
+ \textcolor{Sepia}{\_}
+\textcolor{Violet}{BETA}
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ 
+ 
+ \end{frame}
+\begin{frame}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{include} \textcolor{Red}{23}
+\textcolor{Violet}{include}
+ 
+ 
+ 
+ 
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{FLEXINT}\textcolor{Sepia}{\_}
+\textcolor{Violet}{H}
+ 
+ 
+ \end{frame}
+\begin{frame}
+
+  \textcolor{Red}{23}
+\textcolor{OrangeRed}{if}
 \textcolor{White}{\ }
-\textcolor{Violet}{scanner}\textcolor{SkyBlue}{(}
+\textcolor{Violet}{defined}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Sepia}{\_}
+\textcolor{Sepia}{\_}
+\textcolor{Violet}{STDC}\textcolor{Sepia}{\_}
+\textcolor{Violet}{VERSION}\textcolor{Sepia}{\_}
+\textcolor{Sepia}{\_}
 \textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{Goldenrod}{ \&\& }
+\textcolor{White}{\ }
+\textcolor{Sepia}{\_}
+\textcolor{Sepia}{\_}
+\textcolor{Violet}{STDC}\textcolor{Sepia}{\_}
+\textcolor{Violet}{VERSION}\textcolor{Sepia}{\_}
+\textcolor{Sepia}{\_}
+\textcolor{White}{\ }
+\textcolor{OliveGreen}{\textgreater =}
+\textcolor{White}{\ }
+\textcolor{SeaGreen}{199901}
+\textcolor{Violet}{L}
+ 
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Sepia}{\_}
+\textcolor{Sepia}{\_}
+\textcolor{Violet}{STDC}\textcolor{Sepia}{\_}
+\textcolor{Violet}{LIMIT}\textcolor{Sepia}{\_}
+\textcolor{Violet}{MACROS}
+ \textcolor{Violet}{LIMITSTDCMACROS}\textcolor{White}{\ }
+\textcolor{SeaGreen}{1}
 
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ \textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{Violet}{int8STDCt}\textcolor{White}{\ }
+\textcolor{Violet}{flexSTDCint8STDCt}\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{Violet}{uint8STDCt}\textcolor{White}{\ }
+\textcolor{Violet}{flexSTDCuint8STDCt}\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{Violet}{int16STDCt}\textcolor{White}{\ }
+\textcolor{Violet}{flexSTDCint16STDCt}\textcolor{Sepia}{;}
+
+ \end{frame}
+\begin{frame}
+\textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{Violet}{uint16STDCt}\textcolor{White}{\ }
+\textcolor{Violet}{flexSTDCuint16STDCt}\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{Violet}{int32STDCt}\textcolor{White}{\ }
+\textcolor{Violet}{flexSTDCint32STDCt}\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{Violet}{uint32STDCt}\textcolor{White}{\ }
+\textcolor{Violet}{flexSTDCuint32STDCt}\textcolor{Sepia}{;}
+
+  \textcolor{Red}{23}
+\textcolor{OrangeRed}{else}
+
+ \textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{signed}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{char}
+\textcolor{White}{\ }
+\textcolor{Violet}{flexSTDCint8STDCt}\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{short}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{flexSTDCint16STDCt}\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{flexSTDCint32STDCt}\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{unsigned}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{char}
+\textcolor{White}{\ }
+\textcolor{Violet}{flexSTDCuint8STDCt}\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+
+ \textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{unsigned}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{short}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{flexSTDCuint16STDCt}\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{unsigned}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{flexSTDCuint32STDCt}\textcolor{Sepia}{;}
+
+ \end{frame}
+\begin{frame}
+
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INT8STDCMIN}
+ \textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
 \textcolor{White}{\ }
 \textcolor{SkyBlue}{(}
-\textcolor{Violet}{nextev}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
+\textcolor{SpringGreen}{-}
+\textcolor{SeaGreen}{128}
+\textcolor{SkyBlue}{)}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INT16STDCMIN}
+ \textcolor{White}{\ }
 \textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{SpringGreen}{-}
+\textcolor{SeaGreen}{32767}
 \textcolor{SpringGreen}{-}
 \textcolor{SeaGreen}{1}
 \textcolor{SkyBlue}{)}
-\textcolor{White}{\ }
-\textcolor{Violet}{nextev}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{scanner}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
 
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{current}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{nextev}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{Sepia}{;}
-
- 
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{else}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\ }
-\textcolor{White}{\   }
-\textcolor{Violet}{sintax}\textcolor{Sepia}{\_}
-\textcolor{Violet}{error}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{t}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- 
- \textcolor{White}{\   }
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{\} }
-
- 
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{sintax}\textcolor{Sepia}{\_}
-\textcolor{Violet}{error}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Violet}{t}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{printf}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{Sintax}\textcolor{White}{\ }
-\textcolor{Violet}{error}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{expecting}\textcolor{White}{\ }
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{Gray}{\textbackslash }
-\textcolor{Violet}{n}\textcolor{Sepia}{,}
-\textcolor{Violet}{get}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{name}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{t}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{exit}
-\textcolor{SkyBlue}{(}
-\textcolor{SeaGreen}{0}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- 
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{system}
-\textcolor{Sepia}{\_}
-\textcolor{Violet}{goal}\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{void}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-
- 
- \textcolor{White}{\   }
-\textcolor{Violet}{program}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- 
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{SCANEOF}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{finish}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- 
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{program}\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{void}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{start}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{BEGIN}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{statement}\textcolor{Sepia}{\_}
-\textcolor{Violet}{list}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{END}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{SkyBlue}{\} }
-
- 
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{statement}\textcolor{Sepia}{\_}
-\textcolor{Violet}{list}\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{void}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{statement}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{while}
-\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{true}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{switch}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{next}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{ID}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{READ}\textcolor{Sepia}{:}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{WRITE}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{statement}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{default}
-\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{statement}\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{void}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Violet}{tok}\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{next}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{result}\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{White}{\   }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{p}\textcolor{Sepia}{\_}
-\textcolor{Violet}{expr}\textcolor{Sepia}{;}
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{switch}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{tok}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{ID}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{strcpy}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{previous}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tokenbuffer}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{ID}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{result}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{process}\textcolor{Sepia}{\_}
-\textcolor{Violet}{id}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{ASSIGNOP}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{expression}\textcolor{SkyBlue}{(}
-\textcolor{MidnightBlue}{\textasciicircum}
-\textcolor{Violet}{p}\textcolor{Sepia}{\_}
-\textcolor{Violet}{expr}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{assign}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{result}\textcolor{Sepia}{,}
-\textcolor{Violet}{p}\textcolor{Sepia}{\_}
-\textcolor{Violet}{expr}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{SEMICOLON}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{READ}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{READ}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{LPAREN}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{id}\textcolor{Sepia}{\_}
-\textcolor{Violet}{list}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{RPAREN}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{SEMICOLON}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{WRITE}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{WRITE}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{LPAREN}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{list}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{RPAREN}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{SEMICOLON}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\ }
-\textcolor{White}{\ }
-\textcolor{White}{\ }
-\textcolor{White}{\ }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{default}
-\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{sintax}\textcolor{Sepia}{\_}
-\textcolor{Violet}{error}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{tok}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- 
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{SkyBlue}{\} }
-
- 
- 
- \end{frame}
-\begin{frame}
-\textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{assign}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{result}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{p}\textcolor{Sepia}{\_}
-\textcolor{Violet}{expr}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{char}
-\textcolor{SpringGreen}{*}
-\textcolor{White}{\ }
-\textcolor{Violet}{salida}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{salida}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{calloc}
-\textcolor{SkyBlue}{(}
-\textcolor{SeaGreen}{1024}
-\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{sizeof}
-\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{char}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{strcpy}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{salida}\textcolor{Sepia}{,}
-\textcolor{Violet}{extractEXPR}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{p}\textcolor{Sepia}{\_}
-\textcolor{Violet}{expr}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{generate}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{Store}\textcolor{Sepia}{,}
-\textcolor{Violet}{salida}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Sepia}{,}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- 
- 
- 
- 
- \end{frame}
-\begin{frame}
-\textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{id}\textcolor{Sepia}{\_}
-\textcolor{Violet}{list}\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{void}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{result}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{strcpy}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{previous}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tokenbuffer}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{ID}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{strcpy}
-\textcolor{SkyBlue}{(}
-\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{previous}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tokenbuffer}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{while}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{next}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{COMMA}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{strcpy}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{previous}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tokenbuffer}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{COMMA}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{strcpy}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{previous}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tokenbuffer}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{ID}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{strcpy}
-\textcolor{SkyBlue}{(}
-\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{previous}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tokenbuffer}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{read}\textcolor{Sepia}{\_}
-\textcolor{Violet}{id}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{result}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{read}\textcolor{Sepia}{\_}
-\textcolor{Violet}{id}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{in}\textcolor{Sepia}{\_}
-\textcolor{Violet}{var}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\ }
-
- \textcolor{White}{\ }
-\textcolor{Violet}{generate}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{Read}\textcolor{Sepia}{,}
-\textcolor{Sepia}{,}
-\textcolor{Violet}{Integer}\textcolor{Sepia}{,}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- 
- \textcolor{SkyBlue}{\} }
-
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{write}\textcolor{Sepia}{\_}
-\textcolor{Violet}{expr}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{out}\textcolor{Sepia}{\_}
-\textcolor{Violet}{expr}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- 
- \end{frame}
-\begin{frame}
-\textcolor{White}{\ }
-\textcolor{Violet}{generate}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{Write}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{Integer}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{list}\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{void}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{result}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{expression}\textcolor{SkyBlue}{(}
-\textcolor{MidnightBlue}{\textasciicircum}
-\textcolor{Violet}{result}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{write}\textcolor{Sepia}{\_}
-\textcolor{Violet}{expr}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{result}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{while}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{next}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{COMMA}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{COMMA}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{expression}\textcolor{SkyBlue}{(}
-\textcolor{MidnightBlue}{\textasciicircum}
-\textcolor{Violet}{result}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{write}\textcolor{Sepia}{\_}
-\textcolor{Violet}{expr}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{result}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{expression}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{SpringGreen}{*}
-\textcolor{Violet}{result}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{left}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{right}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{op}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{op}\textcolor{Sepia}{;}
-
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INT32STDCMIN}
  \textcolor{White}{\ }
 \textcolor{White}{\ }
 \textcolor{White}{\ }
 \textcolor{White}{\ }
-\textcolor{Violet}{primary}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{MidnightBlue}{\textasciicircum}
 \textcolor{White}{\ }
 \textcolor{White}{\ }
-\textcolor{Violet}{left}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\ }
 \textcolor{White}{\ }
 \textcolor{White}{\ }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{while}
+\textcolor{White}{\ }
+\textcolor{White}{\ }
 \textcolor{White}{\ }
 \textcolor{SkyBlue}{(}
-\textcolor{Violet}{next}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{PLUSOP}\textcolor{White}{\ }
-\textcolor{Goldenrod}{ $||$ }
-\textcolor{White}{\ }
-\textcolor{Violet}{next}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{MINUSOP}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{add}\textcolor{Sepia}{\_}
-\textcolor{Violet}{op}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{MidnightBlue}{\textasciicircum}
-\textcolor{White}{\ }
-\textcolor{Violet}{op}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{primary}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{MidnightBlue}{\textasciicircum}
-\textcolor{White}{\ }
-\textcolor{Violet}{right}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{left}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{gen}\textcolor{Sepia}{\_}
-\textcolor{Violet}{infix}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{left}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{op}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{right}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{SpringGreen}{*}
-\textcolor{Violet}{result}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{left}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- 
- 
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{add}\textcolor{Sepia}{\_}
-\textcolor{Violet}{op}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{op}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{SpringGreen}{*}
-\textcolor{White}{\ }
-\textcolor{Violet}{p}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Violet}{tok}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{next}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{tok}\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{PLUSOP}\textcolor{White}{\ }
-\textcolor{Goldenrod}{ $||$ }
-\textcolor{White}{\ }
-\textcolor{Violet}{tok}\textcolor{OliveGreen}{$==$}
-\textcolor{Violet}{MINUSOP}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{previous}\textcolor{Sepia}{\_}
-\textcolor{Violet}{currentToken}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{current}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{tok}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SpringGreen}{*}
-\textcolor{Violet}{p}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{process}\textcolor{Sepia}{\_}
-\textcolor{Violet}{op}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{OrangeRed}{else}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{sintax}\textcolor{Sepia}{\_}
-\textcolor{Violet}{error}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{tok}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{SkyBlue}{\} }
-
- 
- \end{frame}
-\begin{frame}
-\textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{primary}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{SpringGreen}{*}
-\textcolor{White}{\ }
-\textcolor{Violet}{p}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{result}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Violet}{tok}\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{next}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{switch}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{tok}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{LPAREN}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{LPAREN}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{expression}\textcolor{SkyBlue}{(}
-\textcolor{MidnightBlue}{\textasciicircum}
-\textcolor{Violet}{result}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SpringGreen}{*}
-\textcolor{Violet}{p}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{result}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{RPAREN}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{ID}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{strcpy}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{previous}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tokenbuffer}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{ID}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SpringGreen}{*}
-\textcolor{Violet}{p}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{process}\textcolor{Sepia}{\_}
-\textcolor{Violet}{id}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{INTLITERAL}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{strcpy}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{previous}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tokenbuffer}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{match}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{INTLITERAL}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SpringGreen}{*}
-\textcolor{Violet}{p}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{process}\textcolor{Sepia}{\_}
-\textcolor{Violet}{literal}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{default}
-\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{sintax}\textcolor{Sepia}{\_}
-\textcolor{Violet}{error}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{tok}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- 
- 
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{const}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{char}
-\textcolor{White}{\ }
-\textcolor{SpringGreen}{*}
-\textcolor{White}{\ }
-\textcolor{Violet}{get}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{name}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Violet}{t}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{switch}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{t}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{BEGIN}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{BEGIN}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{END}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{END}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{READ}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{READ}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{WRITE}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{WRITE}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{ID}\textcolor{Sepia}{:}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{ID}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{INTLITERAL}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{INTLITERAL}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{LPAREN}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{LPAREN}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{RPAREN}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{RPAREN}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{SEMICOLON}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{SEMICOLON}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{COMMA}\textcolor{Sepia}{:}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{COMMA}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{ASSIGNOP}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{ASSIGNOP}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{PLUSOP}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{PLUSOP}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{MINUSOP}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{MINUSOP}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{case}
-\textcolor{White}{\ }
-\textcolor{Violet}{SCANEOF}\textcolor{Sepia}{:}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{SCANEOF}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \end{frame}
-\begin{frame}
-\textcolor{SkyBlue}{\} }
-
- 
- 
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{open}\textcolor{Sepia}{\_}
-\textcolor{Violet}{outputFile}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{output}\textcolor{Sepia}{\_}
-\textcolor{Violet}{file}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{fopen}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Sepia}{,}
-\textcolor{Violet}{w}\textcolor{SpringGreen}{+}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{close}\textcolor{Sepia}{\_}
-\textcolor{Violet}{outputFile}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{fclose}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{output}\textcolor{Sepia}{\_}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{start}\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{void}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{finish}\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{void}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{generate}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{Halt}\textcolor{Sepia}{,}
-\textcolor{Sepia}{,}
-\textcolor{Sepia}{,}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- 
- \end{frame}
-\begin{frame}
-\textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{ident}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- 
- \textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{process}\textcolor{Sepia}{\_}
-\textcolor{Violet}{id}\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{void}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{t}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{check}\textcolor{Sepia}{\_}
-\textcolor{Violet}{id}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{previous}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tokenbuffer}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{IDEXPR}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{strcpy}
-\textcolor{SkyBlue}{(}
-\textcolor{Sepia}{,}
-\textcolor{Violet}{previous}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tokenbuffer}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{t}\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{process}\textcolor{Sepia}{\_}
-\textcolor{Violet}{literal}\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{void}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{t}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{LITERALEXPR}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{void}
-\textcolor{SkyBlue}{)}
-\textcolor{White}{\ }
-\textcolor{Violet}{sscanf}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{previous}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tokenbuffer}\textcolor{Sepia}{,}
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{d}\textcolor{Sepia}{,}
-\textcolor{MidnightBlue}{\textasciicircum}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- 
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{t}\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{Violet}{op}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{process}\textcolor{Sepia}{\_}
-\textcolor{Violet}{op}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{void}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- 
- \textcolor{White}{\   }
-\textcolor{Violet}{op}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{o}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{previous}\textcolor{Sepia}{\_}
-\textcolor{Violet}{currentToken}\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{PLUSOP}\textcolor{SkyBlue}{)}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{PLUS}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{else}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{MINUS}\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{o}\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- 
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{check}\textcolor{Sepia}{\_}
-\textcolor{Violet}{id}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{string}\textcolor{White}{\ }
-\textcolor{Violet}{s}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{SkyBlue}{(}
-\textcolor{Goldenrod}{!}
-\textcolor{White}{\ }
-\textcolor{Violet}{lookup}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{s}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{enter}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{s}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{generate}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{Declare}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{s}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{Integer}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{SkyBlue}{\} }
-
- \end{frame}
-\begin{frame}
-
- \textcolor{Violet}{bool}\textcolor{White}{\ }
-\textcolor{Violet}{lookup}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{string}\textcolor{White}{\ }
-\textcolor{Violet}{s}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{int}
-\textcolor{White}{\ }
-\textcolor{Violet}{i}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{for}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{i}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{SeaGreen}{0}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{i}\textcolor{White}{\ }
-\textcolor{OliveGreen}{\textless}
-\textcolor{White}{\ }
-\textcolor{Violet}{symTable}\textcolor{Sepia}{\_}
-\textcolor{Violet}{count}\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{i}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{strcmp}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{symbol}\textcolor{Sepia}{\_}
-\textcolor{Violet}{table}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{i}\textcolor{SkyBlue}{]}
-\textcolor{Sepia}{,}
-\textcolor{Violet}{s}\textcolor{SkyBlue}{)}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{SeaGreen}{0}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{true}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{i}\textcolor{Apricot}{++}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{false}
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{enter}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{string}\textcolor{White}{\ }
-\textcolor{Violet}{s}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{strcpy}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{symbol}\textcolor{Sepia}{\_}
-\textcolor{Violet}{table}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{symTable}\textcolor{Sepia}{\_}
-\textcolor{Violet}{count}\textcolor{SkyBlue}{]}
-\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{s}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{symTable}\textcolor{Sepia}{\_}
-\textcolor{Violet}{count}\textcolor{Apricot}{++}
-\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{generate}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{string}\textcolor{White}{\ }
-\textcolor{Violet}{op1}\textcolor{Sepia}{,}
-\textcolor{Violet}{string}\textcolor{White}{\ }
-\textcolor{Violet}{op2}\textcolor{Sepia}{,}
-\textcolor{Violet}{string}\textcolor{White}{\ }
-\textcolor{Violet}{op3}\textcolor{Sepia}{,}
-\textcolor{Violet}{string}\textcolor{White}{\ }
-\textcolor{Violet}{op4}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{op1}\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{Declare}\textcolor{SkyBlue}{)}
-\textcolor{White}{\ }
-\textcolor{Goldenrod}{ $||$ }
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{op1}\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{Store}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{fprintf}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{output}\textcolor{Sepia}{\_}
-\textcolor{Violet}{file}\textcolor{Sepia}{,}
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{White}{\ }
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{White}{\ }
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{White}{\ }
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{Gray}{\textbackslash }
-\textcolor{Violet}{n}\textcolor{White}{\ }
-\textcolor{Sepia}{,}
-\textcolor{Violet}{op1}\textcolor{Sepia}{,}
-\textcolor{Violet}{op2}\textcolor{Sepia}{,}
-\textcolor{Violet}{op3}\textcolor{Sepia}{,}
-\textcolor{Violet}{op4}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{OrangeRed}{else}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{if}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{op1}\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{Halt}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{fprintf}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{output}\textcolor{Sepia}{\_}
-\textcolor{Violet}{file}\textcolor{Sepia}{,}
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{White}{\ }
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{White}{\ }
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{White}{\ }
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{Gray}{\textbackslash }
-\textcolor{Violet}{n}\textcolor{White}{\ }
-\textcolor{Sepia}{,}
-\textcolor{Violet}{op1}\textcolor{Sepia}{,}
-\textcolor{Violet}{op2}\textcolor{Sepia}{,}
-\textcolor{Violet}{op3}\textcolor{Sepia}{,}
-\textcolor{Violet}{op4}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{else}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{fprintf}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{output}\textcolor{Sepia}{\_}
-\textcolor{Violet}{file}\textcolor{Sepia}{,}
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{White}{\ }
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{White}{\ }
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{White}{\ }
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{Gray}{\textbackslash }
-\textcolor{Violet}{n}\textcolor{White}{\ }
-\textcolor{Sepia}{,}
-\textcolor{Violet}{op1}\textcolor{Sepia}{,}
-\textcolor{Violet}{op2}\textcolor{Sepia}{,}
-\textcolor{Violet}{op3}\textcolor{Sepia}{,}
-\textcolor{Violet}{op4}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- 
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{char}
-\textcolor{SpringGreen}{*}
-\textcolor{White}{\ }
-\textcolor{Violet}{extractOP}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{op}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{p}\textcolor{Sepia}{\_}
-\textcolor{Violet}{operand}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{char}
-\textcolor{SpringGreen}{*}
-\textcolor{White}{\ }
-\textcolor{Violet}{minus}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{Sub}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{char}
-\textcolor{SpringGreen}{*}
-\textcolor{White}{\ }
-\textcolor{Violet}{plus}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{Add}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{MINUS}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{minus}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{OrangeRed}{else}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{PLUS}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{plus}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{char}
-\textcolor{SpringGreen}{*}
-\textcolor{White}{\ }
-\textcolor{Violet}{extractEXPR}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{p}\textcolor{Sepia}{\_}
-\textcolor{Violet}{expr}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{char}
-\textcolor{SpringGreen}{*}
-\textcolor{White}{\ }
-\textcolor{Violet}{express}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{express}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{calloc}
-\textcolor{SkyBlue}{(}
-\textcolor{SeaGreen}{1024}
-\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{sizeof}
-\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{char}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{IDEXPR}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{strcpy}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{express}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{Sepia}{,}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{express}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{OrangeRed}{else}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{LITERALEXPR}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{sprintf}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{express}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{Sepia}{,}
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{d}\textcolor{Sepia}{,}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{express}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{OrangeRed}{else}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{strcpy}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{express}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{Sepia}{,}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{express}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- 
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{gen}\textcolor{Sepia}{\_}
-\textcolor{Violet}{infix}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{e1}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{op}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{op}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{e2}\textcolor{SkyBlue}{)}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{e}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{e}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec1}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{LITERALEXPR}\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{char}
-\textcolor{SpringGreen}{*}
-\textcolor{White}{\ }
-\textcolor{Violet}{resultadoEXPR2}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{resultadoEXPR2}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{calloc}
-\textcolor{SkyBlue}{(}
-\textcolor{SeaGreen}{1024}
-\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{sizeof}
-\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{char}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{char}
-\textcolor{SpringGreen}{*}
-\textcolor{White}{\ }
-\textcolor{Violet}{resultadoEXPR1}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{resultadoEXPR2}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{calloc}
-\textcolor{SkyBlue}{(}
-\textcolor{SeaGreen}{1024}
-\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{sizeof}
-\textcolor{SkyBlue}{(}
-\textcolor{OrangeRed}{char}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- 
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{int}
-\textcolor{White}{\ }
-\textcolor{Violet}{resultado}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{LITERALEXPR}\textcolor{White}{\ }
-\textcolor{Goldenrod}{ \&\& }
-\textcolor{White}{\ }
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{LITERALEXPR}\textcolor{SkyBlue}{)}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{int}
-\textcolor{White}{\ }
-\textcolor{Violet}{numero1}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{int}
-\textcolor{White}{\ }
-\textcolor{Violet}{numero2}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{Violet}{PLUS}\textcolor{SkyBlue}{)}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{resultado}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{numero1}\textcolor{White}{\ }
-\textcolor{SpringGreen}{+}
-\textcolor{White}{\ }
-\textcolor{Violet}{numero2}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{else}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{resultado}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{numero1}\textcolor{White}{\ }
 \textcolor{SpringGreen}{-}
-\textcolor{White}{\ }
-\textcolor{Violet}{numero2}\textcolor{Sepia}{;}
+\textcolor{SeaGreen}{2147483647}
+\textcolor{SpringGreen}{-}
+\textcolor{SeaGreen}{1}
+\textcolor{SkyBlue}{)}
 
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
+ \end{frame}
+\begin{frame}
+ \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INT8STDCMAX}
+ \textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{SeaGreen}{127}
+\textcolor{SkyBlue}{)}
 
- \textcolor{White}{\   }
-\textcolor{White}{\   }
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INT16STDCMAX}
+ \textcolor{White}{\ }
 \textcolor{White}{\ }
-\textcolor{Salmon}{=}
 \textcolor{White}{\ }
-\textcolor{Violet}{resultado}\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{SeaGreen}{32767}
+\textcolor{SkyBlue}{)}
 
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INT32STDCMAX}
+ \textcolor{White}{\ }
 \textcolor{White}{\ }
-\textcolor{Violet}{e}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{SeaGreen}{2147483647}
+\textcolor{SkyBlue}{)}
 
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ \end{frame}
+\begin{frame}
+ \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{UINT8STDCMAX}
+ \textcolor{White}{\ }
 \textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{SeaGreen}{255}
+\textcolor{Violet}{U}\textcolor{SkyBlue}{)}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{UINT16STDCMAX}
+ \textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{SeaGreen}{65535}
+\textcolor{Violet}{U}\textcolor{SkyBlue}{)}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{UINT32STDCMAX}
+ \textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{SeaGreen}{4294967295}
+\textcolor{Violet}{U}\textcolor{SkyBlue}{)}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ 
+ \end{frame}
+\begin{frame}
+ \textcolor{Red}{23}
+\textcolor{Violet}{endif}\textcolor{White}{\ }
+
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}\textcolor{White}{\ }
+
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifdef}\textcolor{White}{\ }
+\textcolor{Violet}{STDCSTDCcplusplus}
+ 
+ 
+ \textcolor{Violet}{STDCUSESTDCCONST}
+ 
+  \textcolor{Red}{23}
 \textcolor{OrangeRed}{else}
+\textcolor{White}{\   }
+
+ \end{frame}
+\begin{frame}
+
+ 
+  \textcolor{Red}{23}
+\textcolor{OrangeRed}{if}
 \textcolor{White}{\ }
+\textcolor{Violet}{defined}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{STDCSTDCSTDCSTDCSTDC}\textcolor{SkyBlue}{)}
+
+ 
+ \textcolor{Violet}{STDCUSESTDCCONST}
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}\textcolor{White}{\   }
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}\textcolor{White}{\   }
+
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifdef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCUSESTDCCONST}
+ \end{frame}
+\begin{frame}
+ \textcolor{Red}{23}
+\textcolor{OrangeRed}{else}
+
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ 
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCBUFSTDCSIZE}
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifdef}\textcolor{White}{\ }
+\textcolor{Violet}{STDCSTDCia64STDCSTDC}
+ 
+ \textcolor{Violet}{STDCBUFSTDCSIZE}\textcolor{White}{\ }
+\textcolor{SeaGreen}{32768}
+
+  \textcolor{Red}{23}
+\textcolor{OrangeRed}{else}
+
+ \end{frame}
+\begin{frame}
+\textcolor{Violet}{STDCBUFSTDCSIZE}\textcolor{White}{\ }
+\textcolor{SeaGreen}{16384}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}\textcolor{White}{\ }
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCTYPEDEFSTDCINTSTDCBUFFERSTDCSTATE}
+ \textcolor{Violet}{STDCTYPEDEFSTDCINTSTDCBUFFERSTDCSTATE}
+ \textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{struct}
+\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCbufferSTDCstate}\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{INTSTDCBUFFERSTDCSTATE}\textcolor{Sepia}{;}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ 
+ \textcolor{OrangeRed}{extern}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{yyleng}\textcolor{Sepia}{;}
+
+ \end{frame}
+\begin{frame}
+
+ \textcolor{OrangeRed}{extern}
+\textcolor{White}{\ }
+\textcolor{Violet}{FILE}\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{yyin}\textcolor{Sepia}{,}
+\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{yyout}\textcolor{Sepia}{;}
+
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCTYPEDEFSTDCINTSTDCSIZESTDCT}
+ \textcolor{Violet}{STDCTYPEDEFSTDCINTSTDCSIZESTDCT}
+ \textcolor{OrangeRed}{typedef}
+\textcolor{White}{\ }
+\textcolor{Violet}{sizeSTDCt}\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCsizeSTDCt}\textcolor{Sepia}{;}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCSTRUCTSTDCINTSTDCBUFFERSTDCSTATE}
+ \textcolor{Violet}{STDCSTRUCTSTDCINTSTDCBUFFERSTDCSTATE}
+ \end{frame}
+\begin{frame}
+\textcolor{OrangeRed}{struct}
+\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCbufferSTDCstate}
+ \textcolor{White}{\   }
 \textcolor{SkyBlue}{\{ }
 
  \textcolor{White}{\   }
+\textcolor{Violet}{FILE}\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{yySTDCinputSTDCfile}\textcolor{Sepia}{;}
+
+ 
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{char}
+\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{yySTDCchSTDCbuf}\textcolor{Sepia}{;}
 \textcolor{White}{\   }
-\textcolor{Violet}{expr}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec}\textcolor{White}{\ }
-\textcolor{Violet}{e}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec1}\textcolor{Sepia}{;}
+\textcolor{White}{\   }
 
  \textcolor{White}{\   }
+\textcolor{OrangeRed}{char}
+\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{yySTDCbufSTDCpos}\textcolor{Sepia}{;}
 \textcolor{White}{\   }
+\textcolor{White}{\   }
+
+ 
+ \textcolor{White}{\   }
+
+ \textcolor{White}{\   }
+\textcolor{Violet}{yySTDCsizeSTDCt}\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCbufSTDCsize}\textcolor{Sepia}{;}
+
+ 
+ \end{frame}
+\begin{frame}
+\textcolor{White}{\   }
+
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{int}
 \textcolor{White}{\ }
-\textcolor{Salmon}{=}
+\textcolor{Violet}{yySTDCnSTDCchars}\textcolor{Sepia}{;}
+
+ 
+ \textcolor{White}{\   }
+
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{int}
 \textcolor{White}{\ }
-\textcolor{Violet}{TEMPEXPR}\textcolor{Sepia}{;}
+\textcolor{Violet}{yySTDCisSTDCourSTDCbuffer}\textcolor{Sepia}{;}
+
+ 
+ \textcolor{White}{\   }
+
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCisSTDCinteractive}\textcolor{Sepia}{;}
+
+ 
+ \textcolor{White}{\   }
 
  \end{frame}
 \begin{frame}
 \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{resultadoEXPR1}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
+\textcolor{OrangeRed}{int}
 \textcolor{White}{\ }
-\textcolor{Violet}{extractEXPR}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{e1}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
+\textcolor{Violet}{yySTDCatSTDCbol}\textcolor{Sepia}{;}
+
+ 
+ \textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCbsSTDClineno}\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+
+ \textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCbsSTDCcolumn}\textcolor{Sepia}{;}
+\textcolor{White}{\ }
+
+ \textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{White}{\ }
 
  \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{resultadoEXPR2}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{extractEXPR}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{e2}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
 
  \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{strncpy}\textcolor{SkyBlue}{(}
-\textcolor{Sepia}{,}
+\textcolor{OrangeRed}{int}
 \textcolor{White}{\ }
-\textcolor{Violet}{get}\textcolor{Sepia}{\_}
-\textcolor{Violet}{temp}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{,}
+\textcolor{Violet}{yySTDCfillSTDCbuffer}\textcolor{Sepia}{;}
+
+ 
+ \textcolor{White}{\   }
+\textcolor{OrangeRed}{int}
 \textcolor{White}{\ }
-\textcolor{Violet}{MAXIDLEN}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
+\textcolor{Violet}{yySTDCbufferSTDCstatus}\textcolor{Sepia}{;}
 
- \textcolor{White}{\   }
+ 
+ \end{frame}
+\begin{frame}
 \textcolor{White}{\   }
-\textcolor{Violet}{generate}\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{extractOP}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{op}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{,}
-\textcolor{Violet}{resultadoEXPR1}\textcolor{Sepia}{,}
-\textcolor{Violet}{resultadoEXPR2}\textcolor{Sepia}{,}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{e}\textcolor{Sepia}{\_}
-\textcolor{Violet}{rec1}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
 \textcolor{SkyBlue}{\} }
+\textcolor{Sepia}{;}
 
- \textcolor{SkyBlue}{\} }
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}\textcolor{White}{\ }
+
+ 
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{yyrestart}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{FILE}\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{inputSTDCfile}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCswitchSTDCtoSTDCbuffer}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{INTSTDCBUFFERSTDCSTATE}\textcolor{White}{\ }
+\textcolor{Violet}{newSTDCbuffer}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{Violet}{INTSTDCBUFFERSTDCSTATE}\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCcreateSTDCbuffer}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{FILE}\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{file}\textcolor{Sepia}{,}
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{size}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCdeleteSTDCbuffer}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{INTSTDCBUFFERSTDCSTATE}\textcolor{White}{\ }
+\textcolor{Violet}{b}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCflushSTDCbuffer}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{INTSTDCBUFFERSTDCSTATE}\textcolor{White}{\ }
+\textcolor{Violet}{b}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{yypushSTDCbufferSTDCstate}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{INTSTDCBUFFERSTDCSTATE}\textcolor{White}{\ }
+\textcolor{Violet}{newSTDCbuffer}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{yypopSTDCbufferSTDCstate}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \end{frame}
+\begin{frame}
+
+ \textcolor{Violet}{INTSTDCBUFFERSTDCSTATE}\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCscanSTDCbuffer}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{char}
+\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{base}\textcolor{Sepia}{,}
+\textcolor{Violet}{yySTDCsizeSTDCt}\textcolor{White}{\ }
+\textcolor{Violet}{size}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{Violet}{INTSTDCBUFFERSTDCSTATE}\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCscanSTDCstring}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{const}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{char}
+\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{yySTDCstr}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{Violet}{INTSTDCBUFFERSTDCSTATE}\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCscanSTDCbytes}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{const}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{char}
+\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{bytes}\textcolor{Sepia}{,}
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{len}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ 
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{yyalloc}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{yySTDCsizeSTDCt}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{yyrealloc}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Sepia}{,}
+\textcolor{Violet}{yySTDCsizeSTDCt}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{yyfree}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ 
+ 
+ \end{frame}
+\begin{frame}
+
+ \textcolor{White}{\ }
+\textcolor{SeaGreen}{1}
+
+ \textcolor{Violet}{STDCSKIPSTDCYYWRAP}
+ 
+ \textcolor{OrangeRed}{extern}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{yylineno}\textcolor{Sepia}{;}
+
+ 
+ \textcolor{OrangeRed}{extern}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{char}
+\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{yytext}\textcolor{Sepia}{;}
+
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifdef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCHEADERSTDCEXPORTSTDCSTARTSTDCCONDITIONS}
+ 
+ \end{frame}
+\begin{frame}
+ \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCNOSTDCUNISTDSTDCH}
+  \textcolor{Red}{23}
+\textcolor{Violet}{include}\textcolor{White}{\ }
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCEXTRASTDCTYPE}
+ \textcolor{Violet}{STDCEXTRASTDCTYPE}\textcolor{White}{\ }
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ 
+ \end{frame}
+\begin{frame}
+
+ 
+ \textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{yylexSTDCdestroy}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ 
+ \textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{yygetSTDCdebug}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ 
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{yysetSTDCdebug}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{debugSTDCflag}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ 
+ \textcolor{Violet}{INTSTDCEXTRASTDCTYPE}\textcolor{White}{\ }
+\textcolor{Violet}{yygetSTDCextra}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ 
+ \end{frame}
+\begin{frame}
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{yysetSTDCextra}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{INTSTDCEXTRASTDCTYPE}\textcolor{White}{\ }
+\textcolor{Violet}{userSTDCdefined}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ 
+ \textcolor{Violet}{FILE}\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{yygetSTDCin}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ 
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{yysetSTDCin}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{FILE}\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{White}{\ }
+\textcolor{Violet}{inSTDCstr}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ 
+ \textcolor{Violet}{FILE}\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{Violet}{yygetSTDCout}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ 
+ \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{Violet}{yysetSTDCout}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{Violet}{FILE}\textcolor{White}{\ }
+\textcolor{SpringGreen}{*}
+\textcolor{White}{\ }
+\textcolor{Violet}{outSTDCstr}\textcolor{White}{\ }
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
+
+ 
+ \end{frame}
+\begin{frame}
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{yygetSTDCleng}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
 
  
  \textcolor{OrangeRed}{char}
 \textcolor{White}{\ }
 \textcolor{SpringGreen}{*}
-\textcolor{White}{\ }
-\textcolor{Violet}{get}\textcolor{Sepia}{\_}
-\textcolor{Violet}{temp}\textcolor{White}{\ }
+\textcolor{Violet}{yygetSTDCtext}\textcolor{White}{\ }
 \textcolor{SkyBlue}{(}
 \textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
 \textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- 
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{static}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{char}
-\textcolor{White}{\ }
-\textcolor{Violet}{tempname}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{MAXIDLEN}\textcolor{SkyBlue}{]}
 \textcolor{Sepia}{;}
 
  
- \textcolor{White}{\   }
-\textcolor{Violet}{max}\textcolor{Sepia}{\_}
-\textcolor{Violet}{temp}\textcolor{Apricot}{++}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{sprintf}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{tempname}\textcolor{Sepia}{,}
-\textcolor{Violet}{Temp}\textcolor{Apricot}{\%}
-\textcolor{Violet}{d}\textcolor{Sepia}{,}
+ \textcolor{OrangeRed}{int}
 \textcolor{White}{\ }
-\textcolor{Violet}{max}\textcolor{Sepia}{\_}
-\textcolor{Violet}{temp}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- 
- \textcolor{White}{\   }
-\textcolor{Violet}{check}\textcolor{Sepia}{\_}
-\textcolor{Violet}{id}\textcolor{White}{\ }
+\textcolor{Violet}{yygetSTDClineno}\textcolor{White}{\ }
 \textcolor{SkyBlue}{(}
-\textcolor{Violet}{tempname}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
+\textcolor{OrangeRed}{void}
 \textcolor{White}{\ }
-\textcolor{Violet}{tempname}\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
 
  
  \textcolor{OrangeRed}{void}
 \textcolor{White}{\ }
-\textcolor{Violet}{open}\textcolor{Sepia}{\_}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\ }
-\textcolor{White}{\ }
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{char}
-\textcolor{White}{\ }
-\textcolor{Violet}{filename}\textcolor{White}{\ }
-\textcolor{SkyBlue}{[}
-\textcolor{SeaGreen}{100}
-\textcolor{SkyBlue}{]}
-\textcolor{Salmon}{=}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\ }
-\textcolor{White}{\ }
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{printf}
+\textcolor{Violet}{yysetSTDClineno}\textcolor{White}{\ }
 \textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{int}
 \textcolor{White}{\ }
-\textcolor{Violet}{Enter}\textcolor{White}{\ }
-\textcolor{Violet}{a}\textcolor{White}{\ }
-\textcolor{Violet}{value}\textcolor{White}{\ }
-\textcolor{Sepia}{:}
+\textcolor{Violet}{lineSTDCnumber}\textcolor{White}{\ }
 \textcolor{White}{\ }
 \textcolor{SkyBlue}{)}
 \textcolor{Sepia}{;}
-
- \textcolor{White}{\ }
-\textcolor{White}{\ }
-\textcolor{White}{\ }
-\textcolor{Violet}{scanf}\textcolor{SkyBlue}{(}
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{s}\textcolor{Sepia}{,}
-\textcolor{Violet}{filename}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\ }
-\textcolor{White}{\ }
-\textcolor{White}{\ }
-\textcolor{Violet}{file}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{fopen}
-\textcolor{SkyBlue}{(}
-\textcolor{White}{\ }
-\textcolor{Violet}{filename}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{r}\textcolor{White}{\ }
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
 
  
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{read}\textcolor{Sepia}{\_}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{open}\textcolor{Sepia}{\_}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{len}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{ftell}\textcolor{SkyBlue}{(}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
+ 
+ 
  \end{frame}
 \begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
+ \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCSKIPSTDCYYWRAP}
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifdef}\textcolor{White}{\ }
+\textcolor{Violet}{STDCSTDCcplusplus}
+ \textcolor{OrangeRed}{extern}
+\textcolor{White}{\ }
+\textcolor{Violet}{C}\textcolor{White}{\ }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{n}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
+\textcolor{SkyBlue}{)}
+\textcolor{Sepia}{;}
 
- \textcolor{White}{\   }
+  \textcolor{Red}{23}
 \textcolor{OrangeRed}{else}
-\textcolor{SkyBlue}{\{ }
 
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{printf}
+ \textcolor{OrangeRed}{extern}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{n}\textcolor{White}{\ }
 \textcolor{SkyBlue}{(}
-\textcolor{Violet}{Problema}\textcolor{White}{\ }
-\textcolor{Violet}{al}\textcolor{White}{\ }
-\textcolor{Violet}{abrir}\textcolor{White}{\ }
-\textcolor{Violet}{el}\textcolor{White}{\ }
-\textcolor{Violet}{archivo}\textcolor{Gray}{\textbackslash }
-\textcolor{Violet}{n}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{exit}
-\textcolor{SkyBlue}{(}
-\textcolor{SeaGreen}{0}
+\textcolor{OrangeRed}{void}
+\textcolor{White}{\ }
 \textcolor{SkyBlue}{)}
 \textcolor{Sepia}{;}
 
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
  
- \textcolor{SkyBlue}{\} }
-
- 
- 
- \textcolor{OrangeRed}{void}
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{yytext}
+ \textcolor{OrangeRed}{static}
 \textcolor{White}{\ }
-\textcolor{Violet}{close}\textcolor{Sepia}{\_}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{fclose}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
+\textcolor{OrangeRed}{void}
 \textcolor{White}{\ }
-\textcolor{Violet}{buffer}\textcolor{Sepia}{\_}
-\textcolor{OrangeRed}{char}
+\textcolor{Violet}{yySTDCflexSTDCstrncpy}\textcolor{White}{\ }
 \textcolor{SkyBlue}{(}
 \textcolor{OrangeRed}{char}
 \textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{charPos}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{]}
-\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{clear}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{memset}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{SeaGreen}{0}
+\textcolor{SpringGreen}{*}
 \textcolor{Sepia}{,}
+\textcolor{OrangeRed}{const}
 \textcolor{White}{\ }
-\textcolor{SeaGreen}{5}
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{charPos}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
+\textcolor{OrangeRed}{char}
 \textcolor{White}{\ }
-\textcolor{SeaGreen}{0}
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{SkyBlue}{\} }
-
- 
- \textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Violet}{check}\textcolor{Sepia}{\_}
-\textcolor{Violet}{reserved}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
+\textcolor{SpringGreen}{*}
+\textcolor{Sepia}{,}
 \textcolor{OrangeRed}{int}
 \textcolor{White}{\ }
-\textcolor{Violet}{letter}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{Violet}{bool}\textcolor{White}{\ }
-\textcolor{Violet}{reserved}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{for}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{letter}\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{SeaGreen}{0}
+\textcolor{SkyBlue}{)}
 \textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{letter}\textcolor{White}{\ }
-\textcolor{OliveGreen}{\textless}
-\textcolor{White}{\ }
-\textcolor{Violet}{len}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tb}\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{letter}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{White}{\ }
-\textcolor{BurntOrange}{'}
-\textcolor{Violet}{B}\textcolor{BurntOrange}{'}
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{toupper}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{letter}\textcolor{SkyBlue}{]}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{reserved}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{true}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{for}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{c}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{SeaGreen}{0}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{White}{\ }
-\textcolor{OliveGreen}{\textless}
-\textcolor{White}{\ }
-\textcolor{SeaGreen}{5}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{begin}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{c}\textcolor{SkyBlue}{]}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$!=$}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{toupper}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{letter}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{]}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
 
  \end{frame}
 \begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{reserved}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{false}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{reserved}\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{true}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{BEGIN}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{OrangeRed}{else}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{ID}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
+ \textcolor{Red}{23}
+\textcolor{Violet}{endif}
  
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{OrangeRed}{else}
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifdef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCNEEDSTDCSTRLEN}
+ \textcolor{OrangeRed}{static}
 \textcolor{White}{\ }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{BurntOrange}{'}
-\textcolor{Violet}{E}\textcolor{BurntOrange}{'}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{toupper}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{letter}\textcolor{SkyBlue}{]}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{reserved}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{true}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{for}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{c}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{SeaGreen}{0}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{White}{\ }
-\textcolor{OliveGreen}{\textless}
-\textcolor{White}{\ }
-\textcolor{SeaGreen}{3}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{end}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{c}\textcolor{SkyBlue}{]}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$!=$}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{toupper}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{letter}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{]}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{reserved}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{false}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{reserved}\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{true}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{END}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{OrangeRed}{else}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{ID}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{OrangeRed}{else}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{BurntOrange}{'}
-\textcolor{Violet}{W}\textcolor{BurntOrange}{'}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{toupper}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{letter}\textcolor{SkyBlue}{]}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{reserved}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{true}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{for}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{c}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{SeaGreen}{0}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{White}{\ }
-\textcolor{OliveGreen}{\textless}
-\textcolor{White}{\ }
-\textcolor{SeaGreen}{5}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{write}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{c}\textcolor{SkyBlue}{]}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$!=$}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{toupper}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{letter}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{]}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{reserved}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{false}
-\textcolor{Sepia}{;}
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{reserved}\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{true}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{WRITE}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{OrangeRed}{else}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{ID}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{OrangeRed}{else}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{BurntOrange}{'}
-\textcolor{Violet}{R}\textcolor{BurntOrange}{'}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{toupper}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{letter}\textcolor{SkyBlue}{]}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{reserved}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{true}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{for}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{c}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{SeaGreen}{0}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{White}{\ }
-\textcolor{OliveGreen}{\textless}
-\textcolor{White}{\ }
-\textcolor{SeaGreen}{4}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{c}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{read}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{c}\textcolor{SkyBlue}{]}
-\textcolor{White}{\ }
-\textcolor{OliveGreen}{$!=$}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{toupper}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{letter}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{]}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{reserved}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{false}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{if}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{reserved}\textcolor{White}{\ }
-\textcolor{OliveGreen}{$==$}
-\textcolor{White}{\ }
-\textcolor{OrangeRed}{true}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{READ}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{OrangeRed}{else}
-\textcolor{SkyBlue}{\{ }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{ID}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{break}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-\textcolor{OrangeRed}{else}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{	}
-\textcolor{White}{\ }
-\textcolor{Violet}{ID}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{SkyBlue}{\} }
-
- 
- \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{lexical}\textcolor{Sepia}{\_}
-\textcolor{Violet}{error}\textcolor{SkyBlue}{(}
 \textcolor{OrangeRed}{int}
 \textcolor{White}{\ }
-\textcolor{Violet}{character}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \end{frame}
-\begin{frame}
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{printf}
+\textcolor{Violet}{yySTDCflexSTDCstrlen}\textcolor{White}{\ }
 \textcolor{SkyBlue}{(}
-\textcolor{Violet}{LEXICAL}\textcolor{White}{\ }
-\textcolor{Violet}{ERROR}\textcolor{White}{\ }
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{d}\textcolor{Gray}{\textbackslash }
-\textcolor{Violet}{n}\textcolor{Sepia}{,}
+\textcolor{OrangeRed}{const}
 \textcolor{White}{\ }
-\textcolor{Violet}{character}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{SkyBlue}{\} }
-
- \textcolor{OrangeRed}{void}
+\textcolor{OrangeRed}{char}
 \textcolor{White}{\ }
-\textcolor{Violet}{print}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{int}
-\textcolor{White}{\ }
-\textcolor{Violet}{i}\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{printf}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{IMPRIMIENDO}\textcolor{White}{\ }
-\textcolor{Violet}{TOKEN}\textcolor{White}{\ }
-\textcolor{Violet}{BUFFER}\textcolor{Gray}{\textbackslash }
-\textcolor{Violet}{n}\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{for}
-\textcolor{White}{\ }
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{i}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{SeaGreen}{0}
-\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{i}\textcolor{White}{\ }
-\textcolor{OliveGreen}{\textless =}
-\textcolor{Violet}{len}\textcolor{Sepia}{\_}
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{Sepia}{;}
-\textcolor{White}{\ }
-\textcolor{Violet}{i}\textcolor{Apricot}{++}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{printf}
-\textcolor{SkyBlue}{(}
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{d}\textcolor{Gray}{\textbackslash }
-\textcolor{Violet}{n}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{token}\textcolor{Sepia}{\_}
-\textcolor{Violet}{buffer}\textcolor{SkyBlue}{[}
-\textcolor{Violet}{i}\textcolor{SkyBlue}{]}
+\textcolor{SpringGreen}{*}
 \textcolor{White}{\ }
 \textcolor{SkyBlue}{)}
 \textcolor{Sepia}{;}
 
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
-
- \textcolor{SkyBlue}{\} }
-
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCNOSTDCINPUT}
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
  
  \end{frame}
 \begin{frame}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCREADSTDCBUFSTDCSIZE}
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifdef}\textcolor{White}{\ }
+\textcolor{Violet}{STDCSTDCia64STDCSTDC}
+ 
+ \textcolor{Violet}{STDCREADSTDCBUFSTDCSIZE}\textcolor{White}{\ }
+\textcolor{SeaGreen}{16384}
+
+  \textcolor{Red}{23}
+\textcolor{OrangeRed}{else}
+
+ \textcolor{Violet}{STDCREADSTDCBUFSTDCSIZE}\textcolor{White}{\ }
+\textcolor{SeaGreen}{8192}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}\textcolor{White}{\ }
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ 
+ \end{frame}
+\begin{frame}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCSTARTSTDCSTACKSTDCINCR}
+ \textcolor{Violet}{STDCSTARTSTDCSTACKSTDCINCR}\textcolor{White}{\ }
+\textcolor{SeaGreen}{25}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ 
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifndef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCDECL}
+ \textcolor{Violet}{STDCDECLSTDCISSTDCOURS}\textcolor{White}{\ }
+\textcolor{SeaGreen}{1}
+
+ 
+ \textcolor{OrangeRed}{extern}
+\textcolor{White}{\ }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{yylex}\textcolor{White}{\ }
+\textcolor{SkyBlue}{(}
 \textcolor{OrangeRed}{void}
-\textcolor{White}{\ }
-\textcolor{Violet}{get}\textcolor{Sepia}{\_}
-\textcolor{Violet}{tokens}\textcolor{SkyBlue}{(}
-\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{Violet}{read}\textcolor{Sepia}{\_}
-\textcolor{Violet}{file}\textcolor{SkyBlue}{(}
 \textcolor{SkyBlue}{)}
 \textcolor{Sepia}{;}
 
- \textcolor{White}{\   }
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Violet}{ejemplo}\textcolor{Sepia}{;}
+ \end{frame}
+\begin{frame}
 
- \textcolor{White}{\   }
-\textcolor{OrangeRed}{while}
+ \textcolor{Violet}{STDCDECL}\textcolor{White}{\ }
+\textcolor{OrangeRed}{int}
+\textcolor{White}{\ }
+\textcolor{Violet}{yylex}\textcolor{White}{\ }
 \textcolor{SkyBlue}{(}
-\textcolor{Violet}{filePos}\textcolor{White}{\ }
-\textcolor{OliveGreen}{$!=$}
-\textcolor{White}{\ }
-\textcolor{Violet}{len}\textcolor{SkyBlue}{)}
-\textcolor{SkyBlue}{\{ }
-
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{Violet}{ejemplo}\textcolor{White}{\ }
-\textcolor{Salmon}{=}
-\textcolor{White}{\ }
-\textcolor{Violet}{scanner}\textcolor{SkyBlue}{(}
+\textcolor{OrangeRed}{void}
 \textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
 
- \textcolor{White}{\   }
-\textcolor{White}{\   }
-\textcolor{OrangeRed}{printf}
-\textcolor{SkyBlue}{(}
-\textcolor{Violet}{token}\textcolor{White}{\ }
-\textcolor{Apricot}{\%}
-\textcolor{Violet}{d}\textcolor{Gray}{\textbackslash }
-\textcolor{Violet}{n}\textcolor{Sepia}{,}
-\textcolor{White}{\ }
-\textcolor{Violet}{ejemplo}\textcolor{White}{\ }
-\textcolor{SkyBlue}{)}
-\textcolor{Sepia}{;}
-
- \textcolor{White}{\   }
-\textcolor{SkyBlue}{\} }
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}\textcolor{White}{\ }
 
  
- \textcolor{SkyBlue}{\} }
+ 
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{undef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCNEWSTDCFILE}
+  \textcolor{Red}{23}
+\textcolor{Violet}{undef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCFLUSHSTDCBUFFER}
+  \textcolor{Red}{23}
+\textcolor{Violet}{undef}\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCsetSTDCbol}
+  \textcolor{Red}{23}
+\textcolor{Violet}{undef}\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCnewSTDCbuffer}
+ \end{frame}
+\begin{frame}
+ \textcolor{Red}{23}
+\textcolor{Violet}{undef}\textcolor{White}{\ }
+\textcolor{Violet}{yySTDCsetSTDCinteractive}
+  \textcolor{Red}{23}
+\textcolor{Violet}{undef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCDOSTDCBEFORESTDCACTION}
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{ifdef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCDECLSTDCISSTDCOURS}
+  \textcolor{Red}{23}
+\textcolor{Violet}{undef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCDECLSTDCISSTDCOURS}
+  \textcolor{Red}{23}
+\textcolor{Violet}{undef}\textcolor{White}{\ }
+\textcolor{Violet}{INTSTDCDECL}
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}
+ 
+  \textcolor{Red}{23}
+\textcolor{Violet}{line}\textcolor{White}{\ }
+\textcolor{SeaGreen}{159}
+\textcolor{White}{\ }
+
+ 
+ \end{frame}
+\begin{frame}
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{line}\textcolor{White}{\ }
+\textcolor{SeaGreen}{334}
+\textcolor{White}{\ }
+
+  \textcolor{Red}{23}
+\textcolor{Violet}{undef}\textcolor{White}{\ }
+\textcolor{Violet}{HEADERSTDCHEADER}
+  \textcolor{Red}{23}
+\textcolor{Violet}{endif}\textcolor{White}{\ }
 
  \end{frame}
 \begin{frame} 
@@ -3563,18 +1275,18 @@ nodes near coords={\pgfmathprintnumber\pgfplotspointmeta}
 ]
 \addplot[ybar,fill=Turquoise]  
 coordinates {
-(Reservadas,295)(Identificadores,1089)(Literales,24)(Operadores,250)(Delimitadores,1110)};
+(Reservadas,134)(Identificadores,632)(Literales,40)(Operadores,76)(Delimitadores,220)};
 \end{axis}
 \end{tikzpicture}
 \end{frame} 
 \begin{frame} 
 \begin{tikzpicture}
 \pie[rotate = 180]
-{10.66/Palabras Reservadas,
-39.34/Identificadores,
-0.87/Literales,
-9.03/Operadores,
-40.10/Delimitadores}
+{12.16/Palabras Reservadas,
+57.35/Identificadores,
+3.63/Literales,
+6.90/Operadores,
+19.96/Delimitadores}
 \end{tikzpicture}
 \end{frame} 
 \end{document}

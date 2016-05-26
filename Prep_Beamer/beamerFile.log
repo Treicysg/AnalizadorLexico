@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.10)  25 MAY 2016 18:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.10)  25 MAY 2016 20:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1342,24 +1342,6 @@ Overfull \hbox (392.32532pt too wide) has occurred while \output is active
 [2
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 106
-.
-LaTeX Font Info:    No file OMScmss.fd. on input line 106.
-
-
-LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 106.
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 106.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 106.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 Overfull \hbox (392.32532pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1367,6 +1349,16 @@ Overfull \hbox (392.32532pt too wide) has occurred while \output is active
 [3
 
 ]
+LaTeX Font Info:    Try loading font information for OML+cmss on input line 98.
+
+LaTeX Font Info:    No file OMLcmss.fd. on input line 98.
+
+
+LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
+(Font)              using `OML/cmm/m/it' instead
+(Font)              for symbol `textgreater' on input line 98.
+
+
 Overfull \hbox (392.32532pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1451,6 +1443,16 @@ Overfull \hbox (392.32532pt too wide) has occurred while \output is active
 [15
 
 ]
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 603
+.
+LaTeX Font Info:    No file OMScmss.fd. on input line 603.
+
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 603.
+
+
 Overfull \hbox (392.32532pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1556,16 +1558,6 @@ Overfull \hbox (392.32532pt too wide) has occurred while \output is active
 [30
 
 ]
-LaTeX Font Info:    Try loading font information for OML+cmss on input line 185
-7.
-LaTeX Font Info:    No file OMLcmss.fd. on input line 1857.
-
-
-LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
-(Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textless' on input line 1857.
-
-
 Overfull \hbox (392.32532pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1580,160 +1572,29 @@ Overfull \hbox (392.32532pt too wide) has occurred while \output is active
 [32
 
 ]
+LaTeX Font Info:    Try loading font information for U+msa on input line 1281.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 1281.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Overfull \hbox (10.0566pt too wide) in paragraph at lines 1281--1281
+[][]  
+ []
+
+
+Overfull \vbox (0.1203pt too high) detected at line 1281
+ []
+
+
 Overfull \hbox (392.32532pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [33
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[34
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[35
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[36
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[37
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[38
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[39
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[40
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[41
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[42
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[43
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[44
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[45
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[46
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[47
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[48
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[49
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[50
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[51
-
-]
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[52
-
-]
-Overfull \hbox (18.57326pt too wide) in paragraph at lines 3569--3569
-[][]  
- []
-
-
-Overfull \vbox (4.83282pt too high) detected at line 3569
- []
-
-
-Overfull \hbox (392.32532pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[53
 
 ]
 Missing character: There is no b in font nullfont!
@@ -1775,7 +1636,7 @@ Missing character: There is no ! in font nullfont!
 Missing character: There is no 6 in font nullfont!
 Missing character: There is no 0 in font nullfont!
 
-Overfull \hbox (13.97046pt too wide) in paragraph at lines 3579--3579
+Overfull \hbox (17.53716pt too wide) in paragraph at lines 1291--1291
 [][]  
  []
 
@@ -1784,7 +1645,7 @@ Overfull \hbox (392.32532pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[54
+[34
 
 ]
 \tf@nav=\write6
@@ -1796,14 +1657,14 @@ Overfull \hbox (392.32532pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `beamerFile.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3580.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3580.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1292.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1292.
  (./beamerFile.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3580.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3580.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1292.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1292.
 
 Package rerunfilecheck Info: File `beamerFile.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -1815,13 +1676,13 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3580.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1292.
  ) 
 Here is how much of TeX's memory you used:
- 27147 strings out of 493304
- 607557 string characters out of 6139871
+ 27015 strings out of 493304
+ 606524 string characters out of 6139871
  766553 words of memory out of 5000000
- 29873 multiletter control sequences out of 15000+600000
+ 29781 multiletter control sequences out of 15000+600000
  10258 words of font info for 38 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  52i,16n,81p,743b,2006s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1830,10 +1691,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on beamerFile.pdf (54 pages, 166098 bytes).
+Output written on beamerFile.pdf (34 pages, 117091 bytes).
 PDF statistics:
- 1501 PDF objects out of 1728 (max. 8388607)
- 1413 compressed objects within 15 object streams
- 109 named destinations out of 1000 (max. 500000)
+ 961 PDF objects out of 1000 (max. 8388607)
+ 899 compressed objects within 9 object streams
+ 69 named destinations out of 1000 (max. 500000)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 
