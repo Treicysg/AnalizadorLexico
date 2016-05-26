@@ -33,6 +33,7 @@ string 		\"(\\.|[^"])*\"
 {letter}({letter}|{number})* {strcpy(_name,yytext); return CODIGO;}
 #[ \t]*include[ \t]+ {strcpy(_name,yytext);includeCounter++; return INCLUDE;}
 [_]*{letter}({letter}|{number}|[_]*)*("."{letter}+)+ {strcpy(_name,yytext);return FILENAME; }
+"%s" {strcpy(_name,yytext);return PRINTSTRING;}
 <<EOF>> {strcpy(_name,"EOF"); return EOF;}
 . {strcpy(_name,yytext);return CODIGO;}
 
@@ -181,6 +182,9 @@ void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
 				}
 				else if(current_token == LIBRARY){
 					// Copia datos
+					fprintf(output,"#include %s", _name);
+				}
+				else if(current_token == PRINTSTRING){
 					fprintf(output,"#include %s", _name);
 				}
 				else{

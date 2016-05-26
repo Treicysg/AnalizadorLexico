@@ -1,113 +1,89 @@
+ yyunput( c, (pprctextSTDCptr)  )
 
+#ifndef INTSTDCTYPEDEFSTDCINTSTDCSIZESTDCT
+STDCTYPEDEFSTDCINTSTDCSIZESTDCT
+typedef sizeSTDCt createSTDCsizeSTDCt;
 #endif
 
-#ifndef INTSTDCNOSTDCUNISTDSTDCH
-/* Special case for , since it is non-ANSI. We include it way
- * down here because we want the user's section 1 to have been scanned first.
- * The user has a chance to override it with an option.
- */#include 
-#endif
+#ifndef INTSTDCSTRUCTSTDCINTSTDCBUFFERSTDCSTATE
+STDCSTRUCTSTDCINTSTDCBUFFERSTDCSTATE
+struct createSTDCbufferSTDCstate
+	{
+	FILE *createSTDCinputSTDCfile;
 
-#ifndef INTSTDCEXTRASTDCTYPE
-STDCEXTRASTDCTYPE void *
-#endif
+	char *createSTDCchSTDCbuf;		/* input buffer */
+	char *createSTDCbufSTDCpos;		/* current position in input buffer */
 
-/* Accessor methods to globals.
-   These are made visible to non-reentrant scanners for convenience. */
+	/* Size of input buffer in bytes, not including room for EOB
+	 * characters.
+	 */
+	createSTDCsizeSTDCt createSTDCbufSTDCsize;
 
-int yylexSTDCdestroy (void );
+	/* Number of characters read into createSTDCchSTDCbuf, not including EOB
+	 * characters.
+	 */
+	int createSTDCnSTDCchars;
 
-int yygetSTDCdebug (void );
+	/* Whether we own the buffer - ., we know we created it,
+	 * and can realloc() it to grow it, and should free() it to
+	 * delete it.
+	 */
+	int createSTDCisSTDCourSTDCbuffer;
 
-void yysetSTDCdebug (int debugSTDCflag  );
+	/* Whether this is an interactive input source; if so, and
+	 * if we're using stdio for input, then we want to use getc()
+	 * instead of fread(), to make sure we stop fetching input after
+	 * each newline.
+	 */
+	int createSTDCisSTDCinteractive;
 
-INTSTDCEXTRASTDCTYPE yygetSTDCextra (void );
+	/* Whether we're considered to be at the beginning of a line.
+	 * If so, '^' rules will be active on the next match, otherwise
+	 * not.
+	 */
+	int createSTDCatSTDCbol;
 
-void yysetSTDCextra (INTSTDCEXTRASTDCTYPE userSTDCdefined  );
+    int createSTDCbsSTDClineno; /**< The line count. */
+    int createSTDCbsSTDCcolumn; /**< The column count. */
+    
+	/* Whether to try to fill the input buffer when we reach the
+	 * end of it.
+	 */
+	int createSTDCfillSTDCbuffer;
 
-FILE *yygetSTDCin (void );
+	int createSTDCbufferSTDCstatus;
 
-void yysetSTDCin  (FILE * inSTDCstr  );
+STDCBUFFERSTDCNEW 0
+STDCBUFFERSTDCNORMAL 1
+	/* When an EOF's been seen but there's still some text to process
+	 * then we mark the buffer as INTSTDCEOFSTDCPENDING, to indicate that we
+	 * shouldn't try reading from the input source any more.  We might
+	 * still have a bunch of tokens to match, though, because of
+	 * possible backing-up.
+	 *
+	 * When we actually see the EOF, we change the status to new
+	 * (via pprcrestart()), so that the user can continue scanning by
+	 * just pointing pprcin at a new input file.
+	 */
+STDCBUFFERSTDCEOFSTDCPENDING 2
 
-FILE *yygetSTDCout (void );
+	};
+#endif /* !INTSTDCSTRUCTSTDCINTSTDCBUFFERSTDCSTATE */
 
-void yysetSTDCout  (FILE * outSTDCstr  );
+/* Stack of input buffers. */
+static sizeSTDCt createSTDCbufferSTDCstackSTDCtop = 0; /**< index of top of stack. */
+static sizeSTDCt createSTDCbufferSTDCstackSTDCmax = 0; /**< capacity of stack. */
+static INTSTDCBUFFERSTDCSTATE * createSTDCbufferSTDCstack = 0; /**< Stack as an array. */
 
-int yygetSTDCleng (void );
-
-char *yygetSTDCtext (void );
-
-int yygetSTDClineno (void );
-
-void yysetSTDClineno (int lineSTDCnumber  );
-
-/* Macros after this point can all be overridden by user definitions in
- * section 1.
+/* We provide macros for accessing buffer states in case in the
+ * future we want to put the buffer states in a more general
+ * scanner state.
+ *
+ * Returns the top of the stack, or NULL.
  */
+STDCCURRENTSTDCBUFFER ( (createSTDCbufferSTDCstack) \
+                          ? (createSTDCbufferSTDCstack)[(createSTDCbufferSTDCstackSTDCtop)] \
+                          : NULL)
 
-#ifndef INTSTDCSKIPSTDCYYWRAP
-#ifdef STDCSTDCcplusplus
-extern C int n (void );
-#else
-extern int n (void );
-#endif
-#endif
-
-#ifndef yytext
-static void yySTDCflexSTDCstrncpy (char *,const char *,int );
-#endif
-
-#ifdef INTSTDCNEEDSTDCSTRLEN
-static int yySTDCflexSTDCstrlen (const char * );
-#endif
-
-#ifndef INTSTDCNOSTDCINPUT
-
-#endif
-
-/* Amount of stuff to slurp up with each read. */
-#ifndef INTSTDCREADSTDCBUFSTDCSIZE
-#ifdef STDCSTDCia64STDCSTDC
-/* On IA-64, the buffer size is 16k, not 8k */
-STDCREADSTDCBUFSTDCSIZE 16384
-#else
-STDCREADSTDCBUFSTDCSIZE 8192
-#endif /* STDCSTDCia64STDCSTDC */
-#endif
-
-/* Number of entries by which start-condition stack grows. */
-#ifndef INTSTDCSTARTSTDCSTACKSTDCINCR
-STDCSTARTSTDCSTACKSTDCINCR 25
-#endif
-
-/* Default declaration of generated scanner - a define so the user can
- * easily add parameters.
- */
-#ifndef INTSTDCDECL
-STDCDECLSTDCISSTDCOURS 1
-
-extern int yylex (void);
-
-STDCDECL int yylex (void)
-#endif /* !INTSTDCDECL */
-
-/* yySTDCgetSTDCpreviousSTDCstate - get the state just before the EOB char was reached */
-
-#undef INTSTDCNEWSTDCFILE
-#undef INTSTDCFLUSHSTDCBUFFER
-#undef yySTDCsetSTDCbol
-#undef yySTDCnewSTDCbuffer
-#undef yySTDCsetSTDCinteractive
-#undef INTSTDCDOSTDCBEFORESTDCACTION
-
-#ifdef INTSTDCDECLSTDCISSTDCOURS
-#undef INTSTDCDECLSTDCISSTDCOURS
-#undef INTSTDCDECL
-#endif
-
-#line 159 
-
-
-#line 334 
-#undef HEADERSTDCHEADER
-#endif /* HSTDCH */
+/* Same as previous macro, but useful when we know that the buffer stack is not
+ * NULL or when we 

@@ -1,535 +1,291 @@
-token next_token(void){
-	return current_token;
-}
-
-void match(token t){
-	if(nextev_token == t){
-		nextev_token = scanner();
-		if (nextev_token == -1) nextev_token = scanner();
-		current_token = nextev_token;
-
-	}
-	else{
-	 	sintax_error(t);
-
-	 }
-
-}
-
-void sintax_error(token t){
-	// revisar que se esperaba
-	//Condicionales de acuerdo al token
-	//Si id , esperaba ....
-
-	printf(Sintax error, expecting %s\n,get_token_name(t));
-	exit(0);
-}
-
-/*________________FUNCIONES PRINCIPALES DEL PARSER______-*/
-void system_goal(void){
-	/*<system goal> ::= <program> SCANEOF*/
-
-	program();
-
-	//macth() debe llamar al scanner para obtener el sig
-	//token . Si todo correcto guarda en variable global current_token
-	match(SCANEOF);
-	finish();
-
-}
-
-void program(void){
-	/* <program> ::= BEGIN <statement list> END*/
-	start();// Inician las funciones de rutinas semanticas
-	match(BEGIN);
-	statement_list();
-	match(END);
-}
-
-
-void statement_list(void){
-	/*
-	*<statement list> ::= <statement>{<statement>}*/
-	statement();
-	while(true){
-		switch(next_token()){
-			case ID:
-			case READ:
-			case WRITE:
-				statement();
-				break;
-			default:
-				return;
-		}
-	}
-}
-
-void statement(void){
-	token tok= next_token();
-	expr_rec result; //guarda el resultado de analizar el ID semanticamente.
-	expr_rec p_expr;// parametro de la funcion expression
-	switch(tok){
-		case ID:
-			/*<statement> ::= ID := <expresion>;*/
-			strcpy(previous_tokenbuffer, token_buffer); // porque el match me cambia el token buffer
-			match(ID);
-			result = process_id();
-			//printf(Lo que devuelve el process_id nombre = %s valor = %d tipo = %d\n, , , );
-			match(ASSIGNOP);
-			expression(&p_expr); // Le mado la direccion de la variable
-			assign(result,p_expr);
-			match(SEMICOLON);
-			break;
-		case READ:
-		/*<statement> ::= READ(<id_list>);*/
-			match(READ);match(LPAREN);
-			id_list();match(RPAREN);
-			match(SEMICOLON);
-			//printf(\nSoy Read!\n);
-			break;
-		case WRITE:
-		/*<statement>::= WRITE(<expr list>);*/
-			match(WRITE);match(LPAREN);
-			expr_list();match(RPAREN);
-			match(SEMICOLON);
-		    //printf(\nSoy WRITE!\n);
-			break;
-		default:
-			sintax_error(tok);
-			break;
-
-	}
-}
-
-
-void assign (expr_rec result, expr_rec p_expr){
-	//Generate code for assignment
-	char* salida;
-	salida = calloc(1024, sizeof(char));
-	strcpy(salida,extractEXPR(p_expr));
-	generate (Store,salida, ,);
-}
-
-
-
-
-void id_list(void){
-	/* <id_list> ::= ID{ ,ID}*/
-	expr_rec result;
-	strcpy(previous_tokenbuffer, token_buffer); // porque el match me cambia el token buffer
-	match(ID);
-	strcpy(, previous_tokenbuffer);
-	while(next_token() == COMMA){
-		strcpy(previous_tokenbuffer, token_buffer); // porque el match me cambia el token buffer
-		match(COMMA);
-		strcpy(previous_tokenbuffer, token_buffer); // porque el match me cambia el token buffer
-		match(ID);
-		strcpy(, previous_tokenbuffer);
-		read_id(result);
-	}
-}
-
-void read_id (expr_rec in_var){
- /*Generate code for read*/
- generate (Read,,Integer,);
-
-}
-void write_expr (expr_rec out_expr){
-
- generate (Write, , Integer, );
-}
-
-void expr_list(void){
-	/*<expr list>::=<expresion>{ ,<expresion>]*/
-	expr_rec result;
-	expression(&result);
-	write_expr(result);
-	while(next_token() == COMMA){
-		match(COMMA);
-		expression(&result);
-		write_expr(result);
-	}
-}
-
-void expression (expr_rec *result){
-	expr_rec left_operand, right_operand;
-	op_rec op;
-    primary (&  left_operand);
-   // printf(El valor del LEFT operand es nombre = %s  valor = %d tipo = %d\n, , , );
-	while (next_token() == PLUSOP || next_token() == MINUSOP){
-		add_op (& op);
-		//printf(El valor del OPERATOR es %d\n, );
-		primary (& right_operand);
-		//printf(El valor del RIHT operand es nombre = %s  valor = %d tipo = %d\n, , , );
-		left_operand = gen_infix(left_operand, op, right_operand);
-	}
-	*result = left_operand;
-}
-
-
-
-void add_op(op_rec* p_operand){
-	token tok = next_token();
-	/*<addop>::PLUSOP | MINUSOP*/
-	if(tok == PLUSOP || tok==MINUSOP){
-		previous_currentToken = current_token; // porque el match me cambia el current token
-		match(tok);
-		*p_operand = process_op();
-	}else{
-		sintax_error(tok);
-	}
-}
-
-void primary(expr_rec* p_operand){
-	expr_rec result;
-	token tok= next_token();
-	switch(tok){
-		case LPAREN:
-			/*<primary>::= {<expresion>}*/
-			match(LPAREN);
-			expression(&result);
-			*p_operand = result;
-			match(RPAREN);
-			break;
-		case ID:
-			/*<primary>::= ID*/
-			strcpy(previous_tokenbuffer, token_buffer); // porque el match me cambia el token buffer
-			match(ID);
-			*p_operand = process_id();
-			break;
-		case INTLITERAL:
-			/*<primary>::=INTLITERAL*/
-			strcpy(previous_tokenbuffer, token_buffer); // porque el match me cambia el token buffer
-			match(INTLITERAL);
-			*p_operand = process_literal();
-			break;
-		default:
-			sintax_error(tok);
-			break;
-
-
-	}
-}
-
-const char * get_token_name(token t){
-	switch(t){
-		case BEGIN:
-			return BEGIN;
-		case END:
-			return END;
-		case READ:
-			return READ;
-		case WRITE:
-			return WRITE;
-		case ID:
-			return ID;
-		case INTLITERAL:
-			return INTLITERAL;
-		case LPAREN:
-			return LPAREN;
-		case RPAREN:
-			return RPAREN;
-		case SEMICOLON:
-			return SEMICOLON;
-		case COMMA:
-			return COMMA;
-		case ASSIGNOP:
-			return ASSIGNOP;
-		case PLUSOP:
-			return PLUSOP;
-		case MINUSOP:
-			return MINUSOP;
-		case SCANEOF:
-			return SCANEOF;
-	}
-}
-
-
-// Translation Operations
-
-void open_outputFile(){
-	output_file = fopen (,w+);
-}
-
-void close_outputFile(){
-	fclose(output_file);
-}
-
-void start(void){
-	/*Semantic Initialization , none needed*/
-	//printf(%s\n,hola k ace );
-}
-
-void finish(void){
-	generate(Halt,,,);
-}
-
-void ident(){
-	// no sabemos que hace
-}
-
-expr_rec process_id(void){
-	expr_rec t;
-	/*Declare id and build a
-	*corresponding semantic record
-	*/
-	check_id(previous_tokenbuffer);
-	 = IDEXPR;
-	strcpy(,previous_tokenbuffer);
-	return t;
-
-}
-
-expr_rec process_literal(void){
-	expr_rec t;
-	/*Convert literal to a numeric representation and build semantic record*/
-	 = LITERALEXPR;
-	(void) sscanf (previous_tokenbuffer,%d,& );
-
-	return t;
-
-}
-
-op_rec process_op (void){
-/*Produce operator descriptor*/
-	op_rec o;
-	if (previous_currentToken == PLUSOP)
-		 = PLUS;
-	else
-		 = MINUS;
-	return o;
-}
-
-
-void check_id(string s){
-	if(! lookup(s)){
-		enter(s);
-		generate(Declare, s, Integer, );
-	}
-}
-
-bool lookup(string s){
-	int i;
-	for(i = 0; i < symTable_count; i++){
-		if(strcmp(symbol_table[i],s) == 0){
-			return true;
-		}
-		i++;
-	}
-	return false;
-}
-
-void enter(string s){
-	strcpy(symbol_table[symTable_count], s);
-	symTable_count++;
-}
-
-void generate(string op1,string op2,string op3,string op4){
-	//printf(VOY A ESCRIBIRRRR\n);
-	if((op1 == Declare) || (op1 == Store)){
-		fprintf(output_file,%s %s %s %s\n ,op1,op2,op3,op4);
-	}else if(op1 == Halt){
-		fprintf(output_file,%s %s %s %s\n ,op1,op2,op3,op4);
-	}
-	else{
-		fprintf(output_file,%s %s %s %s\n ,op1,op2,op3,op4);
-	}
-
-}
-
-char* extractOP(op_rec p_operand){
-	//printf(VOY A PONER UN OPERATOR\n);
-	char* minus = Sub;
-	char* plus = Add;
-	if ( == MINUS){
-		return minus;
-	}else if ( == PLUS){
-		return plus;
-	}
-}
-
-char* extractEXPR(expr_rec p_expr){
-	char* express_buffer;
-	express_buffer = calloc(1024, sizeof(char));
-	if ( == IDEXPR){
-		strcpy(express_buffer,);
-		return express_buffer;
-	}else if ( == LITERALEXPR){
-		sprintf (express_buffer,%d,);
-		return express_buffer;
-	}else {
-		strcpy(express_buffer,);
-		return express_buffer;
-	}
-
-}
-
-expr_rec gen_infix (expr_rec e1, op_rec op, expr_rec e2) {
-	//printf(ENTRANDO A GENIFIX\n);
-
-	expr_rec e_rec, e_rec1;
-	/*An expr_rec with temp variant set.*/
-	 = LITERALEXPR;
-	char* resultadoEXPR2;
-	resultadoEXPR2 = calloc(1024, sizeof(char));
-	char* resultadoEXPR1;
-	resultadoEXPR2 = calloc(1024, sizeof(char));
-
-	int resultado;
-	/* Generate code for infix operation.
-	Get result temp and set up semantic record for result. */
-	if ( == LITERALEXPR &&  == LITERALEXPR) {
-		int numero1 = ;
-		int numero2 = ;
-		if ( == PLUS) {
-			resultado = numero1 + numero2;
-		} else {
-			resultado = numero1 - numero2;
-		}
-		 = resultado;
-		return e_rec;
-	} else {
-		expr_rec e_rec1;
-		 = TEMPEXPR;
-		resultadoEXPR1 = extractEXPR(e1);
-		resultadoEXPR2 = extractEXPR(e2);
-		strncpy(, get_temp(), MAXIDLEN);
-		generate (extractOP(op),resultadoEXPR1,resultadoEXPR2,);
-		return e_rec1;
-	}
-}
-
-char * get_temp (void){
-/*max temporary allocated so far*/
-	static char tempname[MAXIDLEN];
-
-	max_temp++;
-	sprintf(tempname,Temp%d, max_temp);
-
-	check_id (tempname);
-	return tempname;
-}
-
-void open_file(){
-   char filename [100]=;
-   printf( Enter a value : );
-   scanf(%s,filename);
-   file = fopen( filename, r );
-}
-
-void read_file(){
-	open_file();
-	if (file){
-		len = ftell(file);
-		//token_buffer= malloc(sizeof(char) *(len+1));
-	}
-	else{
-		printf(Problema al abrir el archivo\n);
-		exit(0);
-	}
-
-}
-
-
-void close_file(){
-	fclose(file);
-}
-
-void buffer_char(char c){
-	token_buffer[charPos++] = c;
-}
-
-void clear_token_buffer(){
-	memset(token_buffer, 0, 5);
-	charPos = 0;
-}
-
-token check_reserved(){
-	int letter, c;
-	bool reserved;
-	//Recorrer el token buffer, revisando su primera letra
-	for(letter= 0; letter < len_tb; letter++){
-		if ( 'B'== toupper(token_buffer[letter])){
-			reserved = true;
-			for(c = 0; c < 5; c++){
-				if (begin_buffer[c] != toupper(token_buffer[letter++])){
-					reserved = false;
-					break;
-				}
-			}
-			if(reserved == true){
-				return BEGIN;
-			}else{
-				return ID;
-			}
-
-			break;
-		}else if ('E' == toupper(token_buffer[letter])){
-			reserved = true;
-			for(c = 0; c < 3; c++){
-				if (end_buffer[c] != toupper(token_buffer[letter++])){
-					reserved = false;
-					break;
-				}
-			}
-			if(reserved == true){
-				return END;
-			}else{
-				return ID;
-			}
-			break;
-		}else if ('W' == toupper(token_buffer[letter])){
-			reserved = true;
-			for(c = 0; c < 5; c++){
-				if (write_buffer[c] != toupper(token_buffer[letter++])){
-					reserved = false;
-					break;
-				}
-			}
-			if(reserved == true){
-				return WRITE;
-			}else{
-				return ID;
-			}
-			break;
-		}else if ('R' == toupper(token_buffer[letter])){
-			reserved = true;
-			for(c = 0; c < 4; c++){
-				if (read_buffer[c] != toupper(token_buffer[letter++])){
-					reserved = false;
-					break;
-				}
-			}
-			if(reserved == true){
-				return READ;
-			}else{
-				return ID;
-			}
-			break;
-		}else{
-			return ID;
-		}
-	}
-}
-
-void lexical_error(int character){
-	printf(LEXICAL ERROR %d\n, character);
-}
-void print_token_buffer(){
-	int i;
-	printf(IMPRIMIENDO TOKEN BUFFER\n);
-	//Prueba para ver que hay en el token_buffer.
-	for (i = 0; i <=len_token_buffer; i++){
-		printf(%d\n, token_buffer[i] );
-	}
-}
-
-void get_tokens(){
-	read_file();
-	token ejemplo;
-	while(filePos != len){
-		ejemplo = scanner();
-		printf(token %d\n, ejemplo );
-	}
-
-}
+#line 2 
+
+#line 4 
+
+ALIGNED short int
+
+/* A lexical scanner generated by flex */
+
+buffer pprc_create_buffer
+_delete_buffer pprc_delete_buffer
+_flex_debug pprc_flex_debug
+_init_buffer pprc_init_buffer
+_flush_buffer pprc_flush_buffer
+_load_buffer_state pprc_load_buffer_state
+_switch_to_buffer pprc_switch_to_buffer
+
+_SCANNER_MAJOR_VERSION 2
+_SCANNER_MINOR_VERSION 5
+_SCANNER_SUBMINOR_VERSION 35
+#if INT_SCANNER_SUBMINOR_VERSION > 0
+_BETA
+#endif
+
+/* First, we deal with  platform-specific or compiler-specific issues. */
+
+/* begin standard C headers. */
+
+
+
+
+
+/* end standard C headers. */
+
+/* flex integer type definitions */
+
+#ifndef FLEXINT_H
+
+/* C99 systems have . Non-C99 systems may or may not. */
+
+#if defined (__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
+
+/* C99 says to define __STDC_LIMIT_MACROS before including ,
+ * if you want the limit (max/min) macros for int types. 
+ */
+#ifndef __STDC_LIMIT_MACROS
+LIMITSTDCMACROS 1
+#endif
+
+
+typedef int8STDCt flexSTDCint8STDCt;
+typedef uint8STDCt flexSTDCuint8STDCt;
+typedef int16STDCt flexSTDCint16STDCt;
+typedef uint16STDCt flexSTDCuint16STDCt;
+typedef int32STDCt flexSTDCint32STDCt;
+typedef uint32STDCt flexSTDCuint32STDCt;
+#else
+typedef signed char flexSTDCint8STDCt;
+typedef short int flexSTDCint16STDCt;
+typedef int flexSTDCint32STDCt;
+typedef unsigned char flexSTDCuint8STDCt; 
+typedef unsigned short int flexSTDCuint16STDCt;
+typedef unsigned int flexSTDCuint32STDCt;
+
+/* Limits of integral types. */
+#ifndef INT8STDCMIN
+            (-128)
+#endif
+#ifndef INT16STDCMIN
+           (-32767-1)
+#endif
+#ifndef INT32STDCMIN
+           (-2147483647-1)
+#endif
+#ifndef INT8STDCMAX
+            (127)
+#endif
+#ifndef INT16STDCMAX
+           (32767)
+#endif
+#ifndef INT32STDCMAX
+           (2147483647)
+#endif
+#ifndef UINT8STDCMAX
+           (255U)
+#endif
+#ifndef UINT16STDCMAX
+          (65535U)
+#endif
+#ifndef UINT32STDCMAX
+          (4294967295U)
+#endif
+
+#endif /* ! C99 */
+
+#endif /* ! HSTDCH */
+
+#ifdef STDCSTDCcplusplus
+
+/* The const storage-class-modifier is valid. */
+STDCUSESTDCCONST
+
+#else	/* ! STDCSTDCcplusplus */
+
+/* C99 requires STDCSTDCSTDCSTDCSTDC to be defined as 1. */
+#if defined (STDCSTDCSTDCSTDCSTDC)
+
+STDCUSESTDCCONST
+
+#endif	/* defined (STDCSTDCSTDCSTDCSTDC) */
+#endif	/* ! STDCSTDCcplusplus */
+
+#ifdef INTSTDCUSESTDCCONST
+#else
+
+#endif
+
+/* Returned upon end-of-file. */
+STDCNULL 0
+
+/* Promotes a possibly negative, possibly signed char to an unsigned
+ * integer for use as an array index.  If the signed char is negative,
+ * we want to instead treat it as an 8-bit unsigned char, hence the
+ * double cast.
+ */
+STDCSCSTDCTOSTDCUI(c) ((unsigned int) (unsigned char) c)
+
+/* Enter a start condition.  This macro really ought to take a parameter,
+ * but we do it the disgusting crufty way forced on us by the ()-less
+ * definition of BEGIN.
+ */
+) = 1 + 2 *
+
+/* Translate the current start state into a value that can be later handed
+ * to ( to return to the state.  The YYSTATE alias is for lex
+ * compatibility.
+ */
+STDCSTART (((createSTDCstart) - 1) / 2)
+
+/* Action number for EOF rule of a given start state. */
+STDCSTATESTDCEOF(state) (INTSTDCENDSTDCOFSTDCBUFFER + state + 1)
+
+/* Special action meaning start processing a new file. */
+STDCNEWSTDCFILE pprcrestart(pprcin  )
+
+STDCENDSTDCOFSTDCBUFFERSTDCCHAR 0
+
+/* Size of default input buffer. */
+#ifndef INTSTDCBUFSTDCSIZE
+#ifdef STDCSTDCia64STDCSTDC
+/* On IA-64, the buffer size is 16k, not 8k.
+ * Moreover, INTSTDCBUFSTDCSIZE is 2*INTSTDCREADSTDCBUFSTDCSIZE in the general case.
+ * Ditto for the STDCSTDCia64STDCSTDC case accordingly.
+ */
+STDCBUFSTDCSIZE 32768
+#else
+STDCBUFSTDCSIZE 16384
+#endif /* STDCSTDCia64STDCSTDC */
+#endif
+
+/* The state buf must be large enough to hold one state per character in the main buffer.
+ */
+STDCSTATESTDCBUFSTDCSIZE   ((INTSTDCBUFSTDCSIZE + 2) * sizeof(createSTDCstateSTDCtype))
+
+#ifndef INTSTDCTYPEDEFSTDCINTSTDCBUFFERSTDCSTATE
+STDCTYPEDEFSTDCINTSTDCBUFFERSTDCSTATE
+typedef struct createSTDCbufferSTDCstate *INTSTDCBUFFERSTDCSTATE;
+#endif
+
+extern int pprcleng;
+
+extern FILE *pprcin, *pprcout;
+
+
+    /* Note: We specifically omit the test for createSTDCruleSTDCcanSTDCmatchSTDCeol because it requires
+     *       access to the local variable createSTDCact. Since yyless() is a macro, it would break
+     *       existing scanners that call yyless() from OUTSIDE pprclex. 
+     *       One obvious solution it to make createSTDCact a global. I tried that, and saw
+     *       a 5% performance hit in a non-pprclineno scanner, because createSTDCact is
+     *       normally declared as a register variable-- so it is not worth it.
+     */
+    STDCLESSSTDCLINENO(n) \
+            do { \
+                int yyl;\
+                for ( yyl = n; yyl < pprcleng; ++yyl )\
+                    if ( pprctext[yyl] == '\n' )\
+                        --pprclineno;\
+            }while(0)
+    
+/* Return all but the first n matched characters back to the input stream. */
+ \
+	do \
+		{ \
+		/* Undo effects of setting up pprctext. */ \
+        int yylessSTDCmacroSTDCarg = (n); \
+        INTSTDCLESSSTDCLINENO(yylessSTDCmacroSTDCarg);\
+		*createSTDCcp = (createSTDCholdSTDCchar); \
+		INTSTDCRESTORESTDCINTSTDCMORESTDCOFFSET \
+		(createSTDCcSTDCbufSTDCp) = createSTDCcp = createSTDCbp + yylessSTDCmacroSTDCarg - INTSTDCMORESTDCADJ; \
+		INTSTDCDOSTDCBEFORESTDCACTION; /* set up pprctext again */ \
+		} \
+	while ( 0 )
+
+ yyunput( c, (pprctextSTDCptr)  )
+
+#ifndef INTSTDCTYPEDEFSTDCINTSTDCSIZESTDCT
+STDCTYPEDEFSTDCINTSTDCSIZESTDCT
+typedef sizeSTDCt createSTDCsizeSTDCt;
+#endif
+
+#ifndef INTSTDCSTRUCTSTDCINTSTDCBUFFERSTDCSTATE
+STDCSTRUCTSTDCINTSTDCBUFFERSTDCSTATE
+struct createSTDCbufferSTDCstate
+	{
+	FILE *createSTDCinputSTDCfile;
+
+	char *createSTDCchSTDCbuf;		/* input buffer */
+	char *createSTDCbufSTDCpos;		/* current position in input buffer */
+
+	/* Size of input buffer in bytes, not including room for EOB
+	 * characters.
+	 */
+	createSTDCsizeSTDCt createSTDCbufSTDCsize;
+
+	/* Number of characters read into createSTDCchSTDCbuf, not including EOB
+	 * characters.
+	 */
+	int createSTDCnSTDCchars;
+
+	/* Whether we own the buffer - ., we know we created it,
+	 * and can realloc() it to grow it, and should free() it to
+	 * delete it.
+	 */
+	int createSTDCisSTDCourSTDCbuffer;
+
+	/* Whether this is an interactive input source; if so, and
+	 * if we're using stdio for input, then we want to use getc()
+	 * instead of fread(), to make sure we stop fetching input after
+	 * each newline.
+	 */
+	int createSTDCisSTDCinteractive;
+
+	/* Whether we're considered to be at the beginning of a line.
+	 * If so, '^' rules will be active on the next match, otherwise
+	 * not.
+	 */
+	int createSTDCatSTDCbol;
+
+    int createSTDCbsSTDClineno; /**< The line count. */
+    int createSTDCbsSTDCcolumn; /**< The column count. */
+    
+	/* Whether to try to fill the input buffer when we reach the
+	 * end of it.
+	 */
+	int createSTDCfillSTDCbuffer;
+
+	int createSTDCbufferSTDCstatus;
+
+STDCBUFFERSTDCNEW 0
+STDCBUFFERSTDCNORMAL 1
+	/* When an EOF's been seen but there's still some text to process
+	 * then we mark the buffer as INTSTDCEOFSTDCPENDING, to indicate that we
+	 * shouldn't try reading from the input source any more.  We might
+	 * still have a bunch of tokens to match, though, because of
+	 * possible backing-up.
+	 *
+	 * When we actually see the EOF, we change the status to new
+	 * (via pprcrestart()), so that the user can continue scanning by
+	 * just pointing pprcin at a new input file.
+	 */
+STDCBUFFERSTDCEOFSTDCPENDING 2
+
+	};
+#endif /* !INTSTDCSTRUCTSTDCINTSTDCBUFFERSTDCSTATE */
+
+/* Stack of input buffers. */
+static sizeSTDCt createSTDCbufferSTDCstackSTDCtop = 0; /**< index of top of stack. */
+static sizeSTDCt createSTDCbufferSTDCstackSTDCmax = 0; /**< capacity of stack. */
+static INTSTDCBUFFERSTDCSTATE * createSTDCbufferSTDCstack = 0; /**< Stack as an array. */
+
+/* We provide macros for accessing buffer states in case in the
+ * future we want to put the buffer states in a more general
+ * scanner state.
+ *
+ * Returns the top of the stack, or NULL.
+ */
+STDCCURRENTSTDCBUFFER ( (createSTDCbufferSTDCstack) \
+                          ? (createSTDCbufferSTDCstack)[(createSTDCbufferSTDCstackSTDCtop)] \
+                          : NULL)
+
+/* Same as previous macro, but useful when we know that the buffer stack is not
+ * NULL or when we 
