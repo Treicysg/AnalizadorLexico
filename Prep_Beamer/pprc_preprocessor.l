@@ -31,7 +31,7 @@ string 		\"(\\.|[^"])*\"
 "\"" {strcpy(_name,yytext);return QUOTES;}
 "<"{letter}({letter}|{number})*("."{letter}+)+">" {strcpy(_name, yytext); return LIBRARY;}
 {letter}({letter}|{number})* {strcpy(_name,yytext); return CODIGO;}
-[ \t\n]#[ \t]*include[ \t]+ {strcpy(_name,yytext);includeCounter++; return INCLUDE;}
+#[ \t]*include[ \t]+ {strcpy(_name,yytext);includeCounter++; return INCLUDE;}
 [_]*{letter}({letter}|{number}|[_]*)*("."{letter}+)+ {strcpy(_name,yytext);return FILENAME; }
 <<EOF>> {strcpy(_name,"EOF"); return EOF;}
 . {strcpy(_name,yytext);return CODIGO;}
@@ -153,7 +153,7 @@ void openFilePath(YY_BUFFER_STATE buffer,FILE *output){
 
 	while((current_token= yylex())!= EOF){
 		// Mientras haya algo que leer...
-	
+
 		if(current_token == INCLUDE){
 				current_token = yylex(); // verifica que el file path empiece con comillas
 				if(current_token == QUOTES){
